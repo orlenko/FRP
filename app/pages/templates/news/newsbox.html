@@ -1,0 +1,32 @@
+{% load pagination_tags %}
+<div id='news_box'>
+	<ul>
+		{% if posts %}
+		{% autopaginate posts 2 %}
+    {% for post in posts %}
+		<li>
+			<b><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></b>
+			<br />
+			{{ post.content|safe|truncatewords_html:10 }}
+		</li>
+		<hr />
+    {% endfor %}
+		{% paginate %}
+		{% endif %}
+  </ul>
+	<div class='newsfooter'>
+		<a href="/news/">All News</a>
+	</div>
+	<div>
+		<img src="{{ STATIC_URL }}img/enews.png" alt="Enews" />
+		<p align="center">
+			<a href="/resources/downloads/">
+				<img src="{{ STATIC_URL	}}img/download.png"
+				alt="Download" />
+			</a>
+			<a href="/resources/subscribe/">
+				<img src="{{ STATIC_URL }}img/subscribe.png" alt="Subscribe" />
+			</a>
+		</p>
+	</div>
+</div>

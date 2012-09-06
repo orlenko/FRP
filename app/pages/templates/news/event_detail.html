@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ event.title }}
+{% endblock %}
+
+{% block content %}
+  <h3>{{ event.title }}</h3>
+  {{ event.start }} to {{ event.end }}
+  <div class='ev_desc'>{{ event.description|safe }}</div>
+
+  <p><a href="{% url event_archive_list %}"><i>Back to events</i></a></p>
+{% endblock %}
+

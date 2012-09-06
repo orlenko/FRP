@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load slideshow %}
+{% block header_select %}frontpage{% endblock %}
+
+{% block galleryjs %}
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/jquery.cycle.all.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		document.write('<style>.noscript { display: none; }</style>');
+	</script>
+{% endblock %}
+
+{% block welcome %}
+	<section id="marquee">
+		{% slideshow %}
+	</section>
+	<noscript><img src="{{ STATIC_URL }}img/marquee_place_holder.png"
+		title="Welcome!" /></noscript>
+
+	<section id="welcome" class="grid_16">
+		<div id="title" class="grid_10 prefix_1">
+			Welcome
+		</div>
+		<div id="message" class="grid_10 prefix_1">
+			The BC Association of Family Resource Programs is a not-for-profit provincial organization dedicated to promoting and supporting community-based Family Resource Programs (FRPs).  FRPs are parent/child (aged 0-6) community hubs where families access support, opportunities for engagement, and community resources.
+		</div>
+	</section>
+{% endblock %}
+
+{% block content %}
+            <aside id="parents" class="grid_5 alpha">
+             <div id="parent_poz"><ul>
+                <li><a href="/resources/for-parents/whats-a-frp/"><img src="{{ STATIC_URL }}img/panel_buttons/what.png" alt="What's a Family Resource Program"></a></li>
+                <li><a href="/resources/for-parents/find-an-frp/"><img src="{{ STATIC_URL }}img/panel_buttons/find.png" alt="Find a Family Resource Program"></a></li>
+                <li><a href="/resources/for-parents/video-of-an-frp/"><img src="{{ STATIC_URL }}img/panel_buttons/video.png" alt="Video of a Family Resource Program"></a></li>
+                <li><a href="/resources/for-parents/finding-a-service/"><img src="{{ STATIC_URL }}img/panel_buttons/finding.png" alt="Finding a Service"></a></li>
+              </ul></div>
+            </aside>
+			<aside id="practitioners" class="grid_5 omega">
+ 			<div id="practitioners_poz"><ul>
+                <li><a href="/resources/for-practitioners/frp-certificate/"><img src="{{ STATIC_URL }}img/panel_buttons/certificate.png" alt="Family Resource Program Certificate"></a></li>
+                <li><a href="/resources/for-practitioners/frp-workshops/"><img src="{{ STATIC_URL }}img/panel_buttons/workshops.png" alt="Valued Practices Workshop"></a></li>
+                <li><a href="/resources/for-practitioners/path-to-learning/"><img src="{{ STATIC_URL }}img/panel_buttons/pre-course.png" alt="Pre-course Path to Learning"></a></li>
+                <li><a href="/resources/for-practitioners/standards-of-practice/"><img src="{{ STATIC_URL }}img/panel_buttons/standards.png" alt="Standards of Practice"></a></li>
+              </ul></div>
+            </aside> 
+{% endblock %}
+
+{% block titlecontent %}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "memdir/base.html" %}
+{% load fiber_tags %}
+{% load easy_maps_tags cache %}
+
+{% block content %}
+	<div id="member-detail-info" class="alpha grid_4">
+		<h2 class='member-agency'>{{ member.agency }}</h2>
+		<p class='member-description'>{{ member.description }}</p>
+		<p class='member-full-address'><i>Address</i><br />{{ member.full_address }}</p>
+		<p class='member-phone-number'><i>Phone Number</i><br />{{ member.agphone }}</p>
+		<p class='member-website'><i>Website:</i><br /><a href="{{ member.website	}}">{{ member.website }}</a></p>
+	</div>
+	<div id="membermap" class='grid_4 member-geo-address-map'>
+		{% cache 600 my_map member.geo_address %}
+			{% easy_map member.geo_address 420 250 13 %}
+		{% endcache %}
+	</div>
+	<div class="grid_4 omega">
+		{% show_page_content "aside" %}
+	</div>
+	<div class="clear"></div>
+    {% if user.is_superuser %}
+    <div class="grid_4 admin-info">
+			<p class='member-number'><b>System member number: </b>{{ member.memnum }}</p>
+			<p class='member-renewal'><b>Member renewal date: </b>{{ member.renewal }}</p>
+
+		</div>
+    {% else %}
+	    <div class="prepend_4 suffix_8 alpha omega"></div>
+    {% endif %}
+ <div class="clear"></div>
+{% endblock %}

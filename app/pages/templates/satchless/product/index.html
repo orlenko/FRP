@@ -1,0 +1,20 @@
+{% extends "satchless/base.html" %}
+{% load i18n %}
+{% load product_prices %}
+{% load satchless_image %}
+
+{% block title %}{{ block.super }} &mdash; Products{% endblock %}
+{% block content %}
+
+{% for product in products %}
+	{{ product.main_image }}
+	{{ product.name }}
+	<p>
+		{{ product.description|linebreaks }}
+	</p>
+	<table>
+		{{ product.cart_form.as_table }}
+	</table>
+{% endfor %}
+{% endblock %}
+

@@ -1,0 +1,142 @@
+{% extends "memdir/base.html" %}
+{% block mapjs %}
+<script type="text/javascript"> 
+      var map;
+ 
+      function initialize() {
+        var myOptions = {
+          zoom: 4,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById('map_canvas'),
+            myOptions);
+ 
+        // Try HTML5 geolocation
+							/*
+        if(navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = new google.maps.LatLng(position.coords.latitude,
+                                             position.coords.longitude);
+																						 */
+ 
+						var pos = new google.maps.LatLng(55.95, -122.0);
+            var infowindow = new google.maps.InfoWindow({
+              map: map,
+              position: pos,
+              //content: 'BC Association of Family Resource Programs.'
+            });
+ 
+            map.setCenter(pos);
+						/*
+          }, function() {
+            handleNoGeolocation(true);
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleNoGeolocation(false);
+        }
+				*/
+			{% for member in object_list %}
+				var contentString{{ forloop.counter }} = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading">{{ member.agency }}</h1>'+
+        '<div id="bodyContent">'+
+        '<a href="{{ member.get_absolute_url }}">'+
+        'More info</a> '+
+				{% if member.website %}
+					{% if member.website != "http:" %}
+					'<a href="{{ member.website }}" target="_blank">'+
+					'Member Website</a> '+
+					{% endif %}
+				{% endif %}
+        '.</p>'+
+        '</div>'+
+        '</div>';
+
+				var infowindow{{ forloop.counter }} = new google.maps.InfoWindow({
+						content: contentString{{ forloop.counter }},
+				});
+				var pos = new google.maps.LatLng({{ member.location.lat }},{{ member.location.lng }});
+				var marker{{ forloop.counter }} = new google.maps.Marker({
+					position: pos,
+					title: "{{ member.agency }}"
+				});
+				google.maps.event.addListener(marker{{ forloop.counter }}, 'click', function() {
+					infowindow{{ forloop.counter }}.open(map,marker{{ forloop.counter }});
+				});
+				marker{{ forloop.counter }}.setMap(map);
+			{% endfor %}
+      }
+
+/*
+ 
+      function handleNoGeolocation(errorFlag) {
+        if (errorFlag) {
+          var content = '';
+        } else {
+          var content = '';
+        }
+				*/
+ 
+        var options = {
+          map: map,
+          //position: new google.maps.LatLng(49.2644, -123.137),
+          position: new google.maps.LatLng(55.95, -122.0),
+          //content: content
+        };
+ 
+        var infowindow = new google.maps.InfoWindow(options);
+        map.setCenter(options.position);
+      //}
+ 
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script> 
+{% endblock %}
+
+{% block content %}
+	<h2>Search with Map</h2>
+	<div id="map_canvas" style="width: 680px; height: 350px;">
+		<!-- GMap ends up here -->
+	</div>
+
+	<h3>View by Region</h3>
+<div class="grid_5 alpha"><img src="{{ STATIC_URL }}img/map-directory.gif" border="0" usemap="#Map2"/>
+
+		<map name="Map2"><area shape="rect" coords="201,281,229,305"
+									href="{% url fraser_dir %}" alt="Fraser Valley"><area
+									shape="rect" coords="176,265,201,290" 
+									href="{% url other_dir %}" alt="Other Regions">
+
+									<area shape="poly" coords="81,169,15,13,179,33,245,43,259,218,180,196" 
+									href="{% url northern_dir %}" alt="Northern">
+
+									<area shape="rect" coords="126,198,171,232" 
+									href="{% url other_dir %}" alt="Other Regions">
+
+                  <area shape="poly" coords="184,212" href="#">
+
+                  <area shape="poly"
+									coords="182,205,280,226,324,293,252,297,184,248" 
+									href="{% url interior_dir %}" alt="Interior">
+
+									<area shape="poly" coords="160,236,188,261,171,273,173,288,191,302,197,311,182,313,170,306,151,284,128,257" 
+									href="{% url vanisle_dir %}" alt="Vancouver Island">
+
+                </map>
+
+            </div>
+<div class="grid_4 omega">
+	<ul class="regionlist">
+		<li><a href="{% url northern_dir %}">Northern</a></li>
+		<li><a href="{% url vancoast_dir %}">Vancouver Coastal</a></li>
+		<li><a href="{% url interior_dir %}">Interior</a></li>
+		<li><a href="{% url vanisle_dir %}">Vancouver Island</a></li>
+		<li><a href="{% url fraser_dir %}">Fraser Valley</a></li>
+		<li><a href="{% url other_dir %}">Other</a></li>
+		{% if user.is_superuser %}
+			<li><a href="{% url unknown_dir %}">Uncategorized</a></li>
+		{% endif %}
+	</ul>
+</div>
+{% endblock %}

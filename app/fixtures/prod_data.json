@@ -1,0 +1,567 @@
+[
+  {
+    "pk": 2, 
+    "model": "fiber.contentitem", 
+    "fields": {
+      "content_markup": "", 
+      "updated": "2011-06-08 07:03:52", 
+      "name": "", 
+      "created": "2011-06-05 04:48:11", 
+      "protected": false, 
+      "content_html": "<h2>\r\n\tA ContentItem in the &quot;aside&quot; block</h2>\r\n<p>\r\n\t<em>Double-click to edit this ContentItem.</em></p>\r\n<p>\r\n\tUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>\r\n", 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "fiber.contentitem", 
+    "fields": {
+      "content_markup": "", 
+      "updated": "2011-06-08 07:05:03", 
+      "name": "address", 
+      "created": "2011-06-05 04:53:32", 
+      "protected": false, 
+      "content_html": "<h2>\r\n\tA ContentItem named &quot;address&quot;</h2>\r\n<p>\r\n\t<em>Double-click to edit this ContentItem.</em></p>\r\n", 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "fiber.contentitem", 
+    "fields": {
+      "content_markup": "", 
+      "updated": "2011-08-04 21:42:56", 
+      "name": "", 
+      "created": "2011-08-04 21:42:56", 
+      "protected": false, 
+      "content_html": "<p>\r\n\tYour posts will appear below.</p>\r\n", 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "fiber.contentitem", 
+    "fields": {
+      "content_markup": "", 
+      "updated": "2011-08-15 17:51:37", 
+      "name": "", 
+      "created": "2011-08-15 17:51:37", 
+      "protected": false, 
+      "content_html": "<p>\r\n\tThis is editable text for the member directory home page.</p>\r\n", 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "fiber.contentitem", 
+    "fields": {
+      "content_markup": "", 
+      "updated": "2011-12-01 15:51:22", 
+      "name": "", 
+      "created": "2011-12-01 15:51:22", 
+      "protected": false, 
+      "content_html": "<p>\r\n\tSed semper dolor vitae sem scelerisque vulputate volutpat eros egestas. Nam mollis pharetra libero, sit amet rhoncus libero mollis vitae. Ut eget dui turpis. Sed a tortor vel arcu sollicitudin rhoncus ut vel eros. In bibendum enim non nunc rhoncus aliquet. Ut eget massa id est laoreet varius. Suspendisse semper magna at lectus faucibus sodales. Maecenas enim leo, consectetur sed eleifend vel, euismod sed justo. Nam vehicula mattis nisi. Fusce sit amet orci odio, ut consectetur risus. Phasellus vitae lorem vitae sem venenatis euismod eget ut libero. Aenean posuere metus convallis tortor dapibus tincidunt. Mauris gravida, magna nec pellentesque vestibulum, orci lectus iaculis urna, nec suscipit arcu neque in mauris.</p>\r\n", 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "fiber.contentitem", 
+    "fields": {
+      "content_markup": "", 
+      "updated": "2011-12-01 15:59:25", 
+      "name": "", 
+      "created": "2011-12-01 15:51:44", 
+      "protected": false, 
+      "content_html": "<p>\r\n\tSed semper dolor vitae sem scelerisque vulputate volutpat eros egestas. Nam mollis pharetra libero, sit amet rhoncus libero mollis vitae. Ut eget dui turpis. Sed a tortor vel arcu sollicitudin rhoncus ut vel eros. In bibendum enim non nunc rhoncus aliquet. Ut eget massa id est laoreet varius. Suspendisse semper magna at lectus faucibus sodales. Maecenas enim leo, consectetur sed eleifend vel, euismod sed justo. Nam vehicula mattis nisi. Fusce sit amet orci odio, ut consectetur risus. Phasellus vitae lorem vitae sem venenatis euismod eget ut libero. Aenean posuere metus convallis tortor dapibus tincidunt. Mauris gravida, magna nec pellentesque vestibulum, orci lectus iaculis urna, nec suscipit arcu neque in mauris.</p>\r\n", 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "fiber.contentitem", 
+    "fields": {
+      "content_markup": "", 
+      "updated": "2011-12-12 19:42:49", 
+      "name": "", 
+      "created": "2011-06-05 04:47:59", 
+      "protected": false, 
+      "content_html": "<h2>\r\n\t.</h2>\r\n", 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "fiber.contentitem", 
+    "fields": {
+      "content_markup": "", 
+      "updated": "2011-12-12 21:23:17", 
+      "name": "filler text", 
+      "created": "2011-12-12 21:23:17", 
+      "protected": false, 
+      "content_html": "<p>\r\n\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris rutrum sollicitudin egestas. Praesent aliquam auctor diam ut egestas. Fusce diam neque, bibendum eget euismod eu, luctus vel risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed accumsan mollis posuere. Morbi pellentesque dapibus orci, non imperdiet sapien porta et. Sed sodales risus in nunc interdum vel bibendum lectus hendrerit. Phasellus non est nec tortor pharetra ultricies at in orci. Phasellus mollis tristique vulputate. Aliquam vitae nibh dui, nec ornare sem. Maecenas felis dolor, rutrum et dignissim nec, bibendum non turpis. Cras non enim diam, id commodo libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec placerat adipiscing metus, et rhoncus mauris fringilla in. Maecenas nec diam eros, ac sollicitudin sapien.</p>\r\n", 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "fiber.contentitem", 
+    "fields": {
+      "content_markup": "", 
+      "updated": "2011-12-12 21:32:21", 
+      "name": "", 
+      "created": "2011-12-12 21:32:21", 
+      "protected": false, 
+      "content_html": "<p>\r\n\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris rutrum sollicitudin egestas. Praesent aliquam auctor diam ut egestas. Fusce diam neque, bibendum eget euismod eu, luctus vel risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed accumsan mollis posuere. Morbi pellentesque dapibus orci, non imperdiet sapien porta et. Sed sodales risus in nunc interdum vel bibendum lectus hendrerit. Phasellus non est nec tortor pharetra ultricies at in orci. Phasellus mollis tristique vulputate. Aliquam vitae nibh dui, nec ornare sem. Maecenas felis dolor, rutrum et dignissim nec, bibendum non turpis. Cras non enim diam, id commodo libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec placerat adipiscing metus, et rhoncus mauris fringilla in. Maecenas nec diam eros, ac sollicitudin sapien.</p>\r\n", 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 48, 
+      "updated": "2011-06-04 13:37:13", 
+      "level": 0, 
+      "parent": null, 
+      "title": "mainmenu", 
+      "url": "", 
+      "template_name": "", 
+      "created": "2011-06-04 13:37:13", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 1, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 3, 
+      "updated": "2011-12-12 19:43:49", 
+      "level": 1, 
+      "parent": 1, 
+      "title": "Home", 
+      "url": "/", 
+      "template_name": "", 
+      "created": "2011-06-04 13:37:36", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 2, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 9, 
+      "updated": "2011-12-12 20:13:22", 
+      "level": 1, 
+      "parent": 1, 
+      "title": "About", 
+      "url": "about", 
+      "template_name": "", 
+      "created": "2011-06-04 13:38:07", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 4, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 6, 
+      "updated": "2011-06-04 13:57:17", 
+      "level": 2, 
+      "parent": 3, 
+      "title": "Mission", 
+      "url": "mission", 
+      "template_name": "", 
+      "created": "2011-06-04 13:57:17", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 5, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 8, 
+      "updated": "2011-06-04 13:57:37", 
+      "level": 2, 
+      "parent": 3, 
+      "title": "Our people", 
+      "url": "our-people", 
+      "template_name": "", 
+      "created": "2011-06-04 13:57:37", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 7, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 31, 
+      "updated": "2011-12-12 21:20:47", 
+      "level": 1, 
+      "parent": 1, 
+      "title": "News", 
+      "url": "\"post_archive_list\"", 
+      "template_name": "", 
+      "created": "2011-08-04 21:40:23", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 30, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 33, 
+      "updated": "2011-12-12 20:16:05", 
+      "level": 1, 
+      "parent": 1, 
+      "title": "Events", 
+      "url": "\"event_archive_list\"", 
+      "template_name": "", 
+      "created": "2011-08-04 21:42:30", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 32, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 35, 
+      "updated": "2011-12-12 20:18:51", 
+      "level": 1, 
+      "parent": 1, 
+      "title": "Memberships", 
+      "url": "memberships", 
+      "template_name": "", 
+      "created": "2011-12-12 20:18:51", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 34, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 37, 
+      "updated": "2011-12-12 21:29:24", 
+      "level": 1, 
+      "parent": 1, 
+      "title": "Resources", 
+      "url": "resources", 
+      "template_name": "", 
+      "created": "2011-12-12 20:23:34", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 36, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 39, 
+      "updated": "2011-12-12 20:16:36", 
+      "level": 1, 
+      "parent": 1, 
+      "title": "Directory", 
+      "url": "\"member_dir\"", 
+      "template_name": "", 
+      "created": "2011-08-15 17:50:29", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 38, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 41, 
+      "updated": "2011-12-12 20:19:17", 
+      "level": 1, 
+      "parent": 1, 
+      "title": "Links", 
+      "url": "links", 
+      "template_name": "", 
+      "created": "2011-12-12 20:19:17", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 40, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 47, 
+      "updated": "2011-06-04 13:38:33", 
+      "level": 1, 
+      "parent": 1, 
+      "title": "Contact", 
+      "url": "contact", 
+      "template_name": "", 
+      "created": "2011-06-04 13:38:33", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 42, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 44, 
+      "updated": "2011-06-04 13:58:26", 
+      "level": 2, 
+      "parent": 5, 
+      "title": "Newsletter", 
+      "url": "newsletter", 
+      "template_name": "", 
+      "created": "2011-06-04 13:58:26", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 43, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 46, 
+      "updated": "2011-06-04 13:58:47", 
+      "level": 2, 
+      "parent": 5, 
+      "title": "Directions", 
+      "url": "directions", 
+      "template_name": "", 
+      "created": "2011-06-04 13:58:47", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 45, 
+      "protected": false, 
+      "tree_id": 1, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 8, 
+      "updated": "2011-06-04 14:01:11", 
+      "level": 0, 
+      "parent": null, 
+      "title": "generalmenu", 
+      "url": "", 
+      "template_name": "", 
+      "created": "2011-06-04 14:01:11", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 1, 
+      "protected": false, 
+      "tree_id": 2, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 3, 
+      "updated": "2011-06-04 14:01:23", 
+      "level": 1, 
+      "parent": 19, 
+      "title": "Disclaimer", 
+      "url": "disclaimer", 
+      "template_name": "", 
+      "created": "2011-06-04 14:01:23", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 2, 
+      "protected": false, 
+      "tree_id": 2, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 5, 
+      "updated": "2011-06-04 17:04:07", 
+      "level": 1, 
+      "parent": 19, 
+      "title": "Privacy statement", 
+      "url": "privacy-statement", 
+      "template_name": "", 
+      "created": "2011-06-04 17:04:07", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 4, 
+      "protected": false, 
+      "tree_id": 2, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "fiber.page", 
+    "fields": {
+      "rght": 7, 
+      "updated": "2011-08-04 21:46:34", 
+      "level": 1, 
+      "parent": 19, 
+      "title": "Syndication Feed", 
+      "url": "\"post_feed\"", 
+      "template_name": "", 
+      "created": "2011-08-04 21:46:34", 
+      "mark_current_regexes": "", 
+      "redirect_page": null, 
+      "lft": 6, 
+      "protected": false, 
+      "tree_id": 2, 
+      "show_in_menu": true, 
+      "metadata": null
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "fiber.pagecontentitem", 
+    "fields": {
+      "sort": 0, 
+      "block_name": "aside", 
+      "content_item": 2, 
+      "page": 2
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "fiber.pagecontentitem", 
+    "fields": {
+      "sort": 1, 
+      "block_name": "aside", 
+      "content_item": 5, 
+      "page": 25
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "fiber.pagecontentitem", 
+    "fields": {
+      "sort": 3, 
+      "block_name": "main", 
+      "content_item": 6, 
+      "page": 3
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "fiber.pagecontentitem", 
+    "fields": {
+      "sort": 4, 
+      "block_name": "main", 
+      "content_item": 7, 
+      "page": 5
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "fiber.pagecontentitem", 
+    "fields": {
+      "sort": 1, 
+      "block_name": "main", 
+      "content_item": 8, 
+      "page": 28
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "fiber.pagecontentitem", 
+    "fields": {
+      "sort": 2, 
+      "block_name": "main", 
+      "content_item": 8, 
+      "page": 28
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "fiber.pagecontentitem", 
+    "fields": {
+      "sort": 5, 
+      "block_name": "main", 
+      "content_item": 9, 
+      "page": 26
+    }
+  }
+]

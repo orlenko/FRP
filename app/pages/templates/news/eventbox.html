@@ -1,0 +1,13 @@
+{% load pagination_tags %}
+  <ul>
+		{% if events %}
+		{% autopaginate events 2 %}
+    <h4>Events</h4>
+    {% for event in events %}
+    <li><i>{{ event.start }} &ndash; {{ event.end }}</i> &mdash; <a href='{{ event.get_absolute_url }}'><b>{{ event.title }}</b></a> {{ event.content|safe|truncatewords_html:10 }}</li>
+		<hr />
+    {% endfor %}
+		{% paginate %}
+		{% endif %}
+	</ul>
+

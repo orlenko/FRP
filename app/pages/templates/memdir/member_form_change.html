@@ -1,0 +1,22 @@
+{% extends "memdir/base.html" %}
+{% load easy_maps_tags cache %}
+{% load uni_form_tags %}
+
+{% block content %}
+  {{ form|as_uni_form }}
+	<h2 class='member-agency'>{{ member.agency }}</h2>
+	<p class='member-description'><b>Description</b>{{ member.description }}</p>
+	<p class='member-region'><b>Region</b>{{ member.region }}</p>
+	<p class='member-full-address'><b>Full Address</b>{{ member.full_address }}</p>
+	<div class='member-geo-address-map'>
+		{% cache 600 my_map member.geo_address %}
+			{% easy_map member.geo_address 300 400 13 %}
+		{% endcache %}
+	</div>
+	<p class='member-phone-number'><b>Phone Number</b>{{ member.agphone }}</p>
+    {% if user.is_superuser %}
+        <p class='member-number'>{{ member.memnum }}</p>
+        <p class='member-renewal'>{{ member.renewal }}</p>
+    {% endif %}
+
+{% endblock %}

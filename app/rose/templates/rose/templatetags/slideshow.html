@@ -1,0 +1,21 @@
+<div class="slideshow" style='display: none';>
+		{% for slide in slides %}
+		{% if slide.link %}
+				<a href="{{ slide.link }}">
+			{% endif %}
+					<img src="{{ slide.image.url }}" alt="{{ slide.description }}"
+					style='width: 1107px;'/>
+			{% if slide.link %}
+				</a>
+			{% endif %}
+		{% endfor %}
+</div>
+
+<script type='text/javascript'>
+	$('.slideshow').css('display', 'block');
+	$(document).ready(function () {
+		$('.slideshow').cycle({
+			fx: 'fade',
+		});
+	});
+</script>

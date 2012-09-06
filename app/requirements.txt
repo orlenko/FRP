@@ -1,0 +1,31 @@
+Django==1.3
+PIL==1.1.7
+South==0.7.3
+Whoosh==2.2.0
+argparse==1.2.1
+distribute==0.6.14
+django-appconf==0.4.1
+django-compressor==1.1.1
+-e hg+https://bitbucket.org/kmike/django-easy-maps@8ced16c04330731906c993a2c58e36f1f37c2463#egg=django_easy_maps-dev
+django-fiber==0.9.5.1
+-e git+http://github.com/toastdriven/django-haystack.git@3684d49c0cacf5fd3805b780d697a5c9446cda9a#egg=django_haystack-dev
+django-mptt==0.5.1
+-e git+https://github.com/theatlantic/django-notification.git@48348fb1dcb94e1b8a123b78e431ae3adecc0ad8#egg=django_notification-dev
+django-pagination==1.0.7
+django-photologue==2.3
+django-piston==0.2.3rc1
+-e hg+https://bitbucket.org/ubernostrum/django-registration@fad7080fe76955e7d0d3c97bc468ea8360260a6b#egg=django_registration-dev
+django-timezones==0.1.4
+django-tinymce==1.5.1a2
+django-uni-form==0.8.0
+geopy==0.94.1
+gunicorn==0.12.2
+ipython==0.11
+psycopg2==2.4.2
+pyflakes==0.4.0
+python-dateutil==1.5
+python-ptrace==0.6.3
+pytz==2011h
+xlrd==0.7.1
+django-ckeditor
+fabric

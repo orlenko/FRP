@@ -1,0 +1,17 @@
+{% extends "news/event_archive.html" %}
+{% load calendar_tags %}
+
+{% block title %}
+  Events in {{ year }}
+{% endblock %}
+
+{% block content %}
+  Events in {{ year }}
+  {% for event in events %}
+    <h3>{{ event.title }}</h3>
+    <b>{{ event.start }}</b><br />
+    {{ event.description|safe }}<br />
+    {% month_cal event.start.year event.start.month %}
+    <a href="{{ event.get_absolute_url }}">contine reading...</a>
+  {% endfor %}
+{% endblock %}

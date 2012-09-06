@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% for event in latest %}
+		<h3><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h3>
+		<i>{{ event.start }}</i> &ndash; <i>{{ event.end }}</i><br />
+		{{ event.description|safe }}		
+		<hr />
+  {% endfor %}
+{% endblock %}

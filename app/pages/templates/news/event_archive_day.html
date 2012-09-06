@@ -1,0 +1,18 @@
+{% extends "news/event_archive.html" %}
+{% load calendar_tags %}
+
+{% block title %}
+  Events on {{ day|date:"d" }}
+{% endblock %}
+
+{% block content %}
+  Events on {{ day|date:"d" }}
+  {% for event in events %}
+  <h3>{{ event.title }}</h3>
+  <b>{{ event.start }}</b><br />
+  {{ event.description|safe }}<br />
+	{% month_cal event.start.year event.start.month %}
+  <a href="{{ event.get_absolute_url }}">Read More &rarr;</a>
+
+  {% endfor %}
+{% endblock %}

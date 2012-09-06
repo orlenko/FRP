@@ -1,0 +1,7 @@
+{% load i18n %}
+{% url member.get_absolute_url as mem_home %}
+{% blocktrans %}
+	Your Membership has expired. You can still visit your directory listing
+        by going to:
+{% endblocktrans %}
+	http://{{ current_site }}{{ mem_home }}

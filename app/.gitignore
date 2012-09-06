@@ -1,0 +1,9 @@
+/local_settings.py
+/static/
+/media/
+*.sqlite
+.*.sw*
+.*.xls*
+*.orig
+*.back
+

@@ -1,0 +1,7 @@
+{% extends "memdir/base.html" %}
+{% load easy_maps_tags cache %}
+{% load uni_form_tags %}
+
+{% block content %}
+  {{ form|as_uni_form }}
+{% endblock %}

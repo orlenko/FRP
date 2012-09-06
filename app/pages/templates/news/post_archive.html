@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% for post in latest %}
+		<a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a>
+		{{ post.content|safe }}
+		<hr />
+  {% endfor %}
+{% endblock %}

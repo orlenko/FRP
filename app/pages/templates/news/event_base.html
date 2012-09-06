@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+  All Events
+{% endblock %}
+
+{% block content %}
+{% if events %}
+	<h2><a href="{% url event_archive_list %}">All Events</a></h2>
+		{% for event in events %}
+    <h3>{{ event.title }}</h3>
+    <i>{{ event.start }}</i> &ndash; <i>{{ event.end }}</i><br />
+    {{ event.description|safe }}<br />
+    <a href="{{ event.get_absolute_url }}">Read More &rarr;</a>
+		{% endfor %}
+	{% endif %}
+{% endblock %}
+

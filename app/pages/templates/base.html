@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+{% load fiber_tags %}
+{% load i18n humanize %}
+{% load newsbox %}
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>{% block title %}{{ fiber_page.title }}{% endblock %}</title>
+	<!--<link rel="stylesheet" href="{{ STATIC_URL }}adapt/css/master.css">-->
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/grid1120px-16col.css" rel="stylesheet" type="text/css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic|Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+	<noscript>
+		<link rel="stylesheet" href="{{ STATIC_URL }}adapt/css/mobile.min.css">
+	</noscript>
+	<!-- uniform -->
+	<link rel='stylesheet' href="{{ STATIC_URL }}uni_form/uni-form.css" />
+	<link rel='stylesheet' href="{{ STATIC_URL }}uni_form/default.uni-form.css"	/>
+
+	{% block galleryjs %}
+	{% endblock %}
+
+
+	<!--<script src="{{ STATIC_URL }}adapt/js/adapt.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/typography.css">-->
+	<!--<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">-->
+	<!--<link rel="stylesheet" href="{{ STATIC_URL }}css/base.css">-->
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/base_hugh.css" rel="stylesheet" type="text/css">
+	
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	{% block mapjs %}
+	{% endblock %} <!-- local base stylesheet -->
+					<!-- modernizr -->
+					<script src="{{ STATIC_URL }}js/modernizr.custom.js"
+						type="text/javascript"></script>
+					<!--[if IE 8]>
+						<link rel="stylesheet" href="{{ STATIC_URL }}css/iefix.css" />
+					<![endif]-->
+					
+					<!--[if IE 7]>
+						<link rel="stylesheet" href="{{ STATIC_URL }}css/iefix.css" />
+					<![endif]-->
+	<!--[if lte IE 8]>
+		<script type="text/javascript"> 
+			/*Load jQuery if not already loaded*/ if(typeof jQuery == 'undefined'){ document.write("<script type=\"text/javascript\"   src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\"></"+"script>"); var __noconflict = true; } 
+			var IE6UPDATE_OPTIONS = {
+				icons_path: "ie6update/images/"
+			}
+		</script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/ie6update/ie6update.js"></script>
+	<![endif]-->
+		<!-- Google Analytics -->
+		<script type="text/javascript">
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-30592966-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+	</head>
+<body onload="initialize()" class="{% block body_class %}{{ fiber_page.title|slugify }}{% endblock %}">
+	<div id="wpr-page">
+		<div id="page" class="container_16">
+			<div id="signin" class="grid_2 prefix_14">
+				<a href="@fiber">Sign In</a>
+			</div>
+			<header id="{% block header_select %}contentpage{% endblock %}" class='grid_16'>
+			  <div id="logo" class="grid_4 alpha"><a href="/"><img src="{{ STATIC_URL }}img/bcfrp_logo.png" alt="BCFRP Logo"></a></div>
+        <div id="searchbox" class="grid_6 prefix_6 omega clearfix">
+          <form name='searchbox' type='submit' method='get' action="/search">
+            {% csrf_token %}
+            <input type='submit' name='submit' value='Search'
+              class='form_button_big' lang="en" />
+            <input type='search' class='form_textbox_big' name='q' placeholder="" />
+						<input class='hidden' type='checkbox' value='memdir.member'
+							checked='checked'	name='models' style='visibility:hidden;'>
+						<input class='hidden' type='checkbox' value='news.post'
+							checked='checked'	name='models' style='visibility:hidden;'>
+						<input class='hidden' type='checkbox' value='news.event'
+							checked='checked'	name='models' style='visibility:hidden;'>
+          </form>
+        </div>
+          <!--<img src="{{ STATIC_URL }}img/search_place_holder.png"></div>-->
+				<nav id="mainmenu" class="grid_12 omega">
+					{% show_menu "mainmenu" 1 1 %}
+				</nav>
+				<!--<nav id="breadcrumbs" class="clearfix">
+						<ul>
+							{% for fiber_page in fiber_current_pages %}
+							<li>
+								<a href="{{ fiber_page.get_absolute_url }}">{{ fiber_page.title }}</a>
+							</li>
+							{% endfor %}
+						</ul>
+						</nav>-->
+				<!--{# if notices %}
+					<table>
+							<caption>{% trans "Notices" %}</caption> 
+							<thead>
+									<tr>
+											<th>{% trans "Type" %}</th>
+											<th>{% trans "Message" %}</th>
+											<th>{% trans "Date of the Notice" %}</th>
+									</tr>
+							</thead>a:visited 
+							<tbody>
+									{% for notice in notices %}
+											{% if notice.is_unseen %}
+													<tr class="unseen_notice">
+											{% else %}
+													<tr class="notice">
+											{% endif %}
+													<td class="notice_type">[{% trans notice.notice_type.display %}]</td>
+													<td class="notice_message">{{ notice.message|safe }}</td>
+													<td class="notice_time">{{ notice.added|timesince }} {% trans "ago" %}</td>
+											</tr>
+									{% endfor %}
+							</tbody>
+					</table>
+					{% endif #} -->
+				{% if notices %}
+					<ul id='notices'>
+						{% for notice in notices.object_list %}
+							<li class="notice {% if notice.is_unseen %}unseen{%endif%}
+							{{notice.notice_type.label}}">
+								<div>
+									<p>{{notice|safe}}</p>
+									<span>{{notice.added|naturalday}}</span>
+								</div>
+							</li>
+						{% endfor %}
+						</ul> 
+						<div class="pagination">
+							<span class="step-links">
+								{% if notices.has_previous %}
+										<a href="?page={{ notices.previous_page_number }}">{% trans "previous"%}</a>
+
+								{% endif %}
+
+								<span class="current">
+								{%if notices.paginator.num_pages%}
+										{%blocktrans with notices.number as n and notices.paginator.num_pages as N%}
+												Page {{ n }} of {{ N }}.
+										{%endblocktrans%}
+								{%endif%}
+								</span>
+
+								{% if notices.has_next %}
+										<a href="?page={{ notices.next_page_number }}">{%trans "next"%}</a>
+								{% endif %}
+							</span>
+						</div>
+					{% endif %}
+			</header>
+			{% block welcome %}
+			{% endblock %}
+			<section id="content" class="grid_16">
+				<nav id="submenu" class="prefix_1 grid_15">
+					{% show_menu "mainmenu" 2 2 %}
+				</nav>
+				<nav id="submenu" class="prefix_1 grid_15">
+					{% show_menu "mainmenu" 3 3 %}
+				</nav>
+					{% block titlecontent %}
+					<div id='title_content' class='grid_10 prefix_1'>
+						{{ fiber_page.title }}
+					</div>
+					{% endblock %}
+				<article id="main_content" class="grid_10 prefix_1">
+					{% block content %}
+					{% endblock %}
+					{% show_page_content "main" %}
+				</article>
+				<aside id="news_content" class="grid_4 omega">
+        {% newsbox %}
+
+				<!--	<div id="news_box">
+						<p>News here?</p>
+						<p>Guess so</p>
+						<p>I'll have to put a tag in...</p>
+          </div>-->
+				</aside>
+			</section>
+			<!--<aside id="aside-left" class='grid_3'>-->
+			<!--<section id="main" class="grid_6">-->
+			<footer class="grid_16">
+				<div id="social_icons" class="grid_4 prefix_12 alpha"><a
+						target="_blank" href="https://www.facebook.com/pages/BC-Association-of-Family-Resource-Programs/357623254261530"><img
+						src="{{ STATIC_URL }}img/social_media_facebook.png"
+						alt="Facebook"></a><a target="_blank"  
+						href="https://picasaweb.google.com/106962330267091688041/OurFamilyResourceProgramInAction?authuser=0&authkey=Gv1sRgCMv-n6yKo4KWcg&feat=directlink"><img
+						src="{{ STATIC_URL }}img/social_media_flickr.png" alt="Flikr"></a><a
+						href="https://twitter.com/#frpbc" target="_blank"><img src="{{ STATIC_URL	}}img/social_media_twitter.png" alt="Twitter"></a><a
+						target ="_blank" href="http://www.youtube.com/frpbc"><img src="{{ STATIC_URL }}img/social_media_youtube.png" alt="You Tube"></a></div>
+				<div id="funders" class="grid_16"><img src="{{ STATIC_URL }}img/funders.png" alt="Our Funders" border="0" usemap="#Map">
+				<map name="Map">
+					<area shape="rect" coords="70,8,126,85" href="http://www.gov.bc.ca/mcf/" target="_blank" alt="CHILDREN AND FAMILY DEVELOPMENT">
+					<area shape="rect" coords="164,12,221,73" href="http://www2.unitedway.ca" target="_blank" alt="United Ways">
+					<area shape="rect" coords="257,9,325,84" href="http://www2.gov.bc.ca/" target="_blank" alt="Government of BC">
+					<area shape="rect" coords="663,19,841,76" href="http://www.vancouverfoundation.ca/" target="_blank" alt="Vancouver Foundation">
+					<area shape="rect" coords="870,26,1034,74" href="http://www.greenshield.ca/" target="_blank" alt="Green Shield Canada">
+	<area shape="rect" coords="370,-1,504,83" href="http://www.lawson.on.ca/" target="_blank" alt="The Lawson Foundation">
+				</map>
+				</div>
+				<div id="copyrights" class="grid_16 omega">The BC
+					Association of Family Resource Programs &copy; 2012 | <a
+						target="_blank"
+						href="http://webteam.vcn.bc.ca/" title="Credits">Web design by the VCN Webteam</a></div>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>
