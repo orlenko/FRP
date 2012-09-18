@@ -1,5 +1,3 @@
-Here's what I'd do if i wanted to get this code to %100:
-- add a duplicate-checker to my migration script.
-- add tests for date ordering
-
+Use fabfile from https://github.com/reverie/django-fabfile
+** Staging domain is set up: frp-staging.bjola.ca
 
