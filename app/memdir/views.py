@@ -1,7 +1,6 @@
-from django.views.generic import DetailView, ListView, FormView, CreateView
+from django.views.generic import DetailView, ListView, CreateView
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from forms import UserMemberAdminForm, RegisterMemberForm
 from django.http import HttpResponse
 
 from . import models
@@ -79,45 +78,4 @@ class MemberDetailView(DetailView):
     model = models.Member
     extra_context = "member"
 member_detail_view = MemberDetailView.as_view()
-
-class MemberCreateView(CreateView):
-    queryset = models.Member.objects.all()
-    model = models.Member
-    form = RegisterMemberForm()
-    extra_context = "member"
-
-member_create_view = MemberCreateView.as_view()
-
-@login_required
-def member_change_view(request, *args, **kwargs):
-    """
-    A custom form view for updating
-    """
-    data = request.POST or None
-    form = UserMemberAdminForm(data=data)
-    try:
-        member = models.Member.objects.get(slug=kwargs['slug'])
-        if data is None:
-            form = UserMemberAdminForm(data,instance=member)
-    except models.Member.DoesNotExist:
-        return HttpResponse(status=404)
-    if request.user.is_superuser:
-        if form.is_valid():
-            mem = form.save()
-            return redirect(mem.get_absolute_url())
-        ret = dict(member=member,form=form)
-        return render(request, 'memdir/member_form_change.html', ret)
-    else:
-        try:
-            muser = models.MemberUser.objects.get(user=request.user)
-        except models.MemberUser.DoesNotExist:
-            return HttpResponse(status=404)
-        if muser in member.users.all():
-            if form.is_valid():
-                mem = form.save()
-                return redirect(mem.get_absolute_url())
-            ret = dict(member=member,form=form)
-            return render(request, 'memdir/member_form_change.html', ret)
-        else:
-            return HttpResponse(status=403)
 

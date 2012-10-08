@@ -1,5 +1,5 @@
-from django.core.management.base import BaseCommand, CommandError
-from memdir.models import MemberUser, Member
+from django.core.management.base import BaseCommand
+from memdir.models import Member
 import datetime
 import notification
 from pprint import pprint

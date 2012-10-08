@@ -72,17 +72,3 @@ def _slug_strip(value, separator='-'):
             re_sep = re.escape(separator)
         value = re.sub(r'^%s+|%s+$' % (re_sep, re_sep), '', value)
     return value
-
-# These are the first decorators I've ever used in production ~f 2011-08-26
-# first, a basic model manipulation script
-def authorize_user(user):
-    """
-    "authorizes" a user by adding them to the Member
-    takes a request.user and matches it to a MemberUser and adds the MemberUser
-    to the Member.
-    Static function
-    TK
-    """
-    return
-
-

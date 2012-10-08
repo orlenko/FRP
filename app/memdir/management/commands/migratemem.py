@@ -109,9 +109,9 @@ def migrate(row):
     # I
     mem.postal_code = row[8].value
     # J
-    mem.agphone = getnum(row[9])
+    mem.phone = getnum(row[9])
     # K
-    mem.agfax = getnum(row[10])
+    mem.fax = getnum(row[10])
     # L
     mem.agdirect = row[11].value
     # M

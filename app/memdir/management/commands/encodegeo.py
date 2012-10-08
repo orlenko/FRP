@@ -15,42 +15,43 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         members = Member.objects.all()
         for mem in members:
-            try:
+            for location in mem.locations:
                 try:
-                    place, (lat, lng) = geocode(mem.geo_address)
+                    try:
+                        place, (lat, lng) = geocode(location.geo_address)
+                    except:
+                        print "there was a geocode error"
+                    time.sleep(0.25)
+                    l = Location(
+                            place=place,
+                            lat = "%s" % lat,
+                            lng = "%s" % lng,
+                        )
+                    try:
+                        l.save()
+                    except:
+                        print "There was an issue saving the location"
+                    location.location = l
+                    try:
+                        mem.successful_location_save = True
+                        mem.save()
+                    except:
+                        print "There was an issue saving the member"
+                    print "Agency %(agency)s address was saved successfully.\
+                            Saved geoaddress %(geoaddress)s to lat: %(lat)s, lng: %(lng)s" % {
+                                    'agency': mem.agency,
+                                    'geoaddress': mem.geo_address,
+                                    'lat': mem.location.lat,
+                                    'lng': mem.location.lng,
+                                }
+    
                 except:
-                    print "there was a geocode error"
-                time.sleep(0.25)
-                l = Location(
-                        place=place,
-                        lat = "%s" % lat,
-                        lng = "%s" % lng,
-                    )
-                try:
-                    l.save()
-                except:
-                    print "There was an issue saving the location"
-                mem.location = l
-                try:
-                    mem.successful_location_save = True
+                    mem.successful_location_save = False
                     mem.save()
-                except:
-                    print "There was an issue saving the member"
-                print "Agency %(agency)s address was saved successfully.\
-                        Saved geoaddress %(geoaddress)s to lat: %(lat)s, lng: %(lng)s" % {
-                                'agency': mem.agency,
-                                'geoaddress': mem.geo_address,
-                                'lat': mem.location.lat,
-                                'lng': mem.location.lng,
-                            }
-
-            except:
-                mem.successful_location_save = False
-                mem.save()
-                print "Agency %(agency)s address raised an error. Tried to\
-                    save geoaddress %(geoaddress)s" % {
-                                'agency': mem.agency,
-                                'geoaddress': mem.geo_address,
-                            }
+                    print "Agency %(agency)s address raised an error. Tried to\
+                        save geoaddress %(geoaddress)s" % {
+                                    'agency': mem.agency,
+                                    'geoaddress': mem.geo_address,
+                                }
 
 

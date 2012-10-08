@@ -26,7 +26,7 @@
 	<!--<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">-->
 	<!--<link rel="stylesheet" href="{{ STATIC_URL }}css/base.css">-->
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/base_hugh.css" rel="stylesheet" type="text/css">
-	
+
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	{% block mapjs %}
 	{% endblock %} <!-- local base stylesheet -->
@@ -36,13 +36,13 @@
 					<!--[if IE 8]>
 						<link rel="stylesheet" href="{{ STATIC_URL }}css/iefix.css" />
 					<![endif]-->
-					
+
 					<!--[if IE 7]>
 						<link rel="stylesheet" href="{{ STATIC_URL }}css/iefix.css" />
 					<![endif]-->
 	<!--[if lte IE 8]>
-		<script type="text/javascript"> 
-			/*Load jQuery if not already loaded*/ if(typeof jQuery == 'undefined'){ document.write("<script type=\"text/javascript\"   src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\"></"+"script>"); var __noconflict = true; } 
+		<script type="text/javascript">
+			/*Load jQuery if not already loaded*/ if(typeof jQuery == 'undefined'){ document.write("<script type=\"text/javascript\"   src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\"></"+"script>"); var __noconflict = true; }
 			var IE6UPDATE_OPTIONS = {
 				icons_path: "ie6update/images/"
 			}
@@ -101,14 +101,14 @@
 						</nav>-->
 				<!--{# if notices %}
 					<table>
-							<caption>{% trans "Notices" %}</caption> 
+							<caption>{% trans "Notices" %}</caption>
 							<thead>
 									<tr>
 											<th>{% trans "Type" %}</th>
 											<th>{% trans "Message" %}</th>
 											<th>{% trans "Date of the Notice" %}</th>
 									</tr>
-							</thead>a:visited 
+							</thead>a:visited
 							<tbody>
 									{% for notice in notices %}
 											{% if notice.is_unseen %}
@@ -135,7 +135,7 @@
 								</div>
 							</li>
 						{% endfor %}
-						</ul> 
+						</ul>
 						<div class="pagination">
 							<span class="step-links">
 								{% if notices.has_previous %}
@@ -193,7 +193,7 @@
 				<div id="social_icons" class="grid_4 prefix_12 alpha"><a
 						target="_blank" href="https://www.facebook.com/pages/BC-Association-of-Family-Resource-Programs/357623254261530"><img
 						src="{{ STATIC_URL }}img/social_media_facebook.png"
-						alt="Facebook"></a><a target="_blank"  
+						alt="Facebook"></a><a target="_blank"
 						href="https://picasaweb.google.com/106962330267091688041/OurFamilyResourceProgramInAction?authuser=0&authkey=Gv1sRgCMv-n6yKo4KWcg&feat=directlink"><img
 						src="{{ STATIC_URL }}img/social_media_flickr.png" alt="Flikr"></a><a
 						href="https://twitter.com/#frpbc" target="_blank"><img src="{{ STATIC_URL	}}img/social_media_twitter.png" alt="Twitter"></a><a
