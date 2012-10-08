@@ -8,6 +8,7 @@ from south.modelsinspector import add_introspection_rules
 from tinymce.models import HTMLField
 import datetime
 import logging
+from decimal import Decimal
 
 
 add_introspection_rules([], ["^tinymce\.models\.HTMLField"])
@@ -61,8 +62,10 @@ class AddressMixin(models.Model):
         self.geo_last_address = address
         self.geo_last_updated = datetime.datetime.now()
         try:
-            (self.geo_place,
-             (self.geo_lat, self.geo_lng)) = google.geocode(self.address)
+            place, (lat, lng) = google.geocode(self.address)
+            self.geo_place = place
+            self.geo_lat = Decimal(str(lat))
+            self.geo_lng = Decimal(str(lng))
         except:
             log.debug('Failed to get geo data for %s' % self.address, exc_info=True)
         self.save()
