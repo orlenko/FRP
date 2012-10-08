@@ -1,0 +1,91 @@
+
+#member_form {
+    position: relative;
+
+}
+
+.aligned label {
+    width: 18em;
+}
+
+.module h2 {
+    line-height: 25px;
+}
+
+.inline-group h3 {
+    line-height: 20px;
+}
+
+fieldset.module.aligned  {
+    border: none;
+    clear: both;
+    margin: 0 0 20px 10px;
+}
+
+.form-row {
+    border-bottom: none;
+    padding: 4px 12px;
+}
+
+#agency-info fieldset.module.aligned:nth-child(1) label {
+    width: 14em;
+}
+
+#agency-info fieldset.module.aligned:nth-child(2) label {
+    width: 12em;
+}
+
+#agency-info fieldset.module.aligned:nth-child(3) label {
+    width: 13em;
+}
+
+#agency-info fieldset.module.aligned:nth-child(1) {
+    float: left;
+}
+
+#agency-info fieldset.module.aligned:nth-child(2) {
+    float: left;
+    clear: none;
+}
+
+#agency-info fieldset.module.aligned:nth-child(3) {
+    float: left;
+    clear: none;
+}
+
+div.submit-row {
+    clear: both;
+}
+
+
+/* Styles for customized Django */
+
+.irow1 {
+    background: #EDF3FE;
+}
+
+.irow2 {
+    background: white;
+}
+
+#frp-locations .dynamic-locations {
+    clear: both;
+}
+
+#frp-locations .dynamic-locations>fieldset:nth-child(2) {
+    float: left;
+}
+
+#frp-locations .dynamic-locations>fieldset:nth-child(2) label {
+    width: 18em;
+}
+
+#frp-locations .dynamic-locations>fieldset:nth-child(3) {
+    float: left;
+    clear: none;
+}
+
+#frp-locations .dynamic-locations>.nested-table {
+    float:left;
+    margin: 0 10px;
+}
