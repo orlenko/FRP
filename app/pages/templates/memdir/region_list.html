@@ -1,8 +1,8 @@
 {% extends "memdir/base.html" %}
 {% block mapjs %}
-<script type="text/javascript"> 
+<script type="text/javascript">
       var map;
- 
+
       function initialize() {
         var myOptions = {
           zoom: 4,
@@ -10,7 +10,7 @@
         };
         map = new google.maps.Map(document.getElementById('map_canvas'),
             myOptions);
- 
+
         // Try HTML5 geolocation
 							/*
         if(navigator.geolocation) {
@@ -18,14 +18,14 @@
             var pos = new google.maps.LatLng(position.coords.latitude,
                                              position.coords.longitude);
 																						 */
- 
+
 						var pos = new google.maps.LatLng(55.95, -122.0);
             var infowindow = new google.maps.InfoWindow({
               map: map,
               position: pos,
               //content: 'BC Association of Family Resource Programs.'
             });
- 
+
             map.setCenter(pos);
 						/*
           }, function() {
@@ -57,7 +57,7 @@
 				var infowindow{{ forloop.counter }} = new google.maps.InfoWindow({
 						content: contentString{{ forloop.counter }},
 				});
-				var pos = new google.maps.LatLng({{ member.location.lat }},{{ member.location.lng }});
+				var pos = new google.maps.LatLng({{ member.geo_lat }},{{ member.geo_lng }});
 				var marker{{ forloop.counter }} = new google.maps.Marker({
 					position: pos,
 					title: "{{ member.agency }}"
@@ -70,7 +70,7 @@
       }
 
 /*
- 
+
       function handleNoGeolocation(errorFlag) {
         if (errorFlag) {
           var content = '';
@@ -78,20 +78,20 @@
           var content = '';
         }
 				*/
- 
+
         var options = {
           map: map,
           //position: new google.maps.LatLng(49.2644, -123.137),
           position: new google.maps.LatLng(55.95, -122.0),
           //content: content
         };
- 
+
         var infowindow = new google.maps.InfoWindow(options);
         map.setCenter(options.position);
       //}
- 
+
       google.maps.event.addDomListener(window, 'load', initialize);
-    </script> 
+    </script>
 {% endblock %}
 
 {% block content %}
@@ -105,22 +105,22 @@
 
 		<map name="Map2"><area shape="rect" coords="201,281,229,305"
 									href="{% url fraser_dir %}" alt="Fraser Valley"><area
-									shape="rect" coords="176,265,201,290" 
+									shape="rect" coords="176,265,201,290"
 									href="{% url other_dir %}" alt="Other Regions">
 
-									<area shape="poly" coords="81,169,15,13,179,33,245,43,259,218,180,196" 
+									<area shape="poly" coords="81,169,15,13,179,33,245,43,259,218,180,196"
 									href="{% url northern_dir %}" alt="Northern">
 
-									<area shape="rect" coords="126,198,171,232" 
+									<area shape="rect" coords="126,198,171,232"
 									href="{% url other_dir %}" alt="Other Regions">
 
                   <area shape="poly" coords="184,212" href="#">
 
                   <area shape="poly"
-									coords="182,205,280,226,324,293,252,297,184,248" 
+									coords="182,205,280,226,324,293,252,297,184,248"
 									href="{% url interior_dir %}" alt="Interior">
 
-									<area shape="poly" coords="160,236,188,261,171,273,173,288,191,302,197,311,182,313,170,306,151,284,128,257" 
+									<area shape="poly" coords="160,236,188,261,171,273,173,288,191,302,197,311,182,313,170,306,151,284,128,257"
 									href="{% url vanisle_dir %}" alt="Vancouver Island">
 
                 </map>
