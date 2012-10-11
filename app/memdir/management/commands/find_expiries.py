@@ -11,7 +11,7 @@ class Command(BaseCommand):
             """
     def handle(self, *args, **options):
         now = datetime.datetime.now()
-        expired_members = Member.objects.filter(renewal__lte=now)
+        expired_members = Member.objects.filter(renewal_date__lte=now)
         for member in expired_members:
             member.is_active=False
             pprint("Agency %s is expired" % member.agency)

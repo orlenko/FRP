@@ -95,13 +95,13 @@ def migrate(row):
     # A
     mem.memnum = row[0].value
     # B, C
-    mem.renewal = getrenew(row[2].value)
+    mem.renewal_date = getrenew(row[2].value)
     # D
     mem.region = match_region(row[3].value)
     # E
     mem.agency = row[4].value
     # F
-    mem.address = row[5].value
+    mem.street = row[5].value
     # G
     mem.city = row[6].value
     # H

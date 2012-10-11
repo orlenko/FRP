@@ -10,8 +10,8 @@ admin.autodiscover()
 from memdir.sitemaps import MemberSitemap
 
 sitemaps = {
-        "member": MemberSitemap,
-        }
+    "member": MemberSitemap,
+}
 
 urlpatterns = patterns('',
     # Examples:

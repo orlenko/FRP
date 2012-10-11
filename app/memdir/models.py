@@ -62,12 +62,14 @@ class AddressMixin(models.Model):
         self.geo_last_address = address
         self.geo_last_updated = datetime.datetime.now()
         try:
-            place, (lat, lng) = google.geocode(self.address)
-            self.geo_place = place
-            self.geo_lat = Decimal(str(lat))
-            self.geo_lng = Decimal(str(lng))
+            if not 'None' in address:
+                place, (lat, lng) = google.geocode(address)
+                self.geo_place = place
+                self.geo_lat = Decimal(str(lat))
+                self.geo_lng = Decimal(str(lng))
         except:
-            log.debug('Failed to get geo data for %s' % self.address, exc_info=True)
+            #log.debug('Failed to get geo data for %s' % self.address, exc_info=True)
+            pass
         self.save()
 
     class Meta:
@@ -137,7 +139,7 @@ class Member(AddressMixin, MailingAddressMixin):
     # Advanced fields
     fee = models.DecimalField(_("FRP Fee"), max_digits=9,
             decimal_places=2, blank=True, null=True)
-    receipt = models.IntegerField(_("Reciept"), blank=True, null=True)
+    receipt = models.CharField(_("Receipt"), max_length=255, blank=True, null=True)
     paidfrp = models.BooleanField(_("Paid FRP fee"))
     description = HTMLField(_("Description (for directory)"), blank=True,
             help_text=_("Please describe your program and its goals."))
@@ -219,8 +221,9 @@ class HoursOfOperation(models.Model):
                             self.close_time.strftime('%I:%M%p'))
 
     def __unicode__(self):
-        return ('%s: %s>'
-                % (self.day, self.hours))
+        day_trans = dict(self.DAY_CHOICES)
+        return ('%s: %s'
+                % (day_trans[self.day], self.hours))
 
 
 def encode_location(sender, **kwargs):

@@ -7,16 +7,16 @@
 	<h2 class='member-agency'>{{ member.agency }}</h2>
 	<p class='member-description'><b>Description</b>{{ member.description }}</p>
 	<p class='member-region'><b>Region</b>{{ member.region }}</p>
-	<p class='member-full-address'><b>Full Address</b>{{ member.full_address }}</p>
+	<p class='member-full-address'><b>Full Address</b>{{ member.address }}</p>
 	<div class='member-geo-address-map'>
-		{% cache 600 my_map member.geo_address %}
-			{% easy_map member.geo_address 300 400 13 %}
+		{% cache 600 my_map member.address %}
+			{% easy_map member.address 300 400 13 %}
 		{% endcache %}
 	</div>
-	<p class='member-phone-number'><b>Phone Number</b>{{ member.agphone }}</p>
+	<p class='member-phone-number'><b>Phone Number</b>{{ member.phone }}</p>
     {% if user.is_superuser %}
         <p class='member-number'>{{ member.memnum }}</p>
-        <p class='member-renewal'>{{ member.renewal }}</p>
+        <p class='member-renewal'>{{ member.renewal_date }}</p>
     {% endif %}
 
 {% endblock %}

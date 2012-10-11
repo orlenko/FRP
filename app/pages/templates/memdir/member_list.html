@@ -3,9 +3,9 @@
 {% load pagination_tags %}
 
 {% block mapjs %}
-<script type="text/javascript"> 
+<script type="text/javascript">
       var map;
- 
+
       function initialize() {
         var myOptions = {
           zoom: 4,
@@ -13,7 +13,7 @@
         };
         map = new google.maps.Map(document.getElementById('map_canvas'),
             myOptions);
- 
+
         // Try HTML5 geolocation
 				/*
         if(navigator.geolocation) {
@@ -22,14 +22,14 @@
 							/*
             var pos = new google.maps.LatLng(position.coords.latitude,
                                              position.coords.longitude);*/
- 
+
 						var pos = new google.maps.LatLng(55.95, -122.0);
             var infowindow = new google.maps.InfoWindow({
               map: map,
               position: pos,
               //content: 'BC Association of Family Resource Programs.'
             });
- 
+
             map.setCenter(pos);
          /* }, function() {
             handleNoGeolocation(true);
@@ -71,7 +71,7 @@
 				marker{{ forloop.counter }}.setMap(map);
 			{% endfor %}
       }
- 
+
 			/*
       function handleNoGeolocation(errorFlag) {
         if (errorFlag) {
@@ -80,17 +80,17 @@
           var content = '';
         }
 				*/
- 
+
         var options = {
           map: map,
           position: new google.maps.LatLng(55.95, -122.0),
           //content: content
         };
- 
+
         var infowindow = new google.maps.InfoWindow(options);
         map.setCenter(options.position);
       //}
- 
+
       google.maps.event.addDomListener(window, 'load', initialize);
     </script> {% endblock %}
 
@@ -123,10 +123,10 @@
 	<ul>
 	{% for member in object_list %}
 		<li>
-    <b class='member-agency'><a href="{{ member.get_absolute_url }}">{{ member.agency }}</a></b> 
+    <b class='member-agency'><a href="{{ member.get_absolute_url }}">{{ member.agency }}</a></b>
     <p class="member-description">{{ member.description }}</p>
     <!--<div class="member-geo-address-map">
-      {# cache 600 my_map member.geo_address %} {% easy_map member.geo_address 300 400 11 %} {% endcache #}
+      {# cache 600 my_map member.address %} {% easy_map member.address 300 400 11 %} {% endcache #}
     </div>-->
   </li>
 	{% endfor %}
