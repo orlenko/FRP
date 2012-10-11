@@ -60,7 +60,7 @@
 				var infowindow{{ forloop.counter }} = new google.maps.InfoWindow({
 						content: contentString{{ forloop.counter }},
 				});
-				var pos = new google.maps.LatLng({{ member.location.lat }},{{ member.location.lng }});
+				var pos = new google.maps.LatLng({{ member.geo_lat }},{{ member.geo_lng }});
 				var marker{{ forloop.counter }} = new google.maps.Marker({
 					position: pos,
 					title: "{{ member.agency }}"
@@ -124,7 +124,7 @@
 	{% for member in object_list %}
 		<li>
     <b class='member-agency'><a href="{{ member.get_absolute_url }}">{{ member.agency }}</a></b>
-    <p class="member-description">{{ member.description }}</p>
+    <p class="member-description">{% autoescape off %}{{ member.description }}{% endautoescape %}</p>
     <!--<div class="member-geo-address-map">
       {# cache 600 my_map member.address %} {% easy_map member.address 300 400 11 %} {% endcache #}
     </div>-->

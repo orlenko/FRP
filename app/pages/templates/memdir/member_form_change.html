@@ -5,7 +5,7 @@
 {% block content %}
   {{ form|as_uni_form }}
 	<h2 class='member-agency'>{{ member.agency }}</h2>
-	<p class='member-description'><b>Description</b>{{ member.description }}</p>
+	<p class='member-description'><b>Description</b>{% autoescape off %}{{ member.description }}{% endautoescape %}</p>
 	<p class='member-region'><b>Region</b>{{ member.region }}</p>
 	<p class='member-full-address'><b>Full Address</b>{{ member.address }}</p>
 	<div class='member-geo-address-map'>
