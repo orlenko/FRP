@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from managers import SlideManager
+#from managers import SlideManager
 
 # Create your models here.
 IMAGE_DIMS = u"800x600"
@@ -24,7 +24,7 @@ class Slide(models.Model):
         determine slide-ordering. Lower weights are higher on the page"))
 
     # manager
-    published = SlideManager()
+    #published = SlideManager()
 
     def __unicode__(self):
         return self.title
