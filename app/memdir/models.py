@@ -154,6 +154,13 @@ class Member(AddressMixin, MailingAddressMixin):
         unique=True,
         help_text=_("The slug must be a unique URL identifier."))
 
+    @property
+    def formatted_renewal_date(self):
+        return self.renewal_date and self.renewal_date.strftime('%Y-%m-%d') or '-'
+
+    @property
+    def frp_name(self):
+        return self.locations.count() and self.locations.all()[0].frp_program_name or 'N/A'
 
     class Meta:
         verbose_name = _("Member")
