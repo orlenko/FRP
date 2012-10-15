@@ -5,6 +5,7 @@ import csv
 from memdir import models
 import datetime
 import logging
+from traceback import print_exc
 
 
 log = logging.getLogger(__name__)
@@ -57,7 +58,8 @@ class Command(BaseCommand):
 
     def import_rec(self, rec):
         try:
-            member, _is_new = models.Member.objects.get_or_create(agency=rec['tAgencyName'])
+            member, _is_new = models.Member.objects.get_or_create(agency=rec['tAgencyName'],
+memnum=rec['tNumber'])
             member.street = rec['tAgencyAddress1']
             member.city = rec['tAgencyCity']
             member.postal_code = rec['tAgencyPC']
@@ -120,7 +122,8 @@ class Command(BaseCommand):
                 location_contact.contact_email = rec['tAgencyDirectorEmail']
                 location_contact.save()
         except:
-            log.debug('Failed to import record: %s' % rec, exc_info=True)
+            print ('Failed to import record: %s' % rec)
+            print_exc()
 
     def handle(self, *args, **options):
         header = None
@@ -129,10 +132,10 @@ class Command(BaseCommand):
             reader = csv.reader(csvfile)
             for row in reader:
                 if header:
-                    log.debug('row length: %s' % len(row))
+                    print ('row length: %s' % len(row))
                     assert len(row) == len(header)
                     rec = dict(zip(header, row))
                     self.import_rec(rec)
                 else:
                     header = row
-                    log.debug('header length: %s' % len(header))
+                    print ('header length: %s' % len(header))

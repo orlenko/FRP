@@ -19,6 +19,8 @@
 # ------------------------------------------------------------------------------
 import sys, os, os.path, time, signal
 from optparse import OptionParser
+from traceback import format_exc
+
 
 htmlFilters = {'odt': 'HTML (StarWriter)',
                'ods': 'HTML (StarCalc)',
@@ -207,6 +209,8 @@ class Converter:
                 props = (prop, prop2)
             else:
                 props = (prop,)
+            print 'Loading document from url %s with props %s' % (self.docUrl, props)
+            print 'Does it exist? %s' % os.path.exists(self.docUrl)
             self.doc = self.oo.loadComponentFromURL(self.docUrl, "_blank", 0,
                                                     props)
             if self.inputType == 'odt':
@@ -217,6 +221,7 @@ class Converter:
             except AttributeError:
                 pass
         except IllegalArgumentException, iae:
+            print 'oops: %s' % format_exc()
             raise ConverterError(URL_NOT_FOUND % (self.docPath, iae))
 
     def convertDocument(self):

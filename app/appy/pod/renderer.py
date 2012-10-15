@@ -33,6 +33,7 @@ from appy.pod.buffers import FileBuffer
 from appy.pod.xhtml2odt import Xhtml2OdtConverter
 from appy.pod.doc_importers import OdtImporter, ImageImporter, PdfImporter
 from appy.pod.styles_manager import StylesManager
+from traceback import format_exc
 
 # ------------------------------------------------------------------------------
 BAD_CONTEXT = 'Context must be either a dict, a UserDict or an instance.'
@@ -163,6 +164,7 @@ class Renderer:
         # Unzip template
         self.unzipFolder = os.path.join(self.tempFolder, 'unzip')
         os.mkdir(self.unzipFolder)
+        print 'Created directory: %s' % self.unzipFolder
         for zippedFile in self.templateZip.namelist():
             # Before writing the zippedFile into self.unzipFolder, create the
             # intermediary subfolder(s) if needed.
@@ -351,6 +353,7 @@ class Renderer:
         self.tempFolder = '%s.%f' % (absResult, time.time())
         try:
             os.mkdir(self.tempFolder)
+            print 'Created directory: %s' % self.tempFolder
         except OSError, oe:
             raise PodError(CANT_WRITE_TEMP_FOLDER % (self.result, oe))
 
@@ -414,6 +417,7 @@ class Renderer:
             self.stylesParser.env.currentBuffer.content.close()
             if os.path.exists(self.tempFolder):
                 FolderDeleter.delete(self.tempFolder)
+                print 'Deleted temporary folder: %s' % self.tempFolder
             raise po
 
     def reportProblem(self, msg, resultType):
@@ -437,13 +441,16 @@ class Renderer:
             try:
                 from appy.pod.converter import Converter, ConverterError
                 try:
+                    print 'Calling converter on %s %s' % (resultOdtName, resultType)
                     Converter(resultOdtName, resultType,
                                 self.ooPort).run()
                 except ConverterError, ce:
+                    print 'oops: %s' % format_exc()
                     raise PodError(CONVERT_ERROR % str(ce))
             except ImportError:
                 # I do not have UNO. So try to launch a UNO-enabled Python
                 # interpreter which should be in self.pyPath.
+                print 'oops: %s' % format_exc()
                 if not self.pyPath:
                     raise PodError(NO_PY_PATH % resultType)
                 if self.pyPath.find(' ') != -1:
@@ -498,6 +505,7 @@ class Renderer:
         resultOdtName = os.path.join(self.tempFolder, 'result.odt')
         try:
             resultOdt = zipfile.ZipFile(resultOdtName,'w', zipfile.ZIP_DEFLATED)
+            print 'Zipped result into %s' % resultOdtName
         except RuntimeError:
             resultOdt = zipfile.ZipFile(resultOdtName,'w')
         for dir, dirnames, filenames in os.walk(self.unzipFolder):
@@ -524,6 +532,8 @@ class Renderer:
                     raise PodError(BAD_RESULT_TYPE % (
                         self.result, FILE_TYPES.keys()))
                 # Call OpenOffice to perform the conversion or document update
+                print 'At this point, %s must exist'% resultOdtName
+                assert os.path.exists(resultOdtName)
                 output = self.callOpenOffice(resultOdtName, resultType)
                 # I (should) have the result. Move it to the correct name
                 resPrefix = os.path.splitext(resultOdtName)[0] + '.'
