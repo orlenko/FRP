@@ -33,6 +33,7 @@
     <ul>
         <li><a href="#agency-info">{% trans "Agency Info" %}</a></li>
         <li><a href="#frp-locations">{% trans "FRP Locations" %}</a></li>
+        <li><a href="#reports">{% trans "Reports" %}</a></li>
     </ul>
 
     <div id="agency-info">
@@ -49,6 +50,13 @@
         {% endfor %}
 
         {% block after_related_objects %}{% endblock %}
+    </div>
+
+    <div id="reports">
+        <h2>Download Reports:</h2>
+        <ol>
+            <li><a href="/dir/report/membership-renewal-form/{{ adminform.form.instance.pk }}/">Membership Form</a></li>
+        </ol>
     </div>
 </div>
 

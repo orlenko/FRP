@@ -112,8 +112,9 @@ def report_pdf(request, report_type, member_id):
 
     # Generate response
     retval = HttpResponse(mimetype='application/pdf')
-    retval['Content-Disposition'] = ('attachment; filename=%s.%s'
-        % (os.path.basename(output), 'application/pdf'))
+    retval['Content-Disposition'] = (
+        'attachment; filename=%s' % os.path.basename(output)
+    )
     reader = open(output, 'rb')
     retval.write(reader.read())
 
