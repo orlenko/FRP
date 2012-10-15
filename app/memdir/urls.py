@@ -3,6 +3,7 @@ from memdir import views
 
 
 urlpatterns = defaults.patterns('',
+    defaults.url(r'^report/([^/]+)/(\d+)/', views.report_pdf, name='report'),
     defaults.url(r'^unknown/$', views.unknown_directory, name='unknown_dir'),
     defaults.url(r'^other/$', views.other_directory, name='other_dir'),
     defaults.url(r'^northern/$', views.northern_directory, name='northern_dir'),

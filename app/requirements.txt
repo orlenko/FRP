@@ -13,7 +13,7 @@ django-mptt==0.5.1
 -e git+https://github.com/theatlantic/django-notification.git@48348fb1dcb94e1b8a123b78e431ae3adecc0ad8#egg=django_notification-dev
 django-pagination==1.0.7
 django-photologue==2.3
-django-piston==0.2.3rc1
+django-piston==0.2.3
 -e hg+https://bitbucket.org/ubernostrum/django-registration@fad7080fe76955e7d0d3c97bc468ea8360260a6b#egg=django_registration-dev
 django-timezones==0.1.4
 django-tinymce==1.5.1a2

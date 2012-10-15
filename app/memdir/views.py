@@ -1,9 +1,16 @@
-from django.views.generic import DetailView, ListView, CreateView
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.views.generic import DetailView, ListView
 from django.http import HttpResponse
+import os
+import time
 
-from . import models
+from memdir import models
+from appy.pod.renderer import Renderer
+from subprocess import call
+import logging
+
+
+log = logging.getLogger(__name__)
+
 
 class MemberDirectoryView(ListView):
     # Abstract Model View
@@ -79,3 +86,38 @@ class MemberDetailView(DetailView):
     extra_context = "member"
 member_detail_view = MemberDetailView.as_view()
 
+
+# Download reports
+def report_pdf(request, report_type, member_id):
+    log.debug('Looking for report %s for member %s' % (report_type, member_id))
+    # Make sure the headless soffice is running.
+    call(['soffice',
+          '--headless',
+          '"-accept=socket,host=localhost,port=2002;urp;"'])
+
+    # Populate the context
+    if int(member_id):
+        member = models.Member.objects.get(pk=int(member_id))
+    members = models.Member.objects.all()
+    timestr = time.ctime()
+
+    # Generate the file
+    dirname = os.path.abspath(os.path.dirname(__file__))
+    template_dir = os.path.join(dirname, 'report-templates')
+    template = os.path.join(template_dir, '%s.odt' % report_type)
+    timestamp = time.time()
+    output = template.replace('.odt', '%s.pdf' % timestamp)
+    renderer = Renderer(template, locals(), output)
+    renderer.run()
+
+    # Generate response
+    retval = HttpResponse(mimetype='application/pdf')
+    retval['Content-Disposition'] = ('attachment; filename=%s.%s'
+        % (os.path.basename(output), 'application/pdf'))
+    reader = open(output, 'rb')
+    retval.write(reader.read())
+
+    # Clean up
+    reader.close()
+    os.unlink(output)
+    return retval
