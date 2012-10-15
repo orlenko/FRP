@@ -7,6 +7,7 @@ from rose.models import Slide ## this may get placed in verbena
 
 register = template.Library()
 
+
 @register.inclusion_tag('rose/templatetags/slideshow.html', takes_context=True)
 def slideshow(context):
     """
