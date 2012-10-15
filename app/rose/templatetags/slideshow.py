@@ -3,7 +3,6 @@
 slideshow templatetags
 """
 from django import template
-from django.utils.translation import ugettext_lazy as _
 from rose.models import Slide ## this may get placed in verbena
 
 register = template.Library()
@@ -15,8 +14,7 @@ def slideshow(context):
     eg:
         {% slideshow "frontpage" %} -> frontpage slideshow model
     """
-    slides = ''
-    slides = Slide.published.all()
+    slides = Slide.objects.filter(is_published=True)
     ret = dict(slides=slides)
     return ret
 
