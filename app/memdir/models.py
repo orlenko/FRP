@@ -9,6 +9,7 @@ from tinymce.models import HTMLField
 import datetime
 import logging
 from decimal import Decimal
+from memdir.communities import BC_COMMUNITIES
 
 
 add_introspection_rules([], ["^tinymce\.models\.HTMLField"])
@@ -109,17 +110,25 @@ class Member(AddressMixin, MailingAddressMixin):
         ('unknown', _("Unknown")),
     )
 
+    COMMUNITY_CHOICES = zip(BC_COMMUNITIES, BC_COMMUNITIES)
+
     MEMBERSHIP_CHOICES = (
         ('joint', _('Joint Member')),
         ('bc-only', _('BC-Only Member')),
     )
 
     agency = models.CharField(_("Member-Agency Name"), max_length=200)
+
     # Address fields are inherited from AddressMixin
+
     phone = PhoneNumberField(_("Agency Phone Number"), blank=True, null=True)
     fax = PhoneNumberField(_("Agency Fax Number"), blank=True, null=True)
     website = models.URLField(_("Website"), blank=True)
     region = models.CharField(choices=REGION_CHOICES, max_length=12, default='fraservalley')
+    community = models.CharField(choices=COMMUNITY_CHOICES,
+                                 max_length=255,
+                                 default='Vancouver (City)')
+
     # Mailing Address fields are inherited from MailingAddressMixin
 
     agdirect = models.CharField(_("Contact Name"), max_length=255, blank=True)
@@ -161,6 +170,10 @@ class Member(AddressMixin, MailingAddressMixin):
     @property
     def frp_name(self):
         return self.locations.count() and self.locations.all()[0].frp_program_name or 'N/A'
+
+    @property
+    def community_name(self):
+        return dict(self.COMMUNITY_CHOICES).get(self.community, self.community)
 
     class Meta:
         verbose_name = _("Member")

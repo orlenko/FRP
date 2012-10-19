@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from . import forms
-from . import models
+from memdir import forms
+from memdir import models
 
 
 class InlineHours(admin.NestedTabularInline):
@@ -67,6 +67,7 @@ class MemberAdmin(admin.ModelAdmin):
                 'fax',
                 'website',
                 'region',
+                'community',
                 'join_date',
                 'updated',
                 'description',

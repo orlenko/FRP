@@ -88,7 +88,7 @@ member_detail_view = MemberDetailView.as_view()
 
 
 # Download reports
-def report_pdf(request, report_type, member_id):
+def report_pdf(request, report_type, member_id, extra_data={}):
     log.debug('Looking for report %s for member %s' % (report_type, member_id))
     # Make sure the headless soffice is running.
     call(['soffice',
@@ -107,7 +107,10 @@ def report_pdf(request, report_type, member_id):
     template = os.path.join(template_dir, '%s.odt' % report_type)
     timestamp = time.time()
     output = template.replace('.odt', '%s.pdf' % timestamp)
-    renderer = Renderer(template, locals(), output)
+    data = {}
+    data.update(locals())
+    data.update(extra_data)
+    renderer = Renderer(template, data, output)
     renderer.run()
 
     # Generate response
@@ -122,3 +125,19 @@ def report_pdf(request, report_type, member_id):
     reader.close()
     os.unlink(output)
     return retval
+
+
+def report_region_pdf(request, region):
+    regions_dict = dict(models.Member.REGION_CHOICES)
+    region_name = regions_dict.get(region, region)
+    rowcouples = []
+    couple = []
+    for member in models.Member.objects.filter(region=region):
+        couple.append(member)
+        if len(couple) == 2:
+            rowcouples.append(couple)
+            couple = []
+    if couple:
+        couple.append(None)
+        rowcouples.append(couple)
+    return report_pdf(request, 'provincial-listing', 0, locals())
