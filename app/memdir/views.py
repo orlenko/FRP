@@ -5,7 +5,7 @@ import time
 
 from memdir import models
 from appy.pod.renderer import Renderer
-from subprocess import call
+from subprocess import Popen
 import logging
 from appy.pod import PodError
 
@@ -100,9 +100,10 @@ def report_pdf(request, report_type, member_id, extra_data={}):
             if pod_error:
                 # Make sure the headless soffice is running.
                 log.debug('Starting soffice')
-                call(['soffice',
+                Popen(['soffice',
                       '--headless',
                       '"-accept=socket,host=localhost,port=2002;urp;"'])
+                time.sleep(1)
                 log.debug('soffice started')
                 pod_error = False
 
