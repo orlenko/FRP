@@ -5,9 +5,7 @@ import time
 
 from memdir import models
 from appy.pod.renderer import Renderer
-from subprocess import Popen
 import logging
-from appy.pod import PodError
 
 
 log = logging.getLogger(__name__)
@@ -15,11 +13,11 @@ log = logging.getLogger(__name__)
 
 class MemberDirectoryView(ListView):
     # Abstract Model View
-    queryset = models.Member.objects.all()
+    queryset = models.Member.objects.filter(is_frp_member=True)
     model = models.Member
 
 class MemberDirectoryArchiveView(ListView):
-    queryset = models.Member.objects.all()
+    queryset = models.Member.objects.filter(is_frp_member=True)
     model = models.Member
     template_name = "memdir/region_list.html"
 member_directory_view = MemberDirectoryArchiveView.as_view()
@@ -38,49 +36,49 @@ class RegionContextView(MemberDirectoryView):
 
 # Region Directories
 class NorthernDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='northern')
+    queryset = models.Member.objects.filter(region='northern', is_frp_member=True)
 northern_directory = NorthernDirectory.as_view(extra_context=dict(
         region="Northern",
         region_id='northern',
     ))
 
 class OtherDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='other')
+    queryset = models.Member.objects.filter(region='other', is_frp_member=True)
 other_directory = OtherDirectory.as_view(extra_context=dict(
         region="Other",
         region_id='other',
     ))
 
 class FraserDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='fraservalley')
+    queryset = models.Member.objects.filter(region='fraservalley', is_frp_member=True)
 fraser_directory = FraserDirectory.as_view(extra_context=dict(
         region="Fraser Valley",
         region_id='fraservalley',
     ))
 
 class InteriorDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='interior')
+    queryset = models.Member.objects.filter(region='interior', is_frp_member=True)
 interior_directory = InteriorDirectory.as_view(extra_context=dict(
         region="Interior BC",
         region_id='interior',
     ))
 
 class VancoastDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='vancoast')
+    queryset = models.Member.objects.filter(region='vancoast', is_frp_member=True)
 vancoast_directory = VancoastDirectory.as_view(extra_context=dict(
         region="Vancouver Coast",
         region_id='vancoast',
     ))
 
 class VanisleDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='vanisle')
+    queryset = models.Member.objects.filter(region='vanisle', is_frp_member=True)
 vanisle_directory = VanisleDirectory.as_view(extra_context=dict(
         region="Vancouver Island",
         region_id='vanisle',
     ))
 
 class UnknownDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='unknown')
+    queryset = models.Member.objects.filter(region='unknown', is_frp_member=True)
 unknown_directory = UnknownDirectory.as_view(extra_context=dict(
         region="Unknown",
         region_id='unknown',
@@ -89,7 +87,7 @@ unknown_directory = UnknownDirectory.as_view(extra_context=dict(
 # Detail view
 
 class MemberDetailView(DetailView):
-    queryset = models.Member.objects.all()
+    queryset = models.Member.objects.filter(is_frp_member=True)
     model = models.Member
     extra_context = "member"
 member_detail_view = MemberDetailView.as_view()

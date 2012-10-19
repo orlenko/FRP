@@ -161,6 +161,7 @@ class Member(AddressMixin, MailingAddressMixin):
         max_length=255,
         unique=True,
         help_text=_("The slug must be a unique URL identifier."))
+    is_frp_member = models.BooleanField(default=False)
 
     @property
     def formatted_renewal_date(self):
@@ -169,6 +170,10 @@ class Member(AddressMixin, MailingAddressMixin):
     @property
     def frp_name(self):
         return self.locations.count() and self.locations.all()[0].frp_program_name or 'N/A'
+
+    @property
+    def is_frp(self):
+        return self.locations.count() and True or False
 
     @property
     def community_name(self):
@@ -190,6 +195,7 @@ class Member(AddressMixin, MailingAddressMixin):
         slugstr = "%s %s" % (self.agency, self.region)
         unique_slugify(self, slugstr)
         self.updated = datetime.datetime.now()
+        self.is_frp_member = self.is_frp
         super(Member, self).save(*args, **kwargs)
 
 
