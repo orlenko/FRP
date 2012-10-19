@@ -108,11 +108,15 @@ def report_pdf(request, report_type, member_id, extra_data={}):
         template = os.path.join(template_dir, '%s.odt' % report_type)
         timestamp = time.time()
         output = template.replace('.odt', '%s.pdf' % timestamp)
+        log.debug('Will generate from %s to %s' % (template, output))
         data = {}
         data.update(locals())
         data.update(extra_data)
+        log.debug('Creating renderer')
         renderer = Renderer(template, data, output)
+        log.debug('Running renderer')
         renderer.run()
+        log.debug('Rendering complete')
 
         # Generate response
         retval = HttpResponse(mimetype='application/pdf')
