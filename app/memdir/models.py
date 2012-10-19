@@ -1,4 +1,3 @@
-from django.contrib.localflavor.us.models import PhoneNumberField
 from django.db import models
 from django.db.models.signals import post_save
 from django.utils.translation import ugettext as _
@@ -121,8 +120,8 @@ class Member(AddressMixin, MailingAddressMixin):
 
     # Address fields are inherited from AddressMixin
 
-    phone = PhoneNumberField(_("Agency Phone Number"), blank=True, null=True)
-    fax = PhoneNumberField(_("Agency Fax Number"), blank=True, null=True)
+    phone = models.CharField(_("Agency Phone Number"), max_length=100, blank=True, null=True)
+    fax = models.CharField(_("Agency Fax Number"), max_length=100, blank=True, null=True)
     website = models.URLField(_("Website"), blank=True)
     region = models.CharField(choices=REGION_CHOICES, max_length=12, default='fraservalley')
     community = models.CharField(choices=COMMUNITY_CHOICES,
@@ -135,7 +134,7 @@ class Member(AddressMixin, MailingAddressMixin):
     agdirect_title = models.CharField(_('Title'),
         max_length=255,
         default=_('Agency Executive Director / ECD Program Manager'))
-    dirphone = PhoneNumberField(_("Direct Phone Number"), blank=True, null=True)
+    dirphone = models.CharField(_("Direct Phone Number"), max_length=100, blank=True, null=True)
     email = models.EmailField(_("General Email"), blank=True)
 
     memnum = models.IntegerField(_("Membership Number"))
