@@ -118,6 +118,7 @@
 	</div>
 	<br />
 	<h3>{{ region }} Member Listing</h3>
+	<p><a href="{% url report_region region_id %}">Download Listing Report for {{region}} region</a></p>
 	{% autopaginate object_list %}
 	{% paginate %}
 	<ul>

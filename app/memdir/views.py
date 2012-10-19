@@ -41,42 +41,49 @@ class NorthernDirectory(RegionContextView):
     queryset = models.Member.objects.filter(region='northern')
 northern_directory = NorthernDirectory.as_view(extra_context=dict(
         region="Northern",
+        region_id='northern',
     ))
 
 class OtherDirectory(RegionContextView):
     queryset = models.Member.objects.filter(region='other')
 other_directory = OtherDirectory.as_view(extra_context=dict(
         region="Other",
+        region_id='other',
     ))
 
 class FraserDirectory(RegionContextView):
     queryset = models.Member.objects.filter(region='fraservalley')
 fraser_directory = FraserDirectory.as_view(extra_context=dict(
         region="Fraser Valley",
+        region_id='fraservalley',
     ))
 
 class InteriorDirectory(RegionContextView):
     queryset = models.Member.objects.filter(region='interior')
 interior_directory = InteriorDirectory.as_view(extra_context=dict(
         region="Interior BC",
+        region_id='interior',
     ))
 
 class VancoastDirectory(RegionContextView):
     queryset = models.Member.objects.filter(region='vancoast')
 vancoast_directory = VancoastDirectory.as_view(extra_context=dict(
         region="Vancouver Coast",
+        region_id='vancoast',
     ))
 
 class VanisleDirectory(RegionContextView):
     queryset = models.Member.objects.filter(region='vanisle')
 vanisle_directory = VanisleDirectory.as_view(extra_context=dict(
         region="Vancouver Island",
+        region_id='vanisle',
     ))
 
 class UnknownDirectory(RegionContextView):
     queryset = models.Member.objects.filter(region='unknown')
 unknown_directory = UnknownDirectory.as_view(extra_context=dict(
         region="Unknown",
+        region_id='unknown',
     ))
 
 # Detail view
