@@ -6,7 +6,7 @@ from memdir import models
 
 class InlineHours(admin.NestedTabularInline):
     model = models.HoursOfOperation
-    extra = 5
+    extra = 14
 
 
 class InlineContact(admin.NestedTabularInline):
