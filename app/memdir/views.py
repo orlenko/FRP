@@ -93,9 +93,8 @@ def report_pdf(request, report_type, member_id, extra_data={}):
     pod_error = False
     first_attempt = True
     while first_attempt or pod_error:
+        first_attempt = False
         try:
-            first_attempt = False
-            pod_error = False
             log.debug('Looking for report %s for member %s' % (report_type, member_id))
 
             if pod_error:
@@ -105,6 +104,7 @@ def report_pdf(request, report_type, member_id, extra_data={}):
                       '--headless',
                       '"-accept=socket,host=localhost,port=2002;urp;"'])
                 log.debug('soffice started')
+                pod_error = False
 
             # Populate the context
             if int(member_id):
@@ -141,6 +141,7 @@ def report_pdf(request, report_type, member_id, extra_data={}):
             os.unlink(output)
             return retval
         except PodError:
+            log.debug('PodError', exc_info=True)
             pod_error = True
         except:
             log.debug('Failed to generate report', exc_info=True)
