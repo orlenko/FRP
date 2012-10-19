@@ -92,14 +92,14 @@ def report_pdf(request, report_type, member_id, extra_data={}):
     try:
         log.debug('Looking for report %s for member %s' % (report_type, member_id))
         # Make sure the headless soffice is running.
-        call(['soffice',
-              '--headless',
-              '"-accept=socket,host=localhost,port=2002;urp;"'])
+        #call(['soffice',
+        #      '--headless',
+        #      '"-accept=socket,host=localhost,port=2002;urp;"'])
 
         # Populate the context
         if int(member_id):
             member = models.Member.objects.get(pk=int(member_id))
-        members = models.Member.objects.all()
+        #members = models.Member.objects.all()
         timestr = time.ctime()
 
         # Generate the file
