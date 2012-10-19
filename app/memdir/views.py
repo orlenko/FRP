@@ -102,7 +102,8 @@ def report_pdf(request, report_type, member_id, extra_data={}):
                 log.debug('Starting soffice')
                 Popen(['soffice',
                       '--headless',
-                      '"-accept=socket,host=localhost,port=2002;urp;"'])
+                      '"-accept=socket,host=localhost,port=2002;urp;"',
+                      '-splash-pipe=5'])
                 time.sleep(1)
                 log.debug('soffice started')
                 pod_error = False
