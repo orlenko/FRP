@@ -89,42 +89,46 @@ member_detail_view = MemberDetailView.as_view()
 
 # Download reports
 def report_pdf(request, report_type, member_id, extra_data={}):
-    log.debug('Looking for report %s for member %s' % (report_type, member_id))
-    # Make sure the headless soffice is running.
-    call(['soffice',
-          '--headless',
-          '"-accept=socket,host=localhost,port=2002;urp;"'])
+    try:
+        log.debug('Looking for report %s for member %s' % (report_type, member_id))
+        # Make sure the headless soffice is running.
+        call(['soffice',
+              '--headless',
+              '"-accept=socket,host=localhost,port=2002;urp;"'])
 
-    # Populate the context
-    if int(member_id):
-        member = models.Member.objects.get(pk=int(member_id))
-    members = models.Member.objects.all()
-    timestr = time.ctime()
+        # Populate the context
+        if int(member_id):
+            member = models.Member.objects.get(pk=int(member_id))
+        members = models.Member.objects.all()
+        timestr = time.ctime()
 
-    # Generate the file
-    dirname = os.path.abspath(os.path.dirname(__file__))
-    template_dir = os.path.join(dirname, 'report-templates')
-    template = os.path.join(template_dir, '%s.odt' % report_type)
-    timestamp = time.time()
-    output = template.replace('.odt', '%s.pdf' % timestamp)
-    data = {}
-    data.update(locals())
-    data.update(extra_data)
-    renderer = Renderer(template, data, output)
-    renderer.run()
+        # Generate the file
+        dirname = os.path.abspath(os.path.dirname(__file__))
+        template_dir = os.path.join(dirname, 'report-templates')
+        template = os.path.join(template_dir, '%s.odt' % report_type)
+        timestamp = time.time()
+        output = template.replace('.odt', '%s.pdf' % timestamp)
+        data = {}
+        data.update(locals())
+        data.update(extra_data)
+        renderer = Renderer(template, data, output)
+        renderer.run()
 
-    # Generate response
-    retval = HttpResponse(mimetype='application/pdf')
-    retval['Content-Disposition'] = (
-        'attachment; filename=%s' % os.path.basename(output)
-    )
-    reader = open(output, 'rb')
-    retval.write(reader.read())
+        # Generate response
+        retval = HttpResponse(mimetype='application/pdf')
+        retval['Content-Disposition'] = (
+            'attachment; filename=%s' % os.path.basename(output)
+        )
+        reader = open(output, 'rb')
+        retval.write(reader.read())
 
-    # Clean up
-    reader.close()
-    os.unlink(output)
-    return retval
+        # Clean up
+        reader.close()
+        os.unlink(output)
+        return retval
+    except:
+        log.debug('Failed to generate report', exc_info=True)
+        raise
 
 
 def report_region_pdf(request, region):
