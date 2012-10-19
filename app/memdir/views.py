@@ -90,64 +90,46 @@ member_detail_view = MemberDetailView.as_view()
 
 # Download reports
 def report_pdf(request, report_type, member_id, extra_data={}):
-    pod_error = False
-    first_attempt = True
-    while first_attempt or pod_error:
-        first_attempt = False
-        try:
-            log.debug('Looking for report %s for member %s' % (report_type, member_id))
+    try:
+        log.debug('Looking for report %s for member %s' % (report_type, member_id))
 
-            if pod_error:
-                # Make sure the headless soffice is running.
-                log.debug('Starting soffice')
-                Popen(['soffice',
-                      '--headless',
-                      '"-accept=socket,host=localhost,port=2002;urp;"',
-                      '-splash-pipe=5'])
-                time.sleep(1)
-                log.debug('soffice started')
-                pod_error = False
+        # Populate the context
+        if int(member_id):
+            member = models.Member.objects.get(pk=int(member_id))
+        #members = models.Member.objects.all()
+        timestr = time.ctime()
 
-            # Populate the context
-            if int(member_id):
-                member = models.Member.objects.get(pk=int(member_id))
-            #members = models.Member.objects.all()
-            timestr = time.ctime()
+        # Generate the file
+        dirname = os.path.abspath(os.path.dirname(__file__))
+        template_dir = os.path.join(dirname, 'report-templates')
+        template = os.path.join(template_dir, '%s.odt' % report_type)
+        timestamp = time.time()
+        output = template.replace('.odt', '%s.pdf' % timestamp)
+        log.debug('Will generate from %s to %s' % (template, output))
+        data = {}
+        data.update(locals())
+        data.update(extra_data)
+        log.debug('Creating renderer')
+        renderer = Renderer(template, data, output)
+        log.debug('Running renderer')
+        renderer.run()
+        log.debug('Rendering complete')
 
-            # Generate the file
-            dirname = os.path.abspath(os.path.dirname(__file__))
-            template_dir = os.path.join(dirname, 'report-templates')
-            template = os.path.join(template_dir, '%s.odt' % report_type)
-            timestamp = time.time()
-            output = template.replace('.odt', '%s.pdf' % timestamp)
-            log.debug('Will generate from %s to %s' % (template, output))
-            data = {}
-            data.update(locals())
-            data.update(extra_data)
-            log.debug('Creating renderer')
-            renderer = Renderer(template, data, output)
-            log.debug('Running renderer')
-            renderer.run()
-            log.debug('Rendering complete')
+        # Generate response
+        retval = HttpResponse(mimetype='application/pdf')
+        retval['Content-Disposition'] = (
+            'attachment; filename=%s' % os.path.basename(output)
+        )
+        reader = open(output, 'rb')
+        retval.write(reader.read())
 
-            # Generate response
-            retval = HttpResponse(mimetype='application/pdf')
-            retval['Content-Disposition'] = (
-                'attachment; filename=%s' % os.path.basename(output)
-            )
-            reader = open(output, 'rb')
-            retval.write(reader.read())
-
-            # Clean up
-            reader.close()
-            os.unlink(output)
-            return retval
-        except PodError:
-            log.debug('PodError', exc_info=True)
-            pod_error = True
-        except:
-            log.debug('Failed to generate report', exc_info=True)
-            raise
+        # Clean up
+        reader.close()
+        os.unlink(output)
+        return retval
+    except:
+        log.debug('Failed to generate report', exc_info=True)
+        raise
 
 
 def report_region_pdf(request, region):
