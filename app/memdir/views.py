@@ -142,7 +142,7 @@ def report_region_pdf(request, region):
     region_name = regions_dict.get(region, region)
     rowcouples = []
     couple = []
-    for member in models.Member.objects.filter(region=region):
+    for member in models.Member.objects.filter(region=region, is_frp_member=True):
         couple.append(member)
         if len(couple) == 2:
             rowcouples.append(couple)
