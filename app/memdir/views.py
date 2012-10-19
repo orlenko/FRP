@@ -95,6 +95,7 @@ def report_pdf(request, report_type, member_id, extra_data={}):
     while first_attempt or pod_error:
         try:
             first_attempt = False
+            pod_error = False
             log.debug('Looking for report %s for member %s' % (report_type, member_id))
 
             if pod_error:
