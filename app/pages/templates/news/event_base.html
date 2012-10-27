@@ -6,7 +6,7 @@
 
 {% block content %}
 {% if events %}
-	<h2><a href="{% url event_archive_list %}">All Events</a></h2>
+	<h2><a href="{% url 'event_archive_list' %}">All Events</a></h2>
 		{% for event in events %}
     <h3>{{ event.title }}</h3>
     <i>{{ event.start }}</i> &ndash; <i>{{ event.end }}</i><br />

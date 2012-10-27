@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'testproject.views.home', name='home'),
     # url(r'^testproject/', include('testproject.foo.urls')),
 
-    (r'^api/v1/', include('fiber.api.urls')),
+    #(r'^api/v1/', include('fiber.api.urls')),
     url(r'^databrowse/(.*)', login_required(databrowse.site.root)),
     (r'^admin/fiber/', include('fiber.admin_urls')),
     (r'^jsi18n/$', 'django.views.i18n.javascript_catalog', {'packages': ('fiber',),}),
@@ -30,9 +30,9 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     # User account login
-    url(r'^accounts/', include('registration.urls')),
+    #url(r'^accounts/', include('registration.urls')),
     # User notifications
-    url(r'^notifications/', include('notification.urls')),
+    #url(r'^notifications/', include('notification.urls')),
 
     # Bot helpers
     url(r'sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
@@ -59,6 +59,6 @@ if settings.DEBUG:
         #}),
     )
 
-#urlpatterns += patterns('',
-    #url(r'', 'fiber.views.page'),
-#)
+urlpatterns += patterns('',
+    url(r'', 'fiber.views.page'),
+)

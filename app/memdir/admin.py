@@ -4,19 +4,19 @@ from memdir import forms
 from memdir import models
 
 
-class InlineHours(admin.NestedTabularInline):
+class InlineHours(admin.TabularInline):
     model = models.HoursOfOperation
-    extra = 14
+    extra = 3
 
 
-class InlineContact(admin.NestedTabularInline):
+class InlineContact(admin.TabularInline):
     model = models.LocationContact
     extra = 3
 
 
 class InlineLocation(admin.StackedInline):
     model = models.Location
-    inlines = [InlineHours, InlineContact, ]
+    inlines = [InlineHours, InlineContact,]
     extra = 1
     fieldsets = (
         (None, {
@@ -52,9 +52,10 @@ class MemberAdmin(admin.ModelAdmin):
     list_filter = ('region', 'renewal_date',)
     date_hierarchy = 'renewal_date'
     ordering = ('agency',)
-    change_form_template = 'admin_edit_agency.html'
+    change_form_template = 'admin_edit_agency2.html'
     inlines = [InlineLocation,]
     readonly_fields = ['slug']
+    save_on_top = True
     fieldsets = (
         (None, {
             'fields': (
@@ -70,7 +71,6 @@ class MemberAdmin(admin.ModelAdmin):
                 'community',
                 'join_date',
                 'updated',
-                'description',
                 'notes',
             )
         }),

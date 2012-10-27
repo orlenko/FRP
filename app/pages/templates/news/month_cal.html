@@ -7,7 +7,7 @@
 {% for week in calendar %}
 <tr>
 {% for day in week %}
-<td{% if not day.in_month %} class="cal_not_in_month"{% endif %}>{% if day.event %}<a href="{% url event_archive_day day.day|date:"Y" day.day|date:"m" day.day|date:"d" %}">{{ day.day|date:"j" }}</a>{% else %}{{ day.day|date:"j" }}{% endif %}</td>
+<td{% if not day.in_month %} class="cal_not_in_month"{% endif %}>{% if day.event %}<a href="{% url 'event_archive_day' day.day|date:"Y" day.day|date:"m" day.day|date:"d" %}">{{ day.day|date:"j" }}</a>{% else %}{{ day.day|date:"j" }}{% endif %}</td>
 {% endfor %}
 </tr>
 {% endfor %}

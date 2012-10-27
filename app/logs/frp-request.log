@@ -415,3 +415,619 @@
 [2012-10-12 22:39:16,291 django.request WARNING] base: Not Found: /favicon.ico/
 [2012-10-12 22:39:46,221 django.request WARNING] base: Not Found: /favicon.ico/
 [2012-10-12 22:42:40,606 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-14 17:10:15,991 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-14 17:10:16,049 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-14 17:11:12,363 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-14 17:11:16,877 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-14 17:11:16,890 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-14 17:11:19,668 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-14 17:11:49,827 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-14 17:21:23,457 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-14 17:21:23,470 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:01:48,329 django.request WARNING] base: Not Found: /report/testreport/0
+[2012-10-15 05:01:48,494 django.request WARNING] base: Not Found: /report/testreport/0/
+[2012-10-15 05:01:48,747 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:02:05,183 django.request WARNING] base: Not Found: /dir/report/testreport/0/
+[2012-10-15 05:02:05,332 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:02:28,402 django.request WARNING] base: Not Found: /dir/report/testreport/0/
+[2012-10-15 05:02:28,544 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:07:38,604 django.request WARNING] base: Not Found: /dir/report/testreport/0/
+[2012-10-15 05:07:38,767 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:07:55,122 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:08:02,437 django.request WARNING] base: Not Found: /report/testreport/0/
+[2012-10-15 05:08:02,720 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:08:11,218 django.request WARNING] base: Not Found: /dir/report/testreport/0/
+[2012-10-15 05:08:11,356 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:08:13,159 django.request WARNING] base: Not Found: /dir/report/testreport/0
+[2012-10-15 05:08:13,173 django.request WARNING] base: Not Found: /dir/report/testreport/0/
+[2012-10-15 05:08:13,271 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:08:43,376 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:32:44,030 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:32:48,371 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-15 05:32:48,408 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:32:50,132 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:32:50,151 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:33:49,113 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-15 05:33:49,174 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 03:00:25,610 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-19 03:00:25,708 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 03:00:25,839 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 03:00:31,067 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-19 03:00:31,081 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 03:00:37,071 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-19 03:00:37,100 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 03:00:42,336 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 03:00:44,539 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 03:00:48,632 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 03:00:48,664 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 03:01:02,362 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 03:01:57,065 django.request WARNING] base: Not Found: /dir/report/region/fraservalley
+[2012-10-19 03:01:58,855 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:07:33,294 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-19 05:07:33,316 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:07:39,822 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:07:43,544 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:07:49,201 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:08:06,913 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:08:08,816 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:08:25,433 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:08:54,155 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:09:05,408 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:09:12,287 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:09:16,342 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-19 05:09:16,358 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:09:18,406 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:09:18,477 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:09:25,593 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:09:25,617 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:09:35,744 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:09:35,769 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:22:23,799 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:22:29,698 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:22:52,742 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 05:22:55,891 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:09:46,847 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-19 06:09:46,865 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:09:53,585 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:00,135 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:02,632 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-19 06:10:02,646 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:04,682 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:04,709 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:05,822 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:07,581 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:07,603 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:11,761 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:13,079 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-19 06:10:13,109 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:17,602 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:25,412 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-19 06:10:32,329 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 09:48:32,609 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-26 09:48:32,708 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 09:48:36,560 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-26 09:48:36,574 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 09:48:36,912 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 09:48:41,991 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-26 09:48:42,003 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 09:48:47,850 django.request WARNING] base: Not Found: /favicon.ico
+[2012-10-26 09:48:47,863 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 09:48:50,784 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 09:48:50,892 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 09:49:35,834 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 10:30:05,501 django.request ERROR] base: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 104, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/ws_pep8/FRP/app/urls.py", line 8, in <module>
+    admin.autodiscover()
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/contrib/admin/__init__.py", line 29, in autodiscover
+    import_module('%s.admin' % app)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/ws_pep8/FRP/app/memdir/admin.py", line 7, in <module>
+    class InlineHours(admin.NestedTabularInline):
+AttributeError: 'module' object has no attribute 'NestedTabularInline'
+[2012-10-26 10:30:06,229 django.request ERROR] base: Internal Server Error: /favicon.ico/
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 104, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/ws_pep8/FRP/app/urls.py", line 8, in <module>
+    admin.autodiscover()
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/contrib/admin/__init__.py", line 29, in autodiscover
+    import_module('%s.admin' % app)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/ws_pep8/FRP/app/memdir/admin.py", line 7, in <module>
+    class InlineHours(admin.NestedTabularInline):
+AttributeError: 'module' object has no attribute 'NestedTabularInline'
+[2012-10-26 10:32:03,547 django.request ERROR] base: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 104, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/ws_pep8/FRP/app/urls.py", line 21, in <module>
+    (r'^api/v1/', include('fiber.api.urls')),
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 25, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+ImportError: No module named api.urls
+[2012-10-26 10:32:03,861 django.request ERROR] base: Internal Server Error: /favicon.ico/
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 104, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/ws_pep8/FRP/app/urls.py", line 21, in <module>
+    (r'^api/v1/', include('fiber.api.urls')),
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 25, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+ImportError: No module named api.urls
+[2012-10-26 10:45:42,620 django.request ERROR] base: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 104, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/ws_pep8/FRP/app/urls.py", line 33, in <module>
+    url(r'^accounts/', include('registration.urls')),
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 25, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/registration/urls.py", line 15, in <module>
+    from registration.backends.default.urls import *
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/registration/backends/default/urls.py", line 22, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+[2012-10-26 10:45:43,100 django.request ERROR] base: Internal Server Error: /favicon.ico/
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 104, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/ws_pep8/FRP/app/urls.py", line 33, in <module>
+    url(r'^accounts/', include('registration.urls')),
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 25, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/registration/urls.py", line 15, in <module>
+    from registration.backends.default.urls import *
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/registration/backends/default/urls.py", line 22, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+[2012-10-26 12:03:39,775 django.request ERROR] base: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 104, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/ws_pep8/FRP/app/urls.py", line 33, in <module>
+    url(r'^accounts/', include('registration.urls')),
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 25, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/registration/urls.py", line 15, in <module>
+    from registration.backends.default.urls import *
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/registration/backends/default/urls.py", line 22, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+[2012-10-26 12:03:40,085 django.request ERROR] base: Internal Server Error: /favicon.ico/
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 104, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/ws_pep8/FRP/app/urls.py", line 33, in <module>
+    url(r'^accounts/', include('registration.urls')),
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 25, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/registration/urls.py", line 15, in <module>
+    from registration.backends.default.urls import *
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/registration/backends/default/urls.py", line 22, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+[2012-10-26 12:54:48,673 django.request ERROR] base: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 116, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/vlad/ws_pep8/FRP/app/frontpage/views.py", line 6, in front_page_view
+    return render(request, 'frontpage/frontpage.html', ret)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 40, in render
+    context_instance = RequestContext(request, current_app=current_app)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/context.py", line 179, in __init__
+    self.update(processor(request))
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/context_processors.py", line 25, in page_info
+    page = Page.objects.get_by_url(url)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/managers.py", line 151, in get_by_url
+    return qs.get(url__exact=url)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 371, in get
+    num = len(clone)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 89, in __len__
+    self._result_cache = list(self.iterator())
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 297, in iterator
+    for row in compiler.results_iter():
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 770, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 825, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/util.py", line 43, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 362, in execute
+    six.reraise(utils.DatabaseError, utils.DatabaseError(*tuple(e.args)), sys.exc_info()[2])
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 358, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such column: fiber_page.is_public
+[2012-10-26 12:54:49,361 django.request ERROR] base: Internal Server Error: /favicon.ico/
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 116, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 64, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 85, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 150, in get
+    context = self.get_context_data(**kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/mixins.py", line 18, in get_context_data
+    context['fiber_page'] = self.get_fiber_page()
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/mixins.py", line 31, in get_fiber_page
+    return self.fiber_page or Page.objects.get_by_url(self.get_fiber_page_url())
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/managers.py", line 151, in get_by_url
+    return qs.get(url__exact=url)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 371, in get
+    num = len(clone)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 89, in __len__
+    self._result_cache = list(self.iterator())
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 297, in iterator
+    for row in compiler.results_iter():
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 770, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 825, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/util.py", line 43, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 362, in execute
+    six.reraise(utils.DatabaseError, utils.DatabaseError(*tuple(e.args)), sys.exc_info()[2])
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 358, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such column: fiber_page.is_public
+[2012-10-26 12:55:27,121 django.request ERROR] base: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 116, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/vlad/ws_pep8/FRP/app/frontpage/views.py", line 6, in front_page_view
+    return render(request, 'frontpage/frontpage.html', ret)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 40, in render
+    context_instance = RequestContext(request, current_app=current_app)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/context.py", line 179, in __init__
+    self.update(processor(request))
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/context_processors.py", line 25, in page_info
+    page = Page.objects.get_by_url(url)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/managers.py", line 151, in get_by_url
+    return qs.get(url__exact=url)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 371, in get
+    num = len(clone)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 89, in __len__
+    self._result_cache = list(self.iterator())
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 297, in iterator
+    for row in compiler.results_iter():
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 770, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 825, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/util.py", line 43, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 362, in execute
+    six.reraise(utils.DatabaseError, utils.DatabaseError(*tuple(e.args)), sys.exc_info()[2])
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 358, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such column: fiber_page.is_public
+[2012-10-26 12:55:27,502 django.request ERROR] base: Internal Server Error: /favicon.ico/
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 116, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 64, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 85, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 150, in get
+    context = self.get_context_data(**kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/mixins.py", line 18, in get_context_data
+    context['fiber_page'] = self.get_fiber_page()
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/mixins.py", line 31, in get_fiber_page
+    return self.fiber_page or Page.objects.get_by_url(self.get_fiber_page_url())
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/managers.py", line 151, in get_by_url
+    return qs.get(url__exact=url)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 371, in get
+    num = len(clone)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 89, in __len__
+    self._result_cache = list(self.iterator())
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/query.py", line 297, in iterator
+    for row in compiler.results_iter():
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 770, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 825, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/util.py", line 43, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 362, in execute
+    six.reraise(utils.DatabaseError, utils.DatabaseError(*tuple(e.args)), sys.exc_info()[2])
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 358, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such column: fiber_page.is_public
+[2012-10-26 13:01:20,381 django.request ERROR] base: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 189, in get_response
+    response = middleware_method(request, response)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/middleware.py", line 54, in process_response
+    t = loader.get_template('fiber/admin.html')
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 1261, in url
+    viewname = parser.compile_filter(bits[1])
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 353, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 570, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: ':index' from 'admin:index'
+[2012-10-26 13:01:20,726 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 13:05:51,095 django.request ERROR] base: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 189, in get_response
+    response = middleware_method(request, response)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/middleware.py", line 81, in process_response
+    self.get_header_html(request),
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/fiber/middleware.py", line 164, in get_header_html
+    return t.render(c)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 420, in render
+    raise e
+NoReverseMatch: Reverse for '' with arguments '()' and keyword arguments '{}' not found.
+[2012-10-26 13:05:51,435 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 13:17:46,896 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 13:17:54,699 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 13:17:58,044 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 13:17:59,935 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 13:19:44,405 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 14:34:49,188 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 15:58:32,825 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 15:59:10,383 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 15:59:47,231 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 15:59:49,466 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:00:25,567 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:00:28,794 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:00:33,007 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:01:44,501 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:02:48,620 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:02:48,777 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:03:01,395 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:03:04,873 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:03:20,647 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:03:31,038 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:03:35,894 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:03:56,954 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:04:03,110 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:04:20,062 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:04:23,053 django.request ERROR] base: Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 116, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/views.py", line 50, in __call__
+    return self.create_response()
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/views.py", line 131, in create_response
+    (paginator, page) = self.build_page()
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/views.py", line 108, in build_page
+    self.results[start_offset:start_offset + self.results_per_page]
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/query.py", line 241, in __getitem__
+    self._fill_cache(start, bound)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/query.py", line 140, in _fill_cache
+    results = self.query.get_results(**kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/backends/__init__.py", line 469, in get_results
+    self.run(**kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/backends/__init__.py", line 390, in run
+    results = self.backend.search(final_query, **search_kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/backends/__init__.py", line 47, in wrapper
+    return func(obj, query_string, *args, **kwargs)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/backends/whoosh_backend.py", line 260, in search
+    self.setup()
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/backends/whoosh_backend.py", line 111, in setup
+    self.content_field_name, self.schema = self.build_schema(self.site.all_searchfields())
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/haystack/backends/whoosh_backend.py", line 163, in build_schema
+    raise SearchBackendError("No fields were found in any search_indexes. Please correct this before attempting to search.")
+SearchBackendError: No fields were found in any search_indexes. Please correct this before attempting to search.
+[2012-10-26 16:04:23,467 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:53:31,963 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:53:41,523 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:53:45,079 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:53:48,779 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:53:53,336 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:53:57,877 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:54:07,038 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:54:17,191 django.request ERROR] base: Internal Server Error: /dir/
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 141, in get_response
+    response = response.render()
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    content = template.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 124, in render
+    return compiled_parent._render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 124, in render
+    return compiled_parent._render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 420, in render
+    raise e
+NoReverseMatch: Reverse for '' with arguments '()' and keyword arguments '{}' not found.
+[2012-10-26 16:54:17,977 django.request WARNING] base: Not Found: /directory/
+[2012-10-26 16:54:18,177 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 16:54:21,998 django.request ERROR] base: Internal Server Error: /dir/
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 141, in get_response
+    response = response.render()
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    content = template.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 124, in render
+    return compiled_parent._render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 124, in render
+    return compiled_parent._render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 420, in render
+    raise e
+NoReverseMatch: Reverse for '' with arguments '()' and keyword arguments '{}' not found.
+[2012-10-26 16:54:22,761 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 17:00:42,701 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 17:00:54,204 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 17:00:56,893 django.request ERROR] base: Internal Server Error: /dir/report/region/fraservalley/
+Traceback (most recent call last):
+  File "/home/vlad/env/django15a1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 116, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/vlad/ws_pep8/FRP/app/memdir/views.py", line 153, in report_region_pdf
+    return report_pdf(request, 'provincial-listing', 0, locals())
+  File "/home/vlad/ws_pep8/FRP/app/memdir/views.py", line 120, in report_pdf
+    renderer.run()
+  File "/home/vlad/ws_pep8/FRP/app/appy/pod/renderer.py", line 396, in run
+    self.finalize()
+  File "/home/vlad/ws_pep8/FRP/app/appy/pod/renderer.py", line 537, in finalize
+    output = self.callOpenOffice(resultOdtName, resultType)
+  File "/home/vlad/ws_pep8/FRP/app/appy/pod/renderer.py", line 480, in callOpenOffice
+    raise pe
+PodError: Extension of result file is "pdf". In order to perform conversion from ODT to this format we need to call OpenOffice. But the Python interpreter which runs the current script does not know UNO, the library that allows to connect to OpenOffice in server mode. If you can't install UNO in this Python interpreter, you can specify, in parameter "pythonWithUnoPath", the path to a UNO-enabled Python interpreter. One such interpreter may be found in <open_office_path>/program.
+[2012-10-26 17:00:57,331 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 17:00:59,108 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 17:01:00,738 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 17:01:04,591 django.request WARNING] base: Not Found: /favicon.ico/
+[2012-10-26 17:01:05,496 django.request WARNING] base: Not Found: /favicon.ico/

@@ -106,7 +106,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'fiber.middleware.ObfuscateEmailAddressMiddleware',
     'fiber.middleware.AdminPageMiddleware',
-    'fiber.middleware.PageFallbackMiddleware',
+    #'fiber.middleware.PageFallbackMiddleware',
     'pagination.middleware.PaginationMiddleware',
 )
 
@@ -167,9 +167,9 @@ INSTALLED_APPS = (
     "tinymce", # for the blog
     "ckeditor",
     "photologue",
-    "registration", # for registration and some notifications/verifications
+    #"registration", # for registration and some notifications/verifications
     "uni_form", # for nice forms
-    "notification",
+    #"notification",
     "whoosh",
 
     # Mapping
@@ -217,14 +217,17 @@ FIBER_METADATA_CONTENT_SCHEMA = {}
 COMPRESS = not DEBUG
 
 # HAYSTACK
+#HAYSTACK_SITECONF = 'memdir'
+#HAYSTACK_SEARCH_ENGINE = 'whoosh'
+#HAYSTACK_WHOOSH_PATH = os.path.join(BASE_DIR, 'whoosh_index')
 HAYSTACK_CONNECTIONS = {
-        'default': {
-            'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-            'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
-            'INCLUDE_SPELLING': True,
-            'BATCH_SIZE': 100,
-            }
-        }
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+        'INCLUDE_SPELLING': True,
+        'BATCH_SIZE': 100,
+    }
+}
 
 
 # Django-Registration Settings

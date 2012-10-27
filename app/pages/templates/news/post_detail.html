@@ -5,5 +5,5 @@
 <b>{{ post.pub_date }}</b><br />
 {{ post.content|safe }}
 
-<p><i><a href="{% url post_archive_list %}">Back to news</a></i></p>
+<p><i><a href="{% url 'post_archive_list' %}">Back to news</a></i></p>
 {% endblock %}

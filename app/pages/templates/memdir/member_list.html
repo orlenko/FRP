@@ -105,20 +105,20 @@
 
 	<div id="hozregionlist" class="suffix_4 grid_12">
 		<ul>
-			<li><a href="{% url northern_dir %}">Northern</a></li>
-			<li><a href="{% url vancoast_dir %}">Vancouver Coastal</a></li>
-			<li><a href="{% url fraser_dir %}">Fraser Valley</a></li>
-			<li><a href="{% url interior_dir %}">Interior</a></li>
-			<li><a href="{% url vanisle_dir %}">Vancouver Island</a></li>
-			<li><a href="{% url other_dir %}">Other Regions</a></li>
+			<li><a href="{% url 'northern_dir' %}">Northern</a></li>
+			<li><a href="{% url 'vancoast_dir' %}">Vancouver Coastal</a></li>
+			<li><a href="{% url 'fraser_dir' %}">Fraser Valley</a></li>
+			<li><a href="{% url 'interior_dir' %}">Interior</a></li>
+			<li><a href="{% url 'vanisle_dir' %}">Vancouver Island</a></li>
+			<li><a href="{% url 'other_dir' %}">Other Regions</a></li>
 		{% if user.is_superuser %}
-			<li><a href="{% url unknown_dir %}">Uncategorized</a></li>
+			<li><a href="{% url 'unknown_dir' %}">Uncategorized</a></li>
 		{% endif %}
 		</ul>
 	</div>
 	<br />
 	<h3>{{ region }} Member Listing</h3>
-	<p><a href="{% url report_region region_id %}">Download Listing Report for {{region}} region</a></p>
+	<p><a href="{% url 'report_region' region_id %}">Download Listing Report for {{region}} region</a></p>
 	{% autopaginate object_list %}
 	{% paginate %}
 	<ul>

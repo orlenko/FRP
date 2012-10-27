@@ -9,6 +9,6 @@
   {{ event.start }} to {{ event.end }}
   <div class='ev_desc'>{{ event.description|safe }}</div>
 
-  <p><a href="{% url event_archive_list %}"><i>Back to events</i></a></p>
+  <p><a href="{% url 'event_archive_list' %}"><i>Back to events</i></a></p>
 {% endblock %}
 
