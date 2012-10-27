@@ -6,12 +6,12 @@ from memdir import models
 
 class InlineHours(admin.TabularInline):
     model = models.HoursOfOperation
-    extra = 3
+    extra = 1
 
 
 class InlineContact(admin.TabularInline):
     model = models.LocationContact
-    extra = 3
+    extra = 1
 
 
 class InlineLocation(admin.StackedInline):
