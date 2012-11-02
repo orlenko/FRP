@@ -16,20 +16,20 @@ add_introspection_rules([], ["^tinymce\.models\.HTMLField"])
 google = Google()
 
 PROVINCE_CHOICES = (
-        ("BC", _("British Columbia")),
-        ("AB", _("Alberta")),
-        ("SK", _("Saskatchewan")),
-        ("MB", _("Manitoba")),
-        ("ON", _("Ontario")),
-        ("QC", _("Quebec")),
-        ("PE", _("Prince Edward Island")),
-        ("NL", _("Newfoundland and Labrador")),
-        ("NS", _("Nova Scotia")),
-        ("NB", _("New Brunswick")),
-        ("YT", _("Yukon Territory")),
-        ("NT", _("Northwest Territories")),
-        ("NU", _("Nunavut")),
-    )
+    ("BC", _("British Columbia")),
+    ("AB", _("Alberta")),
+    ("SK", _("Saskatchewan")),
+    ("MB", _("Manitoba")),
+    ("ON", _("Ontario")),
+    ("QC", _("Quebec")),
+    ("PE", _("Prince Edward Island")),
+    ("NL", _("Newfoundland and Labrador")),
+    ("NS", _("Nova Scotia")),
+    ("NB", _("New Brunswick")),
+    ("YT", _("Yukon Territory")),
+    ("NT", _("Northwest Territories")),
+    ("NU", _("Nunavut")),
+)
 
 log = logging.getLogger(__name__)
 
@@ -209,9 +209,47 @@ class Location(AddressMixin, MailingAddressMixin):
                                         max_length=255, null=True, blank=True)
     phone = models.CharField(max_length=255, null=True, blank=True)
     fax = models.CharField(max_length=255, null=True, blank=True)
+    website = models.URLField(_("Website"), blank=True, null=True)
 
     def __unicode__(self):
         return str(self.frp_program_name)
+
+    @property
+    def main_contact(self):
+        contacts = self.contacts.all()
+        if contacts:
+            return contacts[0]
+
+    @property
+    def extra_contacts(self):
+        contacts = self.contacts.all()
+        if contacts:
+            return contacts[1:]
+        return []
+
+    @property
+    def days_of_operations(self):
+        retval = []
+        hours = self.hours_of_operation.all()
+        for n, day in HoursOfOperation.DAY_CHOICES:
+            d = DayHours()
+            d.name = day
+            matching_hours = sorted([h for h in hours if h.day == n],
+                                    key=lambda rec:rec.open_time)
+            parts = []
+            for h in matching_hours:
+                tformat = '%I:%M %p'
+                parts.append('%s - %s'
+                    % (h.open_time.strftime(tformat),
+                       h.close_time.strftime(tformat)))
+            d.formatted_hours = ', '.join(parts)
+            retval.append(d)
+        return retval
+
+
+class DayHours(object):
+    name = 'weekday name'
+    formatted_hours = ''
 
 
 class LocationContact(models.Model):

@@ -9,11 +9,11 @@
 
 {% block extrastyle %}
     {{ block.super }}
-    
+
     <link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />
 
     <link rel="stylesheet" type="text/css" href="/static/css/memdir.css" />
-    
+
 {% endblock %}
 
 {% block coltype %}{% if ordered_objects %}colMS{% else %}colM{% endif %}{% endblock %}
@@ -76,6 +76,7 @@
 {% block inline_field_sets %}
 {% for inline_admin_formset in inline_admin_formsets %}
     {% include inline_admin_formset.opts.template %}
+    <div style="clear:both;"></div>
 {% endfor %}
 {% endblock %}
     </div>

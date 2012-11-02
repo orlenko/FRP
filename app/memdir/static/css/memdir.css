@@ -52,6 +52,13 @@ fieldset.module.aligned  {
     float: left;
     clear: none;
 }
+#agency-info fieldset textarea {
+    width: 20em;
+}
+
+#agency-info fieldset .vURLField {
+   width: 20em;
+}
 
 div.submit-row {
     clear: both;
@@ -74,6 +81,7 @@ div.submit-row {
 
 #frp-locations .dynamic-locations>fieldset:nth-child(2) {
     float: left;
+    width: auto;
 }
 
 #frp-locations .dynamic-locations>fieldset:nth-child(2) label {
@@ -83,9 +91,15 @@ div.submit-row {
 #frp-locations .dynamic-locations>fieldset:nth-child(3) {
     float: left;
     clear: none;
+    width: auto;
 }
 
-#frp-locations .dynamic-locations>.nested-table {
+#frp-locations .dynamic-locations>.nested-inline {
     float:left;
     margin: 0 10px;
+}
+
+#frp-locations .dynamic-locations>.locations-nested-inline:nth-child(9) {
+    float: none;
+    clear:both;
 }

@@ -17,7 +17,7 @@ class InlineContact(admin.TabularInline):
 class InlineLocation(admin.StackedInline):
     model = models.Location
     inlines = [InlineHours, InlineContact,]
-    extra = 1
+    extra = 0
     fieldsets = (
         (None, {
             'fields': (
@@ -31,7 +31,7 @@ class InlineLocation(admin.StackedInline):
             )
         }),
         ('Mailing Address (if different from physical address)', {
-            'classes': ('collapse',),
+            #'classes': ('collapse',),
             'fields': (
                 'mailing_street',
                 'mailing_city',
@@ -106,6 +106,12 @@ class MemberAdmin(admin.ModelAdmin):
                 'fee',
                 'receipt',
                 'paidfrp',
+            )
+        }),
+        ('Description', {
+            'classes': ('collapse',),
+            'fields': (
+                'description',
             )
         }),
     )
