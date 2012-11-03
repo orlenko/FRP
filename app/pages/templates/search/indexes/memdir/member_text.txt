@@ -1,2 +1,3 @@
 {{ object.agency }}
 {{ object.description }}
+{{ object.community }}

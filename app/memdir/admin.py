@@ -28,6 +28,7 @@ class InlineLocation(admin.StackedInline):
                 'postal_code',
                 'phone',
                 'fax',
+                'website',
             )
         }),
         ('Mailing Address (if different from physical address)', {

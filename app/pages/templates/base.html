@@ -73,7 +73,7 @@
 			<header id="{% block header_select %}contentpage{% endblock %}" class='grid_16'>
 			  <div id="logo" class="grid_4 alpha"><a href="/"><img src="{{ STATIC_URL }}img/bcfrp_logo.png" alt="BCFRP Logo"></a></div>
         <div id="searchbox" class="grid_6 prefix_6 omega clearfix">
-          <form name='searchbox' type='submit' method='get' action="/search">
+          <form name='searchbox' type='submit' method='get' action="/search/">
             {% csrf_token %}
             <input type='submit' name='submit' value='Search'
               class='form_button_big' lang="en" />
@@ -90,40 +90,6 @@
 				<nav id="mainmenu" class="grid_12 omega">
 					{% show_menu "mainmenu" 1 1 %}
 				</nav>
-				<!--<nav id="breadcrumbs" class="clearfix">
-						<ul>
-							{% for fiber_page in fiber_current_pages %}
-							<li>
-								<a href="{{ fiber_page.get_absolute_url }}">{{ fiber_page.title }}</a>
-							</li>
-							{% endfor %}
-						</ul>
-						</nav>-->
-				<!--{# if notices %}
-					<table>
-							<caption>{% trans "Notices" %}</caption>
-							<thead>
-									<tr>
-											<th>{% trans "Type" %}</th>
-											<th>{% trans "Message" %}</th>
-											<th>{% trans "Date of the Notice" %}</th>
-									</tr>
-							</thead>a:visited
-							<tbody>
-									{% for notice in notices %}
-											{% if notice.is_unseen %}
-													<tr class="unseen_notice">
-											{% else %}
-													<tr class="notice">
-											{% endif %}
-													<td class="notice_type">[{% trans notice.notice_type.display %}]</td>
-													<td class="notice_message">{{ notice.message|safe }}</td>
-													<td class="notice_time">{{ notice.added|timesince }} {% trans "ago" %}</td>
-											</tr>
-									{% endfor %}
-							</tbody>
-					</table>
-					{% endif #} -->
 				{% if notices %}
 					<ul id='notices'>
 						{% for notice in notices.object_list %}
@@ -168,24 +134,15 @@
 					{% show_menu "mainmenu" 3 3 %}
 				</nav>
 					{% block titlecontent %}
-					<div id='title_content' class='grid_10 prefix_1'>
+					<div id='title_content' class='grid_15 prefix_1'>
 						{{ fiber_page.title }}
 					</div>
 					{% endblock %}
-				<article id="main_content" class="grid_10 prefix_1">
+				<article id="main_content" class="grid_15 prefix_1">
 					{% block content %}
 					{% endblock %}
 					{% show_page_content "main" %}
 				</article>
-				<aside id="news_content" class="grid_4 omega">
-        {% newsbox %}
-
-				<!--	<div id="news_box">
-						<p>News here?</p>
-						<p>Guess so</p>
-						<p>I'll have to put a tag in...</p>
-          </div>-->
-				</aside>
 			</section>
 			<!--<aside id="aside-left" class='grid_3'>-->
 			<!--<section id="main" class="grid_6">-->

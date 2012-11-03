@@ -2,18 +2,13 @@
 {% load i18n admin_static admin_modify %}
 {% load admin_urls %}
 
-{% block extrahead %}{{ block.super }}
-<script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
-{{ media }}
+{% block extrahead %}
+    {{ block.super }}
 {% endblock %}
 
 {% block extrastyle %}
     {{ block.super }}
-
-    <link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />
-
     <link rel="stylesheet" type="text/css" href="/static/css/memdir.css" />
-
 {% endblock %}
 
 {% block coltype %}{% if ordered_objects %}colMS{% else %}colM{% endif %}{% endblock %}
@@ -105,8 +100,193 @@
 <script>
     jQuery(function() {
         jQuery("#tabs").tabs();
+        if (jQuery('#locations-0-hours_of_operation-group').length) {
+            // we do not need the sample forms below - nuke them!
+            jQuery('#locations-group-sample').remove();
+        }
     });
-    </script>
 </script>
+
+<!-- template for nested inlines that should always be there -->
+<div id="locations-group-sample">
+    <div class="inline-group locations-nested-inline nested-inline empty-form"
+        id="locations-0-hours_of_operation-group-sample">
+
+        <div class="tabular inline-related nolinks">
+            <input type="hidden" name="locations-0-hours_of_operation-TOTAL_FORMS" value="0" id="id_locations-0-hours_of_operation-TOTAL_FORMS" autocomplete="off">
+            <input type="hidden" name="locations-0-hours_of_operation-INITIAL_FORMS" value="0" id="id_locations-0-hours_of_operation-INITIAL_FORMS">
+            <input type="hidden" name="locations-0-hours_of_operation-MAX_NUM_FORMS" id="id_locations-0-hours_of_operation-MAX_NUM_FORMS">
+            <fieldset class="module">
+                <h2>Hours of operations</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="required">Day </th>
+                            <th class="required">Open time </th>
+                            <th class="required">Close time </th>
+                            <th>Delete?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="form-row row1  locations-0-hours_of_operation-not-nested dynamic-locations-0-hours_of_operation" id="locations-0-hours_of_operation-0">
+                            <td class="original">
+                            <input type="hidden" name="locations-0-hours_of_operation-0-id" id="id_locations-0-hours_of_operation-0-id">
+                            <input type="hidden" name="locations-0-hours_of_operation-0-location"  id="id_locations-0-hours_of_operation-0-location">
+                            </td>
+
+                            <td class="field-day">
+                            <select title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly">
+                                <option value="" selected="selected">---------</option>
+                                <option value="0">Sun</option>
+                                <option value="1">Mon</option>
+                                <option value="2">Tue</option>
+                                <option value="3">Wed</option>
+                                <option value="4">Thur</option>
+                                <option value="5">Fri</option>
+                                <option value="6">Sat</option>
+                            </select>
+                            <input type="hidden"
+                                name="locations-0-hours_of_operation-0-day"
+                                id="id_locations-0-hours_of_operation-0-day" value=""/></td>
+
+                            <td class="field-open_time">
+                            <input title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly" value="09:00:00" type="text" size="8"/>
+                            <input type="hidden" name="locations-0-hours_of_operation-0-open_time" value="09:00:00" id="id_locations-0-hours_of_operation-0-open_time"/>
+                            </td>
+
+                            <td class="field-close_time">
+                            <input title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly" value="17:00:00" type="text" size="8">
+                            <input name="locations-0-hours_of_operation-0-close_time" value="17:00:00" type="hidden" id="id_locations-0-hours_of_operation-0-close_time">
+                            </td>
+
+                            <td class="delete"></td>
+
+                        </tr>
+                        <tr class="form-row row1  empty-form locations-0-hours_of_operation-not-nested " id="locations-0-hours_of_operation-empty">
+                            <td class="original">
+                            <input type="hidden" name="locations-0-hours_of_operation-__prefix__-id" id="id_locations-0-hours_of_operation-__prefix__-id">
+                            <input type="hidden" name="locations-0-hours_of_operation-__prefix__-location"  id="id_locations-0-hours_of_operation-__prefix__-location">
+                            </td>
+
+                            <td class="field-day">
+                            <select  title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly">
+                                <option value="" selected="selected">---------</option>
+                                <option value="0">Sun</option>
+                                <option value="1">Mon</option>
+                                <option value="2">Tue</option>
+                                <option value="3">Wed</option>
+                                <option value="4">Thur</option>
+                                <option value="5">Fri</option>
+                                <option value="6">Sat</option>
+                            </select>
+                            <input type="hidden" name="locations-0-hours_of_operation-__prefix__-day" id="id_locations-0-hours_of_operation-__prefix__-day" value=""/></td>
+                            <td class="field-open_time">
+                            <input title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly" value="09:00:00" type="text" size="8"/>
+                            <input  name="locations-0-hours_of_operation-__prefix__-open_time" value="09:00:00"  type="hidden" id="id_locations-0-hours_of_operation-__prefix__-open_time"/>
+                            </td>
+
+                            <td class="field-close_time">
+                            <input title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly" value="17:00:00"  type="text" size="8" />
+                            <input name="locations-0-hours_of_operation-__prefix__-close_time" value="17:00:00" type="hidden" id="id_locations-0-hours_of_operation-__prefix__-close_time"  />
+                            </td>
+
+                            <td class="delete"></td>
+
+                        </tr>
+
+                        <tr class="add-row">
+                            <td colspan="5"><a href="javascript:void(0)">Add another Hours Of Operation</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+    <div class="inline-group locations-nested-inline nested-inline empty-form"
+        id="locations-0-contacts-group-sample">
+
+        <div class="tabular inline-related nolinks last-related">
+            <input type="hidden" name="locations-0-contacts-TOTAL_FORMS" value="0" id="id_locations-0-contacts-TOTAL_FORMS" autocomplete="off">
+            <input type="hidden" name="locations-0-contacts-INITIAL_FORMS" value="0" id="id_locations-0-contacts-INITIAL_FORMS">
+            <input type="hidden" name="locations-0-contacts-MAX_NUM_FORMS" id="id_locations-0-contacts-MAX_NUM_FORMS">
+            <fieldset class="module">
+                <h2>Location contacts</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+
+                            <th colspan="2">Contact name </th>
+
+                            <th>Contact position </th>
+
+                            <th>Contact email </th>
+
+                            <th>Delete?</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr class="form-row row1  locations-0-contacts-not-nested  dynamic-locations-0-contacts" id="locations-0-contacts-0">
+                            <td class="original">
+                            <input type="hidden" name="locations-0-contacts-0-id" id="id_locations-0-contacts-0-id">
+                            <input type="hidden" name="locations-0-contacts-0-location" id="id_locations-0-contacts-0-location">
+                            </td>
+
+                            <td class="field-contact_name">
+                            <input title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly" type="text" class="vTextField"  maxlength="255" />
+                            <input id="id_locations-0-contacts-0-contact_name" type="hidden" name="locations-0-contacts-0-contact_name" />
+                            </td>
+
+                            <td class="field-contact_position">
+                            <input title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly" type="text" class="vTextField" maxlength="255" />
+                            <input  id="id_locations-0-contacts-0-contact_position" type="hidden" name="locations-0-contacts-0-contact_position"  />
+                            </td>
+
+                            <td class="field-contact_email">
+                            <input title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly" type="text" class="vTextField" maxlength="255" />
+                            <input id="id_locations-0-contacts-0-contact_email" type="hidden" name="locations-0-contacts-0-contact_email" />
+                            </td>
+
+                            <td class="delete"></td>
+
+                        </tr>
+
+                        <tr class="form-row row2  empty-form locations-0-contacts-not-nested " id="locations-0-contacts-empty">
+                            <td class="original">
+                            <input type="hidden" name="locations-0-contacts-__prefix__-id" id="id_locations-0-contacts-__prefix__-id">
+                            <input type="hidden" name="locations-0-contacts-__prefix__-location"  id="id_locations-0-contacts-__prefix__-location">
+                            </td>
+
+                            <td class="field-contact_name">
+                            <input title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly"  type="text" class="vTextField"  maxlength="255" />
+                            <input id="id_locations-0-contacts-__prefix__-contact_name" type="hidden" name="locations-0-contacts-__prefix__-contact_name"  />
+                            </td>
+
+                            <td class="field-contact_position">
+                            <input title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly" type="text" class="vTextField" maxlength="255" />
+                            <input id="id_locations-0-contacts-__prefix__-contact_position" type="hidden" name="locations-0-contacts-__prefix__-contact_position" />
+                            </td>
+
+                            <td class="field-contact_email">
+                            <input title="Please click 'Save and continue editing to be able to add Hours of Operations and Contacts'" disabled="disabled" readonly="readonly" type="text" class="vTextField" maxlength="255" />
+                            <input id="id_locations-0-contacts-__prefix__-contact_email" type="hidden"  name="locations-0-contacts-__prefix__-contact_email" />
+                            </td>
+
+                            <td class="delete"></td>
+
+                        </tr>
+
+                        <tr class="add-row">
+                            <td colspan="5"><a href="javascript:void(0)">Add another Location Contact</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}

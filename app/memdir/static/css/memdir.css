@@ -98,8 +98,22 @@ div.submit-row {
     float:left;
     margin: 0 10px;
 }
-
-#frp-locations .dynamic-locations>.locations-nested-inline:nth-child(9) {
+.nested-inline-bottom-border {
+    clear:both;
+}
+#frp-locations .dynamic-locations>.locations-nested-inline:nth-child(9),
+#frp-locations .dynamic-locations>.locations-nested-inline:nth-child(8) {
     float: none;
     clear:both;
+}
+
+#locations-group>.add-row {
+    clear: both;
+}
+#locations-group>h2 {
+    display: none;
+}
+
+.nolinks a {
+   display: none;
 }

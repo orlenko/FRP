@@ -2,6 +2,7 @@ from django.views.generic import DetailView, ListView
 from django.http import HttpResponse
 import os
 import time
+import datetime
 
 from memdir import models
 from appy.pod.renderer import Renderer
@@ -21,6 +22,7 @@ class MemberDirectoryArchiveView(ListView):
     model = models.Member
     template_name = "memdir/region_list.html"
 member_directory_view = MemberDirectoryArchiveView.as_view()
+
 
 class RegionContextView(MemberDirectoryView):
     """
@@ -103,6 +105,7 @@ def report_pdf(request, report_type, member_id, extra_data={}):
             member = models.Member.objects.get(pk=int(member_id))
         #members = models.Member.objects.all()
         timestr = time.ctime()
+        year = datetime.datetime.now().year
 
         # Generate the file
         dirname = os.path.abspath(os.path.dirname(__file__))

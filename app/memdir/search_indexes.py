@@ -11,4 +11,4 @@ class MemberIndex(indexes.SearchIndex, indexes.Indexable):
 
     def index_queryset(self):
         """ Used when entire index is updated """
-        return self.get_model().objects.all()
+        return self.get_model().objects.filter(is_frp_member=True)

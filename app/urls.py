@@ -18,8 +18,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'testproject.views.home', name='home'),
     # url(r'^testproject/', include('testproject.foo.urls')),
 
-    #(r'^api/v1/', include('fiber.api.urls')),
     url(r'^databrowse/(.*)', login_required(databrowse.site.root)),
+    (r'^api/v2/', include('fiber.rest_api.urls')),
     (r'^admin/fiber/', include('fiber.admin_urls')),
     (r'^jsi18n/$', 'django.views.i18n.javascript_catalog', {'packages': ('fiber',),}),
 

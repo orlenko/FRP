@@ -1,4 +1,5 @@
 {% extends "memdir/base.html" %}
+{% load fiber_tags %}
 {% block mapjs %}
 <script type="text/javascript">
       var map;
@@ -95,48 +96,69 @@
 {% endblock %}
 
 {% block content %}
-	<h2>Search with Map</h2>
-	<div id="map_canvas" style="width: 680px; height: 350px;">
-		<!-- GMap ends up here -->
+    <div class="grid_14" style="padding-bottom: 20px;">
+        {% show_page_content "intro" %}
+        <form name='searchbox' type='submit' method='get' action="/search/">
+            {% csrf_token %}
+            <input type='submit' name='submit' value='Search'
+                class='form_button_big' lang="en" />
+            <input type='search' class='form_textbox_big' name='q' placeholder=""
+                style="width:800px;"/>
+            <input class='hidden' type='checkbox' value='memdir.member'
+            checked='checked'   name='models' style='visibility:hidden;'>
+            <input class='hidden' type='checkbox' value='news.post'
+            checked='checked'   name='models' style='visibility:hidden;'>
+            <input class='hidden' type='checkbox' value='news.event'
+            checked='checked'   name='models' style='visibility:hidden;'>
+        </form>
+    </div>
+
+    <div class="grid_9">
+    	<div id="map_canvas" style="width: 610px; height: 350px;">
+    		<!-- GMap ends up here -->
+    	</div>
 	</div>
+	<div class="grid_5">
+	    <div style="">
+            <ul class="regionlist">
+                <li><a href="{% url 'northern_dir' %}">Northern</a></li>
+                <li><a href="{% url 'vancoast_dir' %}">Vancouver Coastal</a></li>
+                <li><a href="{% url 'interior_dir' %}">Interior</a></li>
+                <li><a href="{% url 'vanisle_dir' %}">Vancouver Island</a></li>
+                <li><a href="{% url 'fraser_dir' %}">Fraser Valley</a></li>
+                <li><a href="{% url 'other_dir' %}">Other</a></li>
+                {% if user.is_superuser %}
+                    <li><a href="{% url 'unknown_dir' %}">Uncategorized</a></li>
+                {% endif %}
+            </ul>
+        </div>
+	</div>
+    <!--<div class="grid_5">
+        <div style=""><img src="{{ STATIC_URL }}img/map-directory.gif" border="0" usemap="#Map2"/>
 
-	<h3>View by Region</h3>
-<div class="grid_5 alpha"><img src="{{ STATIC_URL }}img/map-directory.gif" border="0" usemap="#Map2"/>
+        		<map name="Map2"><area shape="rect" coords="201,281,229,305"
+        									href="{% url 'fraser_dir' %}" alt="Fraser Valley"><area
+        									shape="rect" coords="176,265,201,290"
+        									href="{% url 'other_dir' %}" alt="Other Regions">
 
-		<map name="Map2"><area shape="rect" coords="201,281,229,305"
-									href="{% url 'fraser_dir' %}" alt="Fraser Valley"><area
-									shape="rect" coords="176,265,201,290"
-									href="{% url 'other_dir' %}" alt="Other Regions">
+        									<area shape="poly" coords="81,169,15,13,179,33,245,43,259,218,180,196"
+        									href="{% url 'northern_dir' %}" alt="Northern">
 
-									<area shape="poly" coords="81,169,15,13,179,33,245,43,259,218,180,196"
-									href="{% url 'northern_dir' %}" alt="Northern">
+        									<area shape="rect" coords="126,198,171,232"
+        									href="{% url 'other_dir' %}" alt="Other Regions">
 
-									<area shape="rect" coords="126,198,171,232"
-									href="{% url 'other_dir' %}" alt="Other Regions">
+                          <area shape="poly" coords="184,212" href="#">
 
-                  <area shape="poly" coords="184,212" href="#">
+                          <area shape="poly"
+        									coords="182,205,280,226,324,293,252,297,184,248"
+        									href="{% url 'interior_dir' %}" alt="Interior">
 
-                  <area shape="poly"
-									coords="182,205,280,226,324,293,252,297,184,248"
-									href="{% url 'interior_dir' %}" alt="Interior">
+        									<area shape="poly" coords="160,236,188,261,171,273,173,288,191,302,197,311,182,313,170,306,151,284,128,257"
+        									href="{% url 'vanisle_dir' %}" alt="Vancouver Island">
 
-									<area shape="poly" coords="160,236,188,261,171,273,173,288,191,302,197,311,182,313,170,306,151,284,128,257"
-									href="{% url 'vanisle_dir' %}" alt="Vancouver Island">
+                        </map>
 
-                </map>
+        </div>
+    </div>-->
 
-            </div>
-<div class="grid_4 omega">
-	<ul class="regionlist">
-		<li><a href="{% url 'northern_dir' %}">Northern</a></li>
-		<li><a href="{% url 'vancoast_dir' %}">Vancouver Coastal</a></li>
-		<li><a href="{% url 'interior_dir' %}">Interior</a></li>
-		<li><a href="{% url 'vanisle_dir' %}">Vancouver Island</a></li>
-		<li><a href="{% url 'fraser_dir' %}">Fraser Valley</a></li>
-		<li><a href="{% url 'other_dir' %}">Other</a></li>
-		{% if user.is_superuser %}
-			<li><a href="{% url 'unknown_dir' %}">Uncategorized</a></li>
-		{% endif %}
-	</ul>
-</div>
 {% endblock %}
