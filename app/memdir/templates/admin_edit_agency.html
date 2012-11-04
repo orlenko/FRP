@@ -55,7 +55,7 @@
     <div id="reports">
         <h2>Download Reports:</h2>
         <ol>
-            <li><a href="/dir/report/membership-renewal-form/{{ adminform.form.instance.pk }}/">Membership Form</a></li>
+            <li><a href="{% url 'report' 'membership-renewal-form' adminform.form.instance.pk %}/">Membership Form</a></li>
         </ol>
     </div>
 </div>

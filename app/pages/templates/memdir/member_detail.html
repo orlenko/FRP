@@ -3,6 +3,16 @@
 {% load easy_maps_tags cache %}
 
 {% block content %}
+
+
+ <div class="breadcrumbs grid_15">
+     <ul>
+     <li><a href="{% url 'region' member.region %}">&laquo; Back to {{member.get_region_display}}</a></li>
+     <li><a href="{% url 'community' member.community %}">Back to {{ member.get_community_display }}</a></li>
+     </ul>
+ </div>
+
+
 	<div id="member-detail-info" class="alpha grid_4">
 		<h2 class='member-agency'>{{ member.agency }}</h2>
 		<p class='member-description'>{% autoescape off %}{{ member.description }}{% endautoescape %}</p>
@@ -23,10 +33,41 @@
     <div class="grid_4 admin-info">
 			<p class='member-number'><b>System member number: </b>{{ member.memnum }}</p>
 			<p class='member-renewal'><b>Member renewal date: </b>{{ member.renewal_date }}</p>
-
 		</div>
     {% else %}
 	    <div class="prepend_4 suffix_8 alpha omega"></div>
     {% endif %}
+
  <div class="clear"></div>
+
+    <h3>FRP Program Locations</h3>
+    {% for location in member.locations.all %}
+        <div class="alpha grid_6">
+            <h4 class='member-agency'>{{ location.frp_program_name }}</h4>
+            <p class='member-full-address'><i>Address</i><br />{{ location.address }}</p>
+            <p class='member-phone-number'><i>Phone Number</i><br />{{ location.phone }}</p>
+            <p class='member-website'><i>Website:</i><br /><a href="{{ location.website   }}">{{ location.website }}</a></p>
+            <p>
+                <i>Hours:</i>
+                <table>
+                {% for d in location.days_of_operations %}
+                    {% if d.formatted_hours %}
+                    <tr>
+                        <th>{{ d.name }}:</th>
+                        <td>{{ d.formatted_hours }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+                </table>
+            </p>
+        </div>
+        <div class='grid_6 member-geo-address-map'>
+            {% cache 600 my_map location.address %}
+                {% easy_map location.address 520 350 13 %}
+            {% endcache %}
+        </div>
+
+        <div class="clear"></div>
+    {% endfor %}
+
 {% endblock %}

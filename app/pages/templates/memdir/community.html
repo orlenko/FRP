@@ -1,0 +1,34 @@
+{% extends "memdir/base.html" %}
+{% load easy_maps_tags cache %}
+{% load pagination_tags %}
+
+{% block content %}
+
+ <div class="breadcrumbs grid_15">
+     <ul>
+     <li><a href="{% url 'region' region %}">&laquo; Back to {{region_name}}</a></li>
+     </ul>
+ </div>
+
+ <div class="subnav grid_14 prefix_1">
+     <ul>
+         {% for community in communities %}
+            <li><a href="{% url 'community' community %}">{{community}}</a></li>
+         {% endfor %}
+     </ul>
+ </div>
+ <h2>{{community}}</h2>
+ <div class="grid_15">
+    {% autopaginate object_list %}
+    {% paginate %}
+        <ul>
+            {% for member in object_list %}
+                <li>
+                    <b class='member-agency'><a href="{{ member.get_absolute_url }}">{{ member.agency }}</a></b>
+                    <p class="member-description">{% autoescape off %}{{ member.description }}{% endautoescape %}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% paginate %}
+ </div>
+{% endblock %}

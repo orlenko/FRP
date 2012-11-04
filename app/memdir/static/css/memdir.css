@@ -117,3 +117,80 @@ div.submit-row {
 .nolinks a {
    display: none;
 }
+
+/*.breadcrumbs ul {
+    list-style: none;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.breadcrumbs ul li {
+   list-style: none;
+   display: inline-block;
+   padding: 5px 10px;
+   margin: 0;
+   color: #666;
+   font-weight: bold;
+}
+
+.breadcrumbs ul li a {
+  color: #666;
+}*/
+
+.breadcrumbs ul {
+    margin-bottom: 70px;
+}
+
+.breadcrumbs ul li {
+    float: left;
+    display: inline;
+    padding: 0 9px;
+}
+
+.breadcrumbs ul li a {
+    font-size: 16px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
+.breadcrumbs ul li a:hover, .breadcrumbs ul li.current a {
+    color: #f30;
+}
+
+.breadcrumbs ul li {
+    float: left;
+    display: block;
+    padding: 0 9px;
+}
+
+.breadcrumbs:after {
+    clear: both;
+}
+
+
+.subnav ul {
+    list-style: none;
+    margin: 20px 10px;
+    padding: 0;
+}
+
+.subnav ul li {
+   list-style: none;
+   display: inline-block;
+   padding: 5px 10px;
+   margin: 0;
+   border-left: 1px solid #999;
+}
+
+.subnav ul li:first-child {
+   border-left: none;
+}
+
+.subnav ul li a {
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.subnav:after {
+    clear: both;
+}

@@ -1,0 +1,60 @@
+{% extends "memdir/base.html" %}
+{% load easy_maps_tags cache %}
+{% load fiber_tags %}
+{% load memdir_tags %}
+
+{% block content %}
+    <div id="hozregionlist" class="suffix_4 grid_12">
+        <ul>
+            {% for region in regions %}
+                <li><a href="{% url 'region' region %}">{{region|region_name}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <h2>{{ region_name }}</h2>
+    <div class="grid_7">
+        <img src="{{ STATIC_URL }}img/map-directory.gif" border="0" usemap="#Map2"/>
+        <map name="Map2"><area shape="rect" coords="201,281,229,305"
+                            href="{% url 'region' 'fraservalley' %}" alt="Fraser Valley"><area
+                            shape="rect" coords="176,265,201,290"
+                            href="{% url 'region' 'other' %}" alt="Other Regions">
+
+                            <area shape="poly" coords="81,169,15,13,179,33,245,43,259,218,180,196"
+                            href="{% url 'region' 'northern' %}" alt="Northern">
+
+                            <area shape="rect" coords="126,198,171,232"
+                            href="{% url 'region' 'other' %}" alt="Other Regions">
+
+          <area shape="poly" coords="184,212" href="#">
+
+          <area shape="poly"
+                            coords="182,205,280,226,324,293,252,297,184,248"
+                            href="{% url 'region' 'interior' %}" alt="Interior">
+
+                            <area shape="poly" coords="160,236,188,261,171,273,173,288,191,302,197,311,182,313,170,306,151,284,128,257"
+                            href="{% url 'region' 'vanisle' %}" alt="Vancouver Island">
+
+        </map>
+    </div>
+    <div class="grid_7">
+        <div>
+            {% show_page_content "intro" %}
+        </div>
+        <h4>Communities Available in {{ region_name }}:</h4>
+        <ul class="communities">
+            {% for community in communities %}
+                <li><a href="{% url 'community' community %}">{{ community }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="grid_15">
+
+        <a href="{% url 'report_region' region %}" style="line-height: 40px;">
+            <img src="/static/img/download.png" alt="Download the complete list of FRPs in this region (PDF)" style="float:left;">
+            Download the complete list of FRPs in this region (PDF)
+        </a>
+    </div>
+
+
+{% endblock %}

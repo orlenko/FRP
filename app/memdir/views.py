@@ -1,4 +1,4 @@
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, TemplateView
 from django.http import HttpResponse
 import os
 import time
@@ -21,78 +21,68 @@ class MemberDirectoryArchiveView(ListView):
     queryset = models.Member.objects.filter(is_frp_member=True)
     model = models.Member
     template_name = "memdir/region_list.html"
-member_directory_view = MemberDirectoryArchiveView.as_view()
-
-
-class RegionContextView(MemberDirectoryView):
-    """
-        Branched from: https://raw.github.com/gregplaysguitar/django-baseclasses/master/baseclasses/views.py
-    """
-    ##context_object_name = "region"
-    extra_context = {}
 
     def get_context_data(self, **kwargs):
-        context = super(RegionContextView, self).get_context_data(**kwargs)
-        context.update(self.extra_context)
+        object_list = kwargs['object_list']
+        context = super(MemberDirectoryArchiveView, self).get_context_data(**kwargs)
+        log.info('Object list: %s' % object_list)
+        regions = sorted(list(set([memb.region for memb in object_list])))
+        log.info('Regions: %s' % regions)
+        context['regions'] = regions
         return context
 
-# Region Directories
-class NorthernDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='northern', is_frp_member=True)
-northern_directory = NorthernDirectory.as_view(extra_context=dict(
-        region="Northern",
-        region_id='northern',
-    ))
 
-class OtherDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='other', is_frp_member=True)
-other_directory = OtherDirectory.as_view(extra_context=dict(
-        region="Other",
-        region_id='other',
-    ))
+member_directory_view = MemberDirectoryArchiveView.as_view()
 
-class FraserDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='fraservalley', is_frp_member=True)
-fraser_directory = FraserDirectory.as_view(extra_context=dict(
-        region="Fraser Valley",
-        region_id='fraservalley',
-    ))
-
-class InteriorDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='interior', is_frp_member=True)
-interior_directory = InteriorDirectory.as_view(extra_context=dict(
-        region="Interior BC",
-        region_id='interior',
-    ))
-
-class VancoastDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='vancoast', is_frp_member=True)
-vancoast_directory = VancoastDirectory.as_view(extra_context=dict(
-        region="Vancouver Coast",
-        region_id='vancoast',
-    ))
-
-class VanisleDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='vanisle', is_frp_member=True)
-vanisle_directory = VanisleDirectory.as_view(extra_context=dict(
-        region="Vancouver Island",
-        region_id='vanisle',
-    ))
-
-class UnknownDirectory(RegionContextView):
-    queryset = models.Member.objects.filter(region='unknown', is_frp_member=True)
-unknown_directory = UnknownDirectory.as_view(extra_context=dict(
-        region="Unknown",
-        region_id='unknown',
-    ))
-
-# Detail view
 
 class MemberDetailView(DetailView):
     queryset = models.Member.objects.filter(is_frp_member=True)
     model = models.Member
     extra_context = "member"
 member_detail_view = MemberDetailView.as_view()
+
+
+class RegionView(TemplateView):
+    template_name = 'memdir/region.html'
+
+    def get_context_data(self, **kwargs):
+        region = self.args[0]
+        log.info('Looking for region %s' % region)
+        context = super(RegionView, self).get_context_data(**kwargs)
+        all_members = models.Member.objects.filter(is_frp_member=True)
+        regions = sorted(list(set([memb.region for memb in all_members])))
+        members = list(models.Member.objects.filter(region=region, is_frp_member=True).order_by('agency'))
+        communities = sorted(list(set([memb.community for memb in members])))
+        context['region'] = region
+        context['regions'] = regions
+        context['region_name'] = dict(models.Member.REGION_CHOICES)[region]
+        context['communities'] = communities
+        context['members'] = members
+        return context
+
+
+class CommunityView(ListView):
+    template_name = 'memdir/community.html'
+
+    def get_queryset(self):
+        community = self.args[0]
+        return list(models.Member.objects.filter(community=community, is_frp_member=True).order_by('agency'))
+
+    def get_context_data(self, **kwargs):
+        object_list = kwargs['object_list']
+        community = self.args[0]
+        context = super(CommunityView, self).get_context_data(**kwargs)
+        members = object_list
+        context['community'] = community
+        context['members'] = members
+        if members:
+            region = members[0].region
+            context['region'] = region
+            context['region_name'] = dict(models.Member.REGION_CHOICES)[region]
+            region_members = list(models.Member.objects.filter(region=region, is_frp_member=True).order_by('agency'))
+            communities = sorted(list(set([memb.community for memb in region_members])))
+            context['communities'] = communities
+        return context
 
 
 # Download reports
@@ -154,3 +144,4 @@ def report_region_pdf(request, region):
         couple.append(None)
         rowcouples.append(couple)
     return report_pdf(request, 'provincial-listing', 0, locals())
+

@@ -1,6 +1,7 @@
 {% extends "memdir/base.html" %}
 {% load easy_maps_tags cache %}
 {% load pagination_tags %}
+{% load memdir_tags %}
 
 {% block mapjs %}
 <script type="text/javascript">
@@ -105,15 +106,9 @@
 
 	<div id="hozregionlist" class="suffix_4 grid_12">
 		<ul>
-			<li><a href="{% url 'northern_dir' %}">Northern</a></li>
-			<li><a href="{% url 'vancoast_dir' %}">Vancouver Coastal</a></li>
-			<li><a href="{% url 'fraser_dir' %}">Fraser Valley</a></li>
-			<li><a href="{% url 'interior_dir' %}">Interior</a></li>
-			<li><a href="{% url 'vanisle_dir' %}">Vancouver Island</a></li>
-			<li><a href="{% url 'other_dir' %}">Other Regions</a></li>
-		{% if user.is_superuser %}
-			<li><a href="{% url 'unknown_dir' %}">Uncategorized</a></li>
-		{% endif %}
+            {% for region in regions %}
+                <li><a href="{% url 'region' region %}"">{{region|region_name}}</a></li>
+            {% endfor %}
 		</ul>
 	</div>
 	<br />
