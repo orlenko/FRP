@@ -38,7 +38,7 @@
 	<div class="clear"></div>
     {% if user.is_superuser %}
     <div class="grid_4 admin-info">
-			<p class='member-number'><b>System member number: </b>{{ member.memnum }}</p>
+			<p class='member-number'><a title="Click to open in back-end" href="/admin/memdir/member/{{ member.id }}/"><b>System member number: </b>{{ member.memnum }}</a></p>
 			<p class='member-renewal'><b>Member renewal date: </b>{{ member.renewal_date }}</p>
 		</div>
     {% else %}
