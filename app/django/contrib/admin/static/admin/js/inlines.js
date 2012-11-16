@@ -326,8 +326,9 @@
         new_form = template_form.clone().removeClass(options.emptyCssClass).addClass("dynamic-" + formset_prefix);
         new_form.insertBefore(template_form);
         // Update Form Properties
-        template.find('#id_' + formset_prefix + '-TOTAL_FORMS').val(1);
         update_props(template, normalized_formset_prefix, formset_prefix);
+        template.find('#id_' + formset_prefix + '-TOTAL_FORMS').val(1);
+        template.find('#id_' + formset_prefix + '-INITIAL_FORMS').val(0);
         var add_text = template.find('.add-row').text();
         template.find('.add-row').remove();
         template.find('.tabular.inline-related tbody tr.' + formset_prefix + '-not-nested').tabularFormset({
