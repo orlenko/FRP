@@ -12,22 +12,29 @@
      </ul>
  </div>
 
+    <div class="grid_8">
+        <h2 class='member-agency'>{{ member.agency }}</h2>
+    </div>
 
-	<div id="member-detail-info" class="alpha grid_4">
-		<h2 class='member-agency'>{{ member.agency }}</h2>
-		<p class='member-description'>{% autoescape off %}{{ member.description }}{% endautoescape %}</p>
-		<p class='member-full-address'><i>Address</i><br />{{ member.address }}</p>
-		<p class='member-phone-number'><i>Phone Number</i><br />{{ member.phone }}</p>
-		<p class='member-website'><i>Website:</i><br /><a href="{{ member.website	}}">{{ member.website }}</a></p>
-	</div>
-	<div id="membermap" class='grid_4 member-geo-address-map'>
-		{% cache 600 my_map member.address %}
-			{% easy_map member.address 420 250 13 %}
-		{% endcache %}
-	</div>
+    {% comment %}
+    	<div id="member-detail-info" class="alpha grid_4">
+    		<h2 class='member-agency'>{{ member.agency }}</h2>
+    		<p class='member-description'>{% autoescape off %}{{ member.description }}{% endautoescape %}</p>
+    		<p class='member-full-address'><i>Address</i><br />{{ member.address }}</p>
+    		<p class='member-phone-number'><i>Phone Number</i><br />{{ member.phone }}</p>
+    		<p class='member-website'><i>Website:</i><br /><a href="{{ member.website	}}">{{ member.website }}</a></p>
+    	</div>
+    	<div id="membermap" class='grid_4 member-geo-address-map'>
+    		{% cache 600 my_map member.address %}
+    			{% easy_map member.address 420 250 13 %}
+    		{% endcache %}
+    	</div>
+	{% endcomment %}
+
 	<div class="grid_4 omega">
 		{% show_page_content "aside" %}
 	</div>
+
 	<div class="clear"></div>
     {% if user.is_superuser %}
     <div class="grid_4 admin-info">
@@ -42,7 +49,7 @@
 
     <h3>FRP Program Locations</h3>
     {% for location in member.locations.all %}
-        <div class="alpha grid_6">
+        <div class="alpha grid_4">
             <h4 class='member-agency'>{{ location.frp_program_name }}</h4>
             <p class='member-full-address'><i>Address</i><br />{{ location.address }}</p>
             <p class='member-phone-number'><i>Phone Number</i><br />{{ location.phone }}</p>
@@ -61,9 +68,9 @@
                 </table>
             </p>
         </div>
-        <div class='grid_6 member-geo-address-map'>
+        <div class='grid_4 member-geo-address-map'>
             {% cache 600 my_map location.address %}
-                {% easy_map location.address 520 350 13 %}
+                {% easy_map location.address 420 250 13 %}
             {% endcache %}
         </div>
 
