@@ -17,11 +17,14 @@ class InlineContact(admin.TabularInline):
 class InlineLocation(admin.StackedInline):
     model = models.Location
     inlines = [InlineHours, InlineContact,]
+    readonly_fields = ['slug']
     extra = 0
     fieldsets = (
         (None, {
             'fields': (
                 'frp_program_name',
+                'region',
+                'community',
                 'street',
                 'city',
                 'province',
@@ -48,14 +51,13 @@ class MemberAdmin(admin.ModelAdmin):
     form = forms.MemberAdminForm
     actions_on_top = True
     actions_on_bottom = True
-    list_display = ('agency', 'renewal_date', 'region', 'memnum')
+    list_display = ('agency', 'is_frp_member', 'renewal_date', 'memnum')
     search_fields = ('agency',)
-    list_filter = ('region', 'renewal_date',)
+    list_filter = ('is_frp_member', 'renewal_date',)
     date_hierarchy = 'renewal_date'
     ordering = ('agency',)
     change_form_template = 'admin_edit_agency2.html'
     inlines = [InlineLocation,]
-    readonly_fields = ['slug']
     save_on_top = True
     fieldsets = (
         (None, {
@@ -68,8 +70,6 @@ class MemberAdmin(admin.ModelAdmin):
                 'phone',
                 'fax',
                 'website',
-                'region',
-                'community',
                 'join_date',
                 'updated',
                 'notes',
@@ -119,7 +119,7 @@ class MemberAdmin(admin.ModelAdmin):
 
 
 class LocationAdmin(admin.ModelAdmin):
-    pass
+    readonly_fields = ['slug']
 
 admin.site.register(models.Member, MemberAdmin)
 admin.site.register(models.Location, LocationAdmin)

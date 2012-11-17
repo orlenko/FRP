@@ -97,19 +97,20 @@ class MailingAddressMixin(models.Model):
         return self.geo_mailing_address
 
 
+REGION_CHOICES = (
+    ('other', _("Other")),
+    ('fraservalley', _("Fraser Valley")),
+    ('interior', _("Interior")),
+    ('vancoast', _("Vancouver Coastal")),
+    ('vanisle', _("Vancouver Island")),
+    ('northern', _("Northern")),
+    ('unknown', _("Unknown")),
+)
+
+COMMUNITY_CHOICES = zip(BC_COMMUNITIES, BC_COMMUNITIES)
+
+
 class Member(AddressMixin, MailingAddressMixin):
-
-    REGION_CHOICES = (
-        ('other', _("Other")),
-        ('fraservalley', _("Fraser Valley")),
-        ('interior', _("Interior")),
-        ('vancoast', _("Vancouver Coastal")),
-        ('vanisle', _("Vancouver Island")),
-        ('northern', _("Northern")),
-        ('unknown', _("Unknown")),
-    )
-
-    COMMUNITY_CHOICES = zip(BC_COMMUNITIES, BC_COMMUNITIES)
 
     MEMBERSHIP_CHOICES = (
         ('joint', _('Joint Member')),
@@ -123,10 +124,6 @@ class Member(AddressMixin, MailingAddressMixin):
     phone = models.CharField(_("Agency Phone Number"), max_length=100, blank=True, null=True)
     fax = models.CharField(_("Agency Fax Number"), max_length=100, blank=True, null=True)
     website = models.URLField(_("Website"), blank=True)
-    region = models.CharField(choices=REGION_CHOICES, max_length=12, default='fraservalley')
-    community = models.CharField(choices=COMMUNITY_CHOICES,
-                                 max_length=255,
-                                 default='Vancouver (City)')
 
     # Mailing Address fields are inherited from MailingAddressMixin
 
@@ -143,7 +140,6 @@ class Member(AddressMixin, MailingAddressMixin):
                                        choices=MEMBERSHIP_CHOICES,
                                        default='joint',
                                        max_length=255)
-
     # Advanced fields
     fee = models.DecimalField(_("FRP Fee"), max_digits=9,
             decimal_places=2, blank=True, null=True)
@@ -157,10 +153,6 @@ class Member(AddressMixin, MailingAddressMixin):
     # Auto-updated fields
     join_date = models.DateField(_("FRP Member Since"), null=True)
     updated = models.DateField(_("Updated"))
-    slug = models.SlugField(_("URL-friendly name"),
-        max_length=255,
-        unique=True,
-        help_text=_("The slug must be a unique URL identifier."))
     is_frp_member = models.BooleanField(default=False)
 
     @property
@@ -187,13 +179,7 @@ class Member(AddressMixin, MailingAddressMixin):
     def __unicode__(self):
         return self.agency
 
-    @models.permalink
-    def get_absolute_url(self):
-        return ('member_view', [str(self.slug)],)
-
     def save(self, *args, **kwargs):
-        slugstr = "%s %s" % (self.agency, self.region)
-        unique_slugify(self, slugstr)
         self.updated = datetime.datetime.now()
         self.is_frp_member = self.is_frp
         super(Member, self).save(*args, **kwargs)
@@ -210,6 +196,28 @@ class Location(AddressMixin, MailingAddressMixin):
     phone = models.CharField(max_length=255, null=True, blank=True)
     fax = models.CharField(max_length=255, null=True, blank=True)
     website = models.URLField(_("Website"), blank=True, null=True)
+
+    region = models.CharField(choices=REGION_CHOICES, max_length=12, default='fraservalley')
+    community = models.CharField(choices=COMMUNITY_CHOICES,
+                                 max_length=255,
+                                 default='Vancouver (City)')
+    slug = models.SlugField(_("URL-friendly name"),
+        max_length=255,
+        unique=True,
+        help_text=_("The slug must be a unique URL identifier."))
+
+    @property
+    def name(self):
+        return self.frp_program_name
+
+    @property
+    def description(self):
+        parts = []
+        if self.member.agency != self.frp_program_name:
+            parts.append(self.member.agency)
+        if self.member.description:
+            parts.append(self.member.description)
+        return ': '.join(parts)
 
     def __unicode__(self):
         return str(self.frp_program_name)
@@ -245,6 +253,15 @@ class Location(AddressMixin, MailingAddressMixin):
             d.formatted_hours = ', '.join(parts)
             retval.append(d)
         return retval
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('location_view', [str(self.slug)],)
+
+    def save(self, *args, **kwargs):
+        slugstr = "%s %s" % (self.frp_program_name, self.region)
+        unique_slugify(self, slugstr)
+        super(Location, self).save(*args, **kwargs)
 
 
 class DayHours(object):

@@ -22,10 +22,10 @@
     {% autopaginate object_list %}
     {% paginate %}
         <ul>
-            {% for member in object_list %}
+            {% for location in object_list %}
                 <li>
-                    <b class='member-agency'><a href="{{ member.get_absolute_url }}">{{ member.agency }}</a></b>
-                    <p class="member-description">{% autoescape off %}{{ member.description }}{% endautoescape %}</p>
+                    <b class='member-agency'><a href="{{ location.get_absolute_url }}">{{ location.name }}</a></b>
+                    <p class="member-description">{% autoescape off %}{{ location.description }}{% endautoescape %}</p>
                 </li>
             {% endfor %}
         </ul>

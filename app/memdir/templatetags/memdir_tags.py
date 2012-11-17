@@ -7,4 +7,4 @@ register = template.Library()
 
 @register.filter
 def region_name(region):
-    return dict(models.Member.REGION_CHOICES)[region]
+    return dict(models.REGION_CHOICES)[region]

@@ -17,29 +17,29 @@ class MemberDirectoryView(ListView):
     queryset = models.Member.objects.filter(is_frp_member=True)
     model = models.Member
 
-class MemberDirectoryArchiveView(ListView):
-    queryset = models.Member.objects.filter(is_frp_member=True)
+class LocationDirectoryArchiveView(ListView):
+    queryset = models.Location.objects.all()
     model = models.Member
     template_name = "memdir/region_list.html"
 
     def get_context_data(self, **kwargs):
         object_list = kwargs['object_list']
-        context = super(MemberDirectoryArchiveView, self).get_context_data(**kwargs)
+        context = super(LocationDirectoryArchiveView, self).get_context_data(**kwargs)
         log.info('Object list: %s' % object_list)
-        regions = sorted(list(set([memb.region for memb in object_list])))
+        regions = sorted(list(set([location.region for location in object_list])))
         log.info('Regions: %s' % regions)
         context['regions'] = regions
         return context
 
 
-member_directory_view = MemberDirectoryArchiveView.as_view()
+member_directory_view = LocationDirectoryArchiveView.as_view()
 
 
-class MemberDetailView(DetailView):
-    queryset = models.Member.objects.filter(is_frp_member=True)
+class LocationDetailView(DetailView):
+    queryset = models.Location.objects.all()
     model = models.Member
-    extra_context = "member"
-member_detail_view = MemberDetailView.as_view()
+    extra_context = "location"
+location_detail_view = LocationDetailView.as_view()
 
 
 class RegionView(TemplateView):
@@ -49,15 +49,15 @@ class RegionView(TemplateView):
         region = self.args[0]
         log.info('Looking for region %s' % region)
         context = super(RegionView, self).get_context_data(**kwargs)
-        all_members = models.Member.objects.filter(is_frp_member=True)
-        regions = sorted(list(set([memb.region for memb in all_members])))
-        members = list(models.Member.objects.filter(region=region, is_frp_member=True).order_by('agency'))
-        communities = sorted(list(set([memb.community for memb in members])))
+        all_locations = models.Location.objects.all()
+        regions = sorted(list(set([location.region for location in all_locations])))
+        locations = list(models.Location.objects.filter(region=region).order_by('frp_program_name'))
+        communities = sorted(list(set([location.community for location in locations])))
         context['region'] = region
         context['regions'] = regions
-        context['region_name'] = dict(models.Member.REGION_CHOICES)[region]
+        context['region_name'] = dict(models.REGION_CHOICES)[region]
         context['communities'] = communities
-        context['members'] = members
+        context['locations'] = locations
         return context
 
 
@@ -66,21 +66,21 @@ class CommunityView(ListView):
 
     def get_queryset(self):
         community = self.args[0]
-        return list(models.Member.objects.filter(community=community, is_frp_member=True).order_by('agency'))
+        return list(models.Location.objects.filter(community=community).order_by('frp_program_name'))
 
     def get_context_data(self, **kwargs):
         object_list = kwargs['object_list']
         community = self.args[0]
         context = super(CommunityView, self).get_context_data(**kwargs)
-        members = object_list
+        locations = object_list
         context['community'] = community
-        context['members'] = members
-        if members:
-            region = members[0].region
+        context['locations'] = locations
+        if locations:
+            region = locations[0].region
             context['region'] = region
-            context['region_name'] = dict(models.Member.REGION_CHOICES)[region]
-            region_members = list(models.Member.objects.filter(region=region, is_frp_member=True).order_by('agency'))
-            communities = sorted(list(set([memb.community for memb in region_members])))
+            context['region_name'] = dict(models.REGION_CHOICES)[region]
+            region_locations = list(models.Location.objects.filter(region=region).order_by('frp_program_name'))
+            communities = sorted(list(set([location.community for location in region_locations])))
             context['communities'] = communities
         return context
 
@@ -131,7 +131,7 @@ def report_pdf(request, report_type, member_id, extra_data={}):
 
 
 def report_region_pdf(request, region):
-    regions_dict = dict(models.Member.REGION_CHOICES)
+    regions_dict = dict(models.REGION_CHOICES)
     region_name = regions_dict.get(region, region)
     rowcouples = []
     couple = []
