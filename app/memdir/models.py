@@ -153,7 +153,7 @@ class Member(AddressMixin, MailingAddressMixin):
     # Auto-updated fields
     join_date = models.DateField(_("FRP Member Since"), null=True)
     updated = models.DateField(_("Updated"))
-    is_frp_member = models.BooleanField(default=False)
+    is_frp_member = models.BooleanField(_('FRP Locations'), default=False)
 
     @property
     def formatted_renewal_date(self):
@@ -212,6 +212,7 @@ class Location(AddressMixin, MailingAddressMixin):
 
     @property
     def description(self):
+        return ''
         parts = []
         if self.member.agency != self.frp_program_name:
             parts.append(self.member.agency)
