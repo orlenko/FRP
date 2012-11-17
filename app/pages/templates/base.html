@@ -139,11 +139,14 @@
 						{{ fiber_page.title }}
 					</div>
 					{% endblock %}
-				<article id="main_content" class="grid_15 prefix_1">
+				<article id="main_content" class="grid_10 prefix_1">
 					{% block content %}
 					{% endblock %}
 					{% show_page_content "main" %}
 				</article>
+				<aside id="news_content" class="grid_4 omega">
+                    {% newsbox %}
+                </aside>
 			</section>
 			<!--<aside id="aside-left" class='grid_3'>-->
 			<!--<section id="main" class="grid_6">-->
