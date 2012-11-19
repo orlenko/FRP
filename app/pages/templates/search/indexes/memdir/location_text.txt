@@ -1,0 +1,4 @@
+{{ object.frp_program_name }}
+{{ object.region }}
+{{ object.community }}
+{{ object.member.agency }}

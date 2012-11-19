@@ -19,12 +19,14 @@
 
             {% for result in page.object_list %}
                 {% if result.object.get_absolute_url  %}
-    				<h4>
-                        <a href="{{ result.object.get_absolute_url }}">{{	result.object.title }}</a>
-                    </h4>
-					{% if result.object.agency %}
+                    {% if result.object.title %}
+        				<h4>
+                            <a href="{{ result.object.get_absolute_url }}">{{	result.object.title }}</a>
+                        </h4>
+                    {% endif %}
+					{% if result.object.frp_program_name %}
                         <h4>
-                            <a href="{{ result.object.get_absolute_url }}">{{	result.object.agency }}</a>
+                            <a href="{{ result.object.get_absolute_url }}">{{	result.object.frp_program_name }}</a>
                         </h4>
 					{% endif %}
                 {% endif %}

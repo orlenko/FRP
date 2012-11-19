@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.contrib import databrowse
+#from django.contrib import databrowse
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'testproject.views.home', name='home'),
     # url(r'^testproject/', include('testproject.foo.urls')),
 
-    url(r'^databrowse/(.*)', login_required(databrowse.site.root)),
+    #url(r'^databrowse/(.*)', login_required(databrowse.site.root)),
     (r'^api/v2/', include('fiber.rest_api.urls')),
     (r'^admin/fiber/', include('fiber.admin_urls')),
     (r'^jsi18n/$', 'django.views.i18n.javascript_catalog', {'packages': ('fiber',),}),

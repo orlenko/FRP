@@ -176,7 +176,7 @@ INSTALLED_APPS = (
     "easy_maps",
 
     # databrowse Beta
-    "django.contrib.databrowse",
+    #"django.contrib.databrowse",
 )
 
 # A sample logging configuration. The only tangible logging
