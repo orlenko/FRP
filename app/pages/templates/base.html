@@ -144,9 +144,11 @@
 					{% endblock %}
 					{% show_page_content "main" %}
 				</article>
-				<aside id="news_content" class="grid_4 omega">
-                    {% newsbox %}
-                </aside>
+				{% block news %}
+    				<aside id="news_content" class="grid_4 omega">
+                        {% newsbox %}
+                    </aside>
+                {% endblock %}
 			</section>
 			<!--<aside id="aside-left" class='grid_3'>-->
 			<!--<section id="main" class="grid_6">-->
