@@ -3,7 +3,7 @@
 {% load pagination_tags %}
 
 {% block content %}
-
+<div class='grid_15 prefix_1'>
  <div class="breadcrumbs grid_15">
      <ul>
      <li><a href="{% url 'region' region %}">&laquo; Back to {{region_name}}</a></li>
@@ -31,4 +31,5 @@
         </ul>
     {% paginate %}
  </div>
+</div>
 {% endblock %}
