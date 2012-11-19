@@ -77,10 +77,14 @@
     </div>
 
     <div id="reports">
-        <h2>Download Reports:</h2>
-        <ol>
-            <li><a href="{% url 'report' 'membership-renewal-form' adminform.form.instance.pk %}/">Membership Form</a></li>
-        </ol>
+        {% if adminform.form.instance.pk %}
+            <h2>Download Reports:</h2>
+            <ol>
+                <li><a href="{% url 'report' 'membership-renewal-form' adminform.form.instance.pk %}/">Membership Form</a></li>
+            </ol>
+        {% else %}
+            Reports will become available after you save this Member
+        {% endif %}
     </div>
 </div>
 
