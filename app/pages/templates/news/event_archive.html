@@ -2,9 +2,6 @@
 
 {% block content %}
   {% for event in latest %}
-		<h3><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h3>
-		<i>{{ event.start }}</i> &ndash; <i>{{ event.end }}</i><br />
-		{{ event.description|safe }}		
-		<hr />
+	<h3><a href="{{ event.get_absolute_url }}">{{ event.start }}: {{ event.title }}</a></h3>
   {% endfor %}
 {% endblock %}

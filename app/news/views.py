@@ -55,6 +55,18 @@ class ArchiveEventView(ArchiveIndexView):
     allow_future = True
     model = models.Event
 
+    def get_dated_items(self):
+        """
+        Return (date_list, items, extra_context) for this request.
+        """
+        qs = self.get_dated_queryset(ordering='%s' % self.get_date_field())
+        date_list = self.get_date_list(qs, ordering='ASC')
+
+        if not date_list:
+            qs = qs.none()
+
+        return (date_list, qs, {})
+
 archive_event_view = ArchiveEventView.as_view(date_field='start')
 
 class YearEventView(YearArchiveView):
