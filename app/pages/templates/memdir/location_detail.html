@@ -3,9 +3,9 @@
 {% load easy_maps_tags cache %}
 
 {% block content %}
-<div class='grid_15 prefix_1'>
+<div class='grid_10'>
 
- <div class="breadcrumbs grid_15">
+ <div class="breadcrumbs grid_10">
      <ul>
      <li><a href="{% url 'region' location.region %}">&laquo; Back to {{ location.get_region_display }}</a></li>
      <li><a href="{% url 'community' location.community %}">Back to {{ location.get_community_display }}</a></li>
@@ -14,7 +14,7 @@
 
 
     {% if user.is_superuser %}
-    <div class="grid_13 admin-info">
+    <div class="grid_10 admin-info">
 			<p class='member-number'><a title="Click to open in back-end" href="/admin/memdir/member/{{ location.member.id }}/"><b>System member number: </b>{{ location.member.memnum }}</a></p>
 			<p class='member-renewal'><b>Member renewal date: </b>{{ location.member.renewal_date }}</p>
 		</div>
@@ -43,13 +43,13 @@
             </table>
         </p>
     </div>
-    <div class='grid_6 member-geo-address-map'>
+    <div class='grid_6 omega member-geo-address-map' style="margin-top:20px;">
         {% cache 600 my_map location.address %}
             {% easy_map location.address 420 250 13 %}
         {% endcache %}
     </div>
 
-    <div class="grid_4 omega">
+    <div class="grid_4">
         {% show_page_content "aside" %}
     </div>
 </div>

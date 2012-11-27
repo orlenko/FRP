@@ -3,14 +3,14 @@
 {% load pagination_tags %}
 
 {% block content %}
-<div class='grid_15 prefix_1'>
- <div class="breadcrumbs grid_15">
+<div class='grid_10'>
+ <div class="breadcrumbs grid_10">
      <ul>
      <li><a href="{% url 'region' region %}">&laquo; Back to {{region_name}}</a></li>
      </ul>
  </div>
 
- <div class="subnav grid_14 prefix_1">
+ <div class="subnav grid_10">
      <ul>
          {% for community in communities %}
             <li><a href="{% url 'community' community %}">{{community}}</a></li>
@@ -18,7 +18,7 @@
      </ul>
  </div>
  <h2>{{community}}</h2>
- <div class="grid_15">
+ <div class="grid_10">
     {% autopaginate object_list %}
     {% paginate %}
         <ul>

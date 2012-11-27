@@ -4,8 +4,8 @@
 {% load memdir_tags %}
 
 {% block content %}
-<div class='grid_15 prefix_1'>
-    <div id="hozregionlist" class="suffix_4 grid_12">
+<div class='grid_9 prefix_1'>
+    <div id="hozregionlist" class="grid_9">
         <ul>
             {% for region in regions %}
                 <li><a href="{% url 'region' region %}">{{region|region_name}}</a></li>
@@ -13,10 +13,10 @@
         </ul>
     </div>
     <h2>{{ region_name }}</h2>
-    <div class="grid_5">
+    <div class="grid_5 alpha">
         <img src="{{ STATIC_URL }}img/map-director-small.gif" border="0" usemap="#Map2"/>
     </div>
-    <div class="grid_9">
+    <div class="grid_4 omega">
         <div>
             {% show_page_content "intro" %}
         </div>
@@ -28,7 +28,7 @@
         </ul>
     </div>
 
-    <div class="grid_15">
+    <div class="grid_9">
 
         <a href="{% url 'report_region' region %}" style="line-height: 40px;">
             <img src="/static/img/download.png" alt="Download the complete list of FRPs in this region (PDF)" style="float:left;">

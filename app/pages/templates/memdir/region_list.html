@@ -6,15 +6,15 @@
 {% endblock %}
 
 {% block content %}
-<div class='grid_15 prefix_1'>
-    <div class="grid_13" style="padding-bottom: 20px;">
+<div class='grid_9 prefix_1'>
+    <div class="grid_9" style="padding-bottom: 20px;">
         {% show_page_content "intro" %}
-        <form name='searchbox' type='submit' method='get' action="/search/">
+        <form class="grid_9" style="margin-top:20px;" name='searchbox' type='submit' method='get' action="/search/">
             {% csrf_token %}
             <input type='submit' name='submit' value='Search'
                 class='form_button_big' lang="en" />
             <input type='search' class='form_textbox_big' name='q' placeholder=""
-                style="width:600px;"/>
+                style="width:455px;"/>
             <input class='hidden' type='checkbox' value='memdir.location'
             checked='checked'   name='models' style='visibility:hidden;'>
             <input class='hidden' type='checkbox' value='news.post'
@@ -24,7 +24,7 @@
         </form>
     </div>
 
-    <div class="grid_7">
+    <div class="grid_6 alpha">
         <img src="{{ STATIC_URL }}img/map-directory.gif" border="0" usemap="#Map2"/>
         <map name="Map2"><area shape="rect" coords="201,281,229,305"
                             href="{% url 'region' 'fraservalley' %}" alt="Fraser Valley"><area
@@ -48,7 +48,7 @@
 
         </map>
     </div>
-	<div class="grid_7">
+	<div class="grid_3 omega">
 	    <div style="">
             <ul class="regionlist">
                 {% for region in regions %}
