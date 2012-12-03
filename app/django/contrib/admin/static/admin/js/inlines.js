@@ -133,12 +133,35 @@
           nested_formsets.each(function() {
             row.append($(this));
           });
+
         }
 
         // If a post-add callback was supplied, call it with the added form:
         if (options.added) {
           options.added(row);
         }
+
+        // Disable nested locations and contacts - this is a dirty dirty hack,
+        // which will only work for FRP project. Bad code, not reusable.
+        var readOnlyAttrs = {
+            readonly: 'readonly',
+            disabled: 'disabled',
+            title: "Please click 'Save and continue editing' to be able to add Hours of Operations and Contacts"
+        };
+        function cloneInput() {
+            var id = $(this).attr('id');
+            var name = $(this).attr('name');
+            $(this).removeAttr('id');
+            $(this).removeAttr('name');
+            var hidden = $('<input type="hidden" id="' + id + '" name="' + name + '" />');
+            hidden.val($(this).val());
+            hidden.insertAfter($(this));
+        }
+        row.find('.locations-nested-inline textarea').attr(readOnlyAttrs).each(cloneInput);
+        row.find('.locations-nested-inline input').attr(readOnlyAttrs).each(cloneInput);
+        row.find('.locations-nested-inline select').attr(readOnlyAttrs).each(cloneInput);
+        row.find('.locations-nested-inline button').attr(readOnlyAttrs).each(cloneInput);
+        row.find('.locations-nested-inline .datetimeshortcuts a').attr('href', '#').each(cloneInput);
 
         nextIndex = nextIndex + 1;
       });
@@ -381,12 +404,14 @@
       if (add_bottom_border) {
         template = template.add($('<div class="nested-inline-bottom-border">'));
       }
+
       if (formsets.length) {
         formsets = formsets.add(template);
       } else {
         formsets = template;
       }
     });
+
     return formsets;
   };
 
@@ -397,6 +422,7 @@
     if (/-sample$/.test(orig)) {
       template.attr('id', orig.substring(0, orig.length - '-sample'.length));
     }
+
     template.find('*').each(function() {
       if ($(this).attr("for")) {
         $(this).attr("for", $(this).attr("for").replace(normalized_formset_prefix, formset_prefix));
