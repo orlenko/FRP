@@ -141,7 +141,7 @@ def report_region_pdf(request, region):
         if (location.member_id, location.community) in processed_communities:
             continue
         processed_communities.add((location.member_id, location.community))
-        for loc in location.member.locations.all():
+        for loc in location.member.locations.order_by('id').all():
             if loc.community == location.community:
                 final_list.append(loc)
     rowcouples = []
