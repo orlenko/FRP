@@ -207,6 +207,10 @@ class Location(AddressMixin, MailingAddressMixin):
         help_text=_("The slug must be a unique URL identifier."))
 
     @property
+    def formatted_phone(self):
+        return (self.phone or '').lower().replace('ext', '\nExt')
+
+    @property
     def name(self):
         return self.frp_program_name
 

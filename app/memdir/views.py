@@ -133,9 +133,20 @@ def report_pdf(request, report_type, member_id, extra_data={}):
 def report_region_pdf(request, region):
     regions_dict = dict(models.REGION_CHOICES)
     region_name = regions_dict.get(region, region)
+    locations = list(models.Location.objects.filter(region=region))
+    locations = sorted(locations, key=lambda rec: rec.community)
+    final_list = []
+    processed_communities = set()
+    for location in locations:
+        if location.community in processed_communities:
+            continue
+        processed_communities.add(location.community)
+        for loc in location.member.locations.all():
+            if loc.community == location.community:
+                final_list.append(loc)
     rowcouples = []
     couple = []
-    for location in models.Location.objects.filter(region=region):
+    for location in final_list:
         couple.append(location)
         if len(couple) == 2:
             rowcouples.append(couple)
