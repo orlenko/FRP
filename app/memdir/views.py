@@ -138,9 +138,9 @@ def report_region_pdf(request, region):
     final_list = []
     processed_communities = set()
     for location in locations:
-        if location.community in processed_communities:
+        if (location.member_id, location.community) in processed_communities:
             continue
-        processed_communities.add(location.community)
+        processed_communities.add((location.member_id, location.community))
         for loc in location.member.locations.all():
             if loc.community == location.community:
                 final_list.append(loc)
@@ -153,6 +153,6 @@ def report_region_pdf(request, region):
             couple = []
     if couple:
         couple.append(None)
-        rowcouples.append(couple)
+        rowcouples.append(couple)    
     return report_pdf(request, 'provincial-listing', 0, locals())
 
