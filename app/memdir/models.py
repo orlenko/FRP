@@ -132,7 +132,7 @@ class Member(AddressMixin, MailingAddressMixin):
         max_length=255,
         default=_('Agency Executive Director / ECD Program Manager'))
     dirphone = models.CharField(_("Direct Phone Number"), max_length=100, blank=True, null=True)
-    email = models.EmailField(_("General Email"), blank=True)
+    email = models.EmailField(_("Email"), blank=True)
 
     memnum = models.IntegerField(_("Membership Number"))
     renewal_date = models.DateField(_("Renewal Date"), blank=True, null=True)
