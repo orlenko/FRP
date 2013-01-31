@@ -19,8 +19,6 @@
  </div>
  <h2>{{community}}</h2>
  <div class="grid_10">
-    {% autopaginate object_list %}
-    {% paginate %}
         <ul>
             {% for location in object_list %}
                 <li>
@@ -29,7 +27,6 @@
                 </li>
             {% endfor %}
         </ul>
-    {% paginate %}
  </div>
 </div>
 {% endblock %}
