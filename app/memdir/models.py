@@ -168,6 +168,10 @@ class Member(AddressMixin, MailingAddressMixin):
         return self.locations.count() and True or False
 
     @property
+    def format_is_frp(self):
+        return 'Yes'if self.is_frp else 'No'
+
+    @property
     def community_name(self):
         return dict(self.COMMUNITY_CHOICES).get(self.community, self.community)
 

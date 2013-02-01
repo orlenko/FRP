@@ -1,6 +1,7 @@
 # coding: utf8
 
-BC_COMMUNITIES = ['100 Mile House',
+BC_COMMUNITIES = sorted([
+ '100 Mile House',
  '108 Mile House',
  'Abbotsford',
  'Agassiz',
@@ -106,4 +107,11 @@ BC_COMMUNITIES = ['100 Mile House',
  'West Vancouver',
  'White Rock',
  'Whitehorse',
- 'Williams Lake']
+ 'Williams Lake',
+ 'Gibsons',
+ 'Pemberton',
+ 'Whistler',
+ "Manson's Landing",
+ 'Ladner',
+ 'Tsawwassen',
+ ])
