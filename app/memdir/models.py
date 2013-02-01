@@ -169,7 +169,7 @@ class Member(AddressMixin, MailingAddressMixin):
 
     @property
     def format_is_frp(self):
-        return 'Yes'if self.is_frp else 'No'
+        return 'Yes' if self.is_frp else 'No'
 
     @property
     def community_name(self):
