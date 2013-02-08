@@ -26,9 +26,11 @@
 
     <div class="alpha grid_4">
         <h3 class='member-agency'>{{ location.frp_program_name }}</h3>
-        <p class='member-full-address'><i>Address</i><br />{{ location.street }}<br />{{ location.city }}, {{ location.province}}<br />{{ location.postal_code }} </p>
-        <p class='member-phone-number'><i>Phone Number</i><br />{{ location.phone }}</p>
-        <p class='member-website'><i>Website:</i><br /><a href="{{ location.website   }}">{{ location.website }}</a></p>
+        <p class='member-delivering-agency'><i>Delivering Agency:</i><br />{{ location.member.agency }}</p>
+
+        <p class='member-full-address'><i>Address:</i><br />{{ location.street }}<br />{{ location.city }}, {{ location.province}}<br />{{ location.postal_code }} </p>
+        <p class='member-phone-number'><i>Phone Number:</i><br />{{ location.phone }}</p>
+        <p class='member-website'><i>Website:</i><br /><a href="{{ location.website   }}" target="_blank">Click here to open in a new window</a></p>
         <p>
             <i>Hours:</i>
             <table>

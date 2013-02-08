@@ -21,12 +21,13 @@
                 {% if result.object.get_absolute_url  %}
                     {% if result.object.title %}
         				<h4>
-                            <a href="{{ result.object.get_absolute_url }}">{{	result.object.title }}</a>
+                            <span style="font-weight:normal">News or Event:</span> <a href="{{ result.object.get_absolute_url }}">{{	result.object.title }}</a>
                         </h4>
                     {% endif %}
 					{% if result.object.frp_program_name %}
                         <h4>
-                            <a href="{{ result.object.get_absolute_url }}">{{	result.object.frp_program_name }}</a>
+                            <span style="font-weight:normal">FRP Location:</span> <a href="{{ result.object.get_absolute_url }}">{{	result.object.frp_program_name }}</a><br />
+                    <span style="font-weight:normal; font-size:14px"><i>Delivering Agency:</i>&nbsp;{{ result.object.member.agency }}</span>
                         </h4>
 					{% endif %}
                 {% endif %}

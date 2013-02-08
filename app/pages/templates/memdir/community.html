@@ -19,14 +19,18 @@
  </div>
  <h2>{{community}}</h2>
  <div class="grid_10">
+    {% autopaginate object_list %}
+    {% paginate %}
         <ul>
             {% for location in object_list %}
                 <li>
-                    <b class='member-agency'><a href="{{ location.get_absolute_url }}">{{ location.name }}</a></b>
+                    <b class='member-agency'><a href="{{ location.get_absolute_url }}">{{ location.name }}</a></b><br />
+                    <i>Delivering Agency:</i>&nbsp;{{ location.member.agency }}<br />
                     <p class="member-description">{% autoescape off %}{{ location.description }}{% endautoescape %}</p>
                 </li>
             {% endfor %}
         </ul>
+    {% paginate %}
  </div>
 </div>
 {% endblock %}
