@@ -210,6 +210,9 @@ class Location(AddressMixin, MailingAddressMixin):
         unique=True,
         help_text=_("The slug must be a unique URL identifier."))
 
+    class Meta:
+        ordering = ('order', 'id',)
+
     @property
     def formatted_phone(self):
         return (self.phone or '').lower().replace('ext', '\nExt')

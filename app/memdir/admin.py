@@ -22,6 +22,7 @@ class InlineLocation(admin.StackedInline):
     fieldsets = (
         (None, {
             'fields': (
+                'order',
                 'frp_program_name',
                 'region',
                 'community',
