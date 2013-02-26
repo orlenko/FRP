@@ -2,6 +2,6 @@
 
 {% block content %}
   {% for event in latest %}
-	<h3><a href="{{ event.get_absolute_url }}">{{ event.start }}: {{ event.title }}</a></h3>
+	<h3><a href="{{ event.get_absolute_url }}">{{ event.start|date }}: {{ event.title }}</a></h3>
   {% endfor %}
 {% endblock %}
