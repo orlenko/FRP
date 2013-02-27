@@ -247,32 +247,32 @@ EMAIL_PORT = "1025"
 ##EASY_MAPS_GOOGLE_KEY = "ABQIAAAA_6YxpRQIVJjIx8daYGWgaRTQFubQ9aXSUmGOI1r5AejNfYy9jhT2sT2ikwmkQE3FyRvw08INWDZvZw"
 EASY_MAPS_YAHOO_KEY = "WyrmtwLV34E44wp080AXz6hASJoAezCNlm7O3bF3F7nn2eyeO5PWW4SWMZUkUw4fvzcjLPM-"
 
-CKEDITOR_MEDIA_PREFIX = "/static/ckeditor/"
-CKEDITOR_UPLOAD_PATH =  os.path.join(MEDIA_ROOT, 'uploads')
+#CKEDITOR_MEDIA_PREFIX = "/static/ckeditor/"
+#CKEDITOR_UPLOAD_PATH =  os.path.join(MEDIA_ROOT, 'uploads')
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'skin': 'kama',
-        'toolbar': [
-            [      'Source', 'Preview',
-              '-', 'PasteText', 'PasteFromWord',
-              '-', 'Undo', 'Redo',
-              '-', 'Bold', 'Italic', 'Strike',
-              '-', 'RemoveFormat',
-            ],
-            [      'NumberedList', 'BulletedList',
-              '-', 'Outdent', 'Indent',
-              '-', 'Blockquote',
-              '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
-                  'JustifyBlock',
-              '-', 'Link', 'Unlink', 'Anchor',
-              '-', 'Image', 'Table', 'SpecialChar',
-              '-', 'Format', 'TextColor',
-              '-', 'Maximize', 'ShowBlocks',
-            ]
-        ]
-    },
-}
+#CKEDITOR_CONFIGS = {
+#    'default': {
+#        'skin': 'kama',
+#        'toolbar': [
+#            [      'Source', 'Preview',
+#              '-', 'PasteText', 'PasteFromWord',
+#              '-', 'Undo', 'Redo',
+#              '-', 'Bold', 'Italic', 'Strike',
+#              '-', 'RemoveFormat',
+#            ],
+#            [      'NumberedList', 'BulletedList',
+#              '-', 'Outdent', 'Indent',
+#              '-', 'Blockquote',
+#              '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+#                  'JustifyBlock',
+#              '-', 'Link', 'Unlink', 'Anchor',
+#              '-', 'Image', 'Table', 'SpecialChar',
+#              '-', 'Format', 'TextColor',
+#              '-', 'Maximize', 'ShowBlocks',
+#            ]
+#        ]
+#    },
+#}
 
 try:
     from local_settings import *
