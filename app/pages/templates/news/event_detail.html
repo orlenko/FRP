@@ -6,7 +6,7 @@
 
 {% block content %}
   <h3>{{ event.title }}</h3>
-  {{ event.start }} to {{ event.end }}
+  {{ event.start|date }} to {{ event.end|date }}
   <div class='ev_desc'>{{ event.description|safe }}</div>
 
   <p><a href="{% url 'event_archive_list' %}"><i>Back to events</i></a></p>
