@@ -145,6 +145,7 @@ h1,h2,h3,h4,h5,h6 {
 	background-color:#FFF;
 }
 #main_content {
+	height: 480px;
 }
 #news_content {
 	background-image:url(../img/news_content_bg.png);
@@ -163,12 +164,13 @@ footer {
 	background-repeat:no-repeat;
 }
 #social_icons {
-	margin-top:20px;
+	margin-top:12px;
 	text-align:left;
+	margin-left:-15px;
 	height:57px;
 }
 #funders {
-	margin-top:8px;
+	margin-top:16px;
 }
 #copyrights {
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -235,6 +237,12 @@ footer {
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size:12px;
 	color:#000;	
+}
+
+#download_enews {
+	width:209px;
+	margin-left:39px;
+	margin-top:15px;
 }
 
 /* Inline CSS fixes */
@@ -347,7 +355,7 @@ footer {
 #parent_poz ul li {
 	list-style:none;
 	margin: 10px 0;
-	margin-top: 16px;
+	margin-top: 35px;
 }
 #parent_poz img:hover{
 opacity:0.7;
@@ -369,7 +377,7 @@ filter:alpha(opacity=70); /* For IE8 and earlier */
 #practitioners_poz ul li {
 	list-style:none;
 	margin: 10px 0;
-	margin-top: 16px;
+	margin-top: 35px;
 }
 #practitioners_poz img:hover{
 opacity:0.7;
