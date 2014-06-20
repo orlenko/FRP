@@ -117,6 +117,16 @@ class Member(AddressMixin, MailingAddressMixin):
         ('bc-only', _('BC-Only Member')),
     )
 
+    ACCREDITATIONS = (
+	    ('carf', _('CARF')),
+	    ('coa', _('COA')),
+	    ('accredit_can', _('Accreditation Canada'))
+	)
+    
+    YES_NO = (
+	    ('yes', _('Yes')),
+		('no', _('No'))
+	)
     agency = models.CharField(_("Member-Agency Name"), max_length=200)
 
     # Address fields are inherited from AddressMixin
@@ -140,6 +150,9 @@ class Member(AddressMixin, MailingAddressMixin):
                                        choices=MEMBERSHIP_CHOICES,
                                        default='joint',
                                        max_length=255)
+    standards_complete = models.BooleanField(_("Standards complete?"))
+    standards_renewal_year = models.CharField(_("Standards Renewal Year"), max_length=4, blank=True)
+    accredited = models.CharField(_('Accredited'), choices=ACCREDITATIONS, max_length=255, blank=True)
     # Advanced fields
     fee = models.DecimalField(_("FRP Fee"), max_digits=9,
             decimal_places=2, blank=True, null=True)

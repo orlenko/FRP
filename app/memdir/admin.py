@@ -91,6 +91,14 @@ class MemberAdmin(admin.ModelAdmin):
                 'memnum',
                 'renewal_date',
                 'membership_type',
+			)
+		}),
+		(#'Standards', {
+		 None, {
+			'fields': (
+				'standards_complete',
+				'standards_renewal_year',
+				'accredited',
             )
         }),
         ('Mailing Address (if different from physical address)', {

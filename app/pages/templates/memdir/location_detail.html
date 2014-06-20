@@ -44,10 +44,25 @@
             {% endfor %}
             </table>
         </p>
+		<p ><i>Accreditations:</i><br />
+		{% if location.member.standards_complete %}
+			{% if location.member.accredited == "carf" %}
+				<a href="http://www.carf.org/home/">CARF</a>
+			{% elif location.member.accredited == "coa" %}
+				<a href="http://coanet.org/">COA</a>
+			{% elif location.member.accredited == "accredit_can" %}
+				<a href="www.accreditation.ca/">Accreditation Canada</a>
+			{% endif %}
+			<br /> 
+			{{ location.member.standards_renewal_year }}
+		{% else %}
+			None. 
+		{% endif %}
+		</p>
     </div>
     <div class="grid_6 omega member-geo-address-map" style="margin-top:20px;">
         {% cache 600 my_map location.address %}
-            {% easy_map location.address 390 250 13 %}
+        {#	{% easy_map location.address 390 250 13 %} >#}
         {% endcache %}
     </div>
 
