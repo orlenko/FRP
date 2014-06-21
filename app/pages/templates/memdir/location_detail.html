@@ -46,18 +46,16 @@
         </p>
 		<p ><i>Accreditations:</i><br />
 		{% if location.member.standards_complete %}
-			{% if location.member.accredited == "carf" %}
-				<a href="http://www.carf.org/home/">CARF</a>
-			{% elif location.member.accredited == "coa" %}
-				<a href="http://coanet.org/">COA</a>
-			{% elif location.member.accredited == "accredit_can" %}
-				<a href="www.accreditation.ca/">Accreditation Canada</a>
-			{% endif %}
-			<br /> 
-			{{ location.member.standards_renewal_year }}
-		{% else %}
-			None. 
+			Standards Complete: {{ location.member.standards_renewal_year }}
 		{% endif %}
+		{% if location.member.accredited == "carf" %}
+			<a href="http://www.carf.org/home/">CARF</a>
+		{% elif location.member.accredited == "coa" %}
+			<a href="http://coanet.org/">COA</a>
+		{% elif location.member.accredited == "accredit_can" %}
+			<a href="www.accreditation.ca/">Accreditation Canada</a>
+		{% endif %}
+		<br /> 
 		</p>
     </div>
     <div class='grid_6 omega member-geo-address-map' style="margin-top:20px;">
