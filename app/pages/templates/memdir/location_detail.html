@@ -30,15 +30,15 @@
 
         <p class='member-full-address'><i>Address:</i><br />{{ location.street }}<br />{{ location.city }}, {{ location.province}}<br />{{ location.postal_code }} </p>
         <p class='member-phone-number'><i>Phone Number:</i><br />{{ location.phone }}</p>
-        <p class='member-website'><i>Website:</i><br /><a href="{{ location.website   }}" target="_blank">Visit their website</a></p>
+        <p class='member-website'><i>Website:</i><br /><a href="{{ location.website   }}" target="_blank">Click here to open in a new window</a></p>
         <p>
-            <i>Hours of Operation:</i>
-            <table style="width:240px;">
+            <i>Hours:</i>
+            <table>
             {% for d in location.days_of_operations %}
                 {% if d.formatted_hours %}
                 <tr>
-                    <th style="vertical-align:top;">{{ d.name }}:</th>
-                    <td style="vertical-align:top;">{{ d.formatted_hours }}</td>
+                    <th>{{ d.name }}:</th>
+                    <td>{{ d.formatted_hours }}</td>
                 </tr>
                 {% endif %}
             {% endfor %}
@@ -60,14 +60,14 @@
 		{% endif %}
 		</p>
     </div>
-    <div class="grid_6 omega member-geo-address-map" style="margin-top:20px;">
+    <div class='grid_6 omega member-geo-address-map' style="margin-top:20px;">
         {% cache 600 my_map location.address %}
         	{% easy_map location.address 390 250 13 %} >
         {% endcache %}
     </div>
 
-    <div class="grid_6 omega" style="padding-top:20px;">
-        {{ location.member.description|safe }}
+    <div class="grid_4">
+        {% show_page_content "aside" %}
     </div>
 </div>
 {% endblock %}

@@ -13,6 +13,13 @@ from django.views.generic.base import View
 from django.views.generic.detail import BaseDetailView, SingleObjectTemplateResponseMixin
 from django.views.generic.list import MultipleObjectMixin, MultipleObjectTemplateResponseMixin
 
+
+import logging
+
+
+log = logging.getLogger(__name__)
+
+
 class YearMixin(object):
     """
     Mixin for views manipulating year-based data.
@@ -358,6 +365,7 @@ class BaseDateListView(MultipleObjectMixin, DateMixin, View):
 
         if not allow_future:
             now = timezone.now() if self.uses_datetime_field else timezone_today()
+            log.debug('Future is not allowed on line 368, so we are adding <= %s' % now)
             qs = qs.filter(**{'%s__lte' % date_field: now})
 
         if not allow_empty:
@@ -641,8 +649,10 @@ class BaseDateDetailView(YearMixin, MonthMixin, DayMixin, DateMixin, BaseDetailV
 
         # Use a custom queryset if provided
         qs = queryset or self.get_queryset()
+        log.debug('Initial queryset: %s' % qs.query)
 
         if not self.get_allow_future() and date > datetime.date.today():
+            log.debug('The date is in the future! Wat! %s %s %s' % (date, self.allow_future, self.get_allow_future()))
             raise Http404(_("Future %(verbose_name_plural)s not available because %(class_name)s.allow_future is False.") % {
                 'verbose_name_plural': qs.model._meta.verbose_name_plural,
                 'class_name': self.__class__.__name__,
@@ -654,7 +664,7 @@ class BaseDateDetailView(YearMixin, MonthMixin, DayMixin, DateMixin, BaseDetailV
         lookup_kwargs = self._make_single_date_lookup(date)
         qs = qs.filter(**lookup_kwargs)
 
-        print 'Date View lookup arguments: %s' % qs
+        log.debug('Date View lookup arguments: %s' % qs.query)
 
         return super(BaseDetailView, self).get_object(queryset=qs)
 
@@ -753,6 +763,7 @@ def _get_next_prev(generic_view, date, is_previous, period):
                 now = timezone.now()
             else:
                 now = timezone_today()
+            log.debug('Future is not allowed on line 765, so we are adding a <=%s' % now)
             lookup['%s__lte' % date_field] = now
 
         qs = generic_view.get_queryset().filter(**lookup).order_by(ordering)
