@@ -9,8 +9,10 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
 
+        db.delete_column('memdir_member', 'standards_complete')
+
         # Changing field 'Member.standards_complete'
-        db.alter_column(u'memdir_member', 'standards_complete', self.gf('django.db.models.fields.BooleanField')())
+        db.add_column(u'memdir_member', 'standards_complete', self.gf('django.db.models.fields.BooleanField')(default=False, blank=True))
 
     def backwards(self, orm):
 

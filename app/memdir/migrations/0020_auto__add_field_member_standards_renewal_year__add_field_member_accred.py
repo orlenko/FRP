@@ -18,9 +18,10 @@ class Migration(SchemaMigration):
                       self.gf('django.db.models.fields.CharField')(default='', max_length=255, blank=True),
                       keep_default=False)
 
+        db.delete_column('memdir_member', 'standards_complete')
 
         # Changing field 'Member.standards_complete'
-        db.alter_column(u'memdir_member', 'standards_complete', self.gf('django.db.models.fields.CharField')(max_length=4))
+        db.add_column(u'memdir_member', 'standards_complete', self.gf('django.db.models.fields.CharField')(default='', max_length=4, blank=True))
 
     def backwards(self, orm):
         # Deleting field 'Member.standards_renewal_year'
