@@ -33,6 +33,9 @@ class InlineLocation(admin.StackedInline):
                 'phone',
                 'fax',
                 'website',
+                'pcmg_offered',
+                'npp_offered',
+                'triplep_offered',
             )
         }),
         ('Mailing Address (if different from physical address)', {

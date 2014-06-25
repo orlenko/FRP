@@ -218,6 +218,11 @@ class Location(AddressMixin, MailingAddressMixin):
     community = models.CharField(choices=COMMUNITY_CHOICES,
                                  max_length=255,
                                  default='Vancouver (City)')
+	
+    pcmg_offered = models.BooleanField(_("PCMG Offered?"), blank=True)
+    npp_offered = models.BooleanField(_("NPP Offered?"), blank=True)
+    triplep_offered = models.BooleanField(_("PPP Offered?"), blank=True)
+
     slug = models.SlugField(_("URL-friendly name"),
         max_length=255,
         unique=True,
