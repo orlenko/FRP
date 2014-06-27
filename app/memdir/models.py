@@ -150,8 +150,8 @@ class Member(AddressMixin, MailingAddressMixin):
                                        choices=MEMBERSHIP_CHOICES,
                                        default='joint',
                                        max_length=255)
-    standards_complete = models.BooleanField(_("Standards complete?"))
-    standards_renewal_year = models.CharField(_("Standards Renewal Year"), max_length=4, blank=True)
+    standards_complete = models.BooleanField(_("FRP Standards complete?"))
+    standards_renewal_year = models.CharField(_("FRP Standards Renewal Year"), max_length=4, blank=True)
     accredited = models.CharField(_('Accredited'), choices=ACCREDITATIONS, max_length=255, blank=True)
     # Advanced fields
     fee = models.DecimalField(_("FRP Fee"), max_digits=9,

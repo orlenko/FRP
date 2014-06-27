@@ -47,7 +47,7 @@
 		{% if location.member.standards_complete or location.member.accredited %}
 			<p ><i>Accreditations:</i><br />
 			{% if location.member.standards_complete %}
-				Standards Complete: {{ location.member.standards_renewal_year }}
+				FRP Standards Complete: {{ location.member.standards_renewal_year }}
 				<br>
 			{% endif %}
 			{% if location.member.accredited == "carf" %}
@@ -57,14 +57,38 @@
 			{% elif location.member.accredited == "accredit_can" %}
 				<a href="www.accreditation.ca/">Accreditation Canada</a>
 			{% endif %}
+            Accredited
 			<br /> 
 		{% endif %}
 		</p>
     </div>
     <div class='grid_6 omega member-geo-address-map' style="margin-top:20px;">
         {% cache 600 my_map location.address %}
-        	{% easy_map location.address 390 250 13 %} 
+       {# 	{% easy_map location.address 390 250 13 %} #}
         {% endcache %}
+        <div class='grid_2'>
+            {% if location.pcmg_offered %}
+                <a href="http://nationalpcmgp.ca/">
+                <img src="{{ STATIC_URL }}img/Mother_Goose.gif"
+                    title="Mother Goose" width="80%"/>
+                Parent/Child Mother Goose </a>
+            {% endif %}
+        </div>
+        <div class='grid_2'>
+            {% if location.npp_offered %}
+                <a href="http://www.bccf.ca/families/programs/nobodys-perfect">
+                <img src="{{ STATIC_URL }}img/Nobody_Pefect_Parenting_Logo.jpg"
+                    title="Nobody's Perfect" width="80%"/>
+                Nobody's Perfect Parenting Program </a>
+            {% endif %}
+        </div> 
+        <div class='grid_2'>
+            {% if location.triplep_offered %}
+                <a href="http://www.triplep.net/glo-en/home/">
+                <img src="{{ STATIC_URL }}img/triple_p_parenting-logo.gif"
+                    title="Triple P" width="80%"/>
+                Triple P Parenting Program </a>
+            {% endif %}
     </div>
 
     <div class="grid_4">

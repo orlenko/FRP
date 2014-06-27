@@ -38,6 +38,11 @@ urlpatterns = patterns('',
     url(r'sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
 )
 
+#JSON url for Android app
+import json_data
+urlpatterns += patterns('',
+    url(r'^json/(.+)$', 'json_data.views.json_page')
+)
 
 # News urls
 urlpatterns += patterns('',
@@ -62,3 +67,4 @@ if settings.DEBUG:
 urlpatterns += patterns('',
     url(r'', 'fiber.views.page'),
 )
+
