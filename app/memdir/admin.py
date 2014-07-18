@@ -105,6 +105,7 @@ class MemberAdmin(admin.ModelAdmin):
 		 None, {
 			'fields': (
 				'standards_complete',
+                'standards_beginning_year',
 				'standards_renewal_year',
 				'accredited',
             )

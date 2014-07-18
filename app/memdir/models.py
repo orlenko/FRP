@@ -151,6 +151,7 @@ class Member(AddressMixin, MailingAddressMixin):
                                        default='joint',
                                        max_length=255)
     standards_complete = models.BooleanField(_("FRP Standards complete?"))
+    standards_beginning_year = models.CharField(_("FRP Standards Initial Year"), max_length=4, blank=True)
     standards_renewal_year = models.CharField(_("FRP Standards Renewal Year"), max_length=4, blank=True)
     accredited = models.CharField(_('Accredited'), choices=ACCREDITATIONS, max_length=255, blank=True)
     # Advanced fields

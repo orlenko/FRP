@@ -26,13 +26,13 @@
 
     <div class="alpha grid_4">
         <h3 class='member-agency'>{{ location.frp_program_name }}</h3>
-        <p class='member-delivering-agency'><i>Delivering Agency:</i><br />{{ location.member.agency }}</p>
+        <p class='member-delivering-agency'><i><b>Delivering Agency:</b></i><br />{{ location.member.agency }}</p>
 
-        <p class='member-full-address'><i>Address:</i><br />{{ location.street }}<br />{{ location.city }}, {{ location.province}}<br />{{ location.postal_code }} </p>
-        <p class='member-phone-number'><i>Phone Number:</i><br />{{ location.phone }}</p>
-        <p class='member-website'><i>Website:</i><br /><a href="{{ location.website   }}" target="_blank">Click here to open in a new window</a></p>
+        <p class='member-full-address'><i><b>Address:</b></i><br />{{ location.street }}<br />{{ location.city }}, {{ location.province}}<br />{{ location.postal_code }} </p>
+        <p class='member-phone-number'><i><b>Phone Number:</b></i><br />{{ location.phone }}</p>
+        <p class='member-website'><i><b>Website:</b></i><br /><a href="{{ location.website   }}" target="_blank">Click here to open in a new window</a></p>
         <p>
-            <i>Hours:</i>
+            <i><b>Hours:</b></i>
             <table>
             {% for d in location.days_of_operations %}
                 {% if d.formatted_hours %}
@@ -45,9 +45,9 @@
             </table>
         </p>
 		{% if location.member.standards_complete or location.member.accredited %}
-			<p ><i>Accreditations:</i><br />
+			<p ><i><b>Accreditations:</b></i><br />
 			{% if location.member.standards_complete %}
-				FRP Standards Complete: {{ location.member.standards_renewal_year }}
+				FRP Standards Complete: {{location.member.standards_beginning_year}} - {{ location.member.standards_renewal_year }}
 				<br>
 			{% endif %}
 			{% if location.member.accredited == "carf" %}
@@ -55,9 +55,8 @@
 			{% elif location.member.accredited == "coa" %}
 				<a href="http://coanet.org/">COA</a>
 			{% elif location.member.accredited == "accredit_can" %}
-				<a href="www.accreditation.ca/">Accreditation Canada</a>
+				<a href="http://www.accreditation.ca/">Accreditation Canada</a>
 			{% endif %}
-            Accredited
 			<br /> 
 		{% endif %}
 		</p>
@@ -66,31 +65,38 @@
         {% cache 600 my_map location.address %}
         	{% easy_map location.address 390 250 13 %} 
         {% endcache %}
-        <div class='grid_2'>
+        {% if location.pcmg_offered or location.npp_offered or location.triplep_offered %}
+        <div class='grid_3' style='font-size: 10pt;'>
+           <i><b>Parenting Programs Offered:</b></i>
             {% if location.pcmg_offered %}
-                <a href="http://nationalpcmgp.ca/">
-                <img src="{{ STATIC_URL }}img/Mother_Goose.gif"
-                    title="Mother Goose" width="80%"/>
-                Parent/Child Mother Goose </a>
+                <div class='grid_2'>
+                    <a href="http://nationalpcmgp.ca/">
+                    <img src="{{ STATIC_URL }}img/Mother_Goose.gif"
+                    title="Mother Goose" width="60%"/>
+                    <br>
+                    Parent/Child Mother Goose </a>
+                </div>
+            {% endif %}
+            {% if location.npp_offered %}
+                <div class='grid_2'> 
+                    <a href="http://www.bccf.ca/families/programs/nobodys-perfect">
+                    <img src="{{ STATIC_URL }}img/Nobody_Pefect_Parenting_Logo.jpg"
+                    title="Nobody's Perfect" width="60%"/>
+                    <br>
+                    Nobody's Perfect Parenting Program </a>
+                </div>
+            {% endif %}
+            {% if location.triplep_offered %}
+                <div class='grid_2'>
+                    <a href="http://www.triplep.net/glo-en/home/">
+                    <img src="{{ STATIC_URL }}img/triple_p_parenting-logo.gif"
+                    title="Triple P" width="60%"/>
+                    <br>
+                    Triple P Parenting Program </a>
+                </div>
             {% endif %}
         </div>
-        <div class='grid_2'>
-            {% if location.npp_offered %}
-                <a href="http://www.bccf.ca/families/programs/nobodys-perfect">
-                <img src="{{ STATIC_URL }}img/Nobody_Pefect_Parenting_Logo.jpg"
-                    title="Nobody's Perfect" width="80%"/>
-                Nobody's Perfect Parenting Program </a>
-            {% endif %}
-        </div> 
-        <div class='grid_2'>
-            {% if location.triplep_offered %}
-                <a href="http://www.triplep.net/glo-en/home/">
-                <img src="{{ STATIC_URL }}img/triple_p_parenting-logo.gif"
-                    title="Triple P" width="80%"/>
-                Triple P Parenting Program </a>
-            {% endif %}
-    </div>
-
+        {% endif %} 
     <div class="grid_4">
         {% show_page_content "aside" %}
     </div>
