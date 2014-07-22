@@ -12,7 +12,7 @@ class Post(models.Model):
     title = models.CharField(max_length=80)
     slug = models.SlugField(max_length=80)
     pub_date = models.DateField(_("Publish Date"),
-        default=datetime.datetime.today())
+        default=datetime.datetime.now)
     exp_date = models.DateField(_("Expiry Date"),
         help_text=_("If specified, this will be when the post is removed."),
         blank=True, null=True)
