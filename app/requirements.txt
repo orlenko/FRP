@@ -1,31 +1,38 @@
-Django==1.3
+Cheetah==2.0.1
+Django==1.5a1
 PIL==1.1.7
-South==0.7.3
-Whoosh==2.2.0
+Pillow==1.7.7
+South==0.7.6
+URLObject==2.1.0
+Whoosh==2.4.1
 argparse==1.2.1
-distribute==0.6.14
-django-appconf==0.4.1
-django-compressor==1.1.1
--e hg+https://bitbucket.org/kmike/django-easy-maps@8ced16c04330731906c993a2c58e36f1f37c2463#egg=django_easy_maps-dev
-django-fiber==0.9.5.1
--e git+http://github.com/toastdriven/django-haystack.git@3684d49c0cacf5fd3805b780d697a5c9446cda9a#egg=django_haystack-dev
+distribute==0.6.10
+django-appconf==0.5
+django-ckeditor==3.6.2.1
+django-compressor==1.2
+django-easy-maps==0.9
+django-fiber==0.9.8.7
+-e git+https://github.com/toastdriven/django-haystack.git@13e5a4926992581106ed14db1f8dd58a897c9a76#egg=django_haystack-dev
 django-mptt==0.5.1
--e git+https://github.com/theatlantic/django-notification.git@48348fb1dcb94e1b8a123b78e431ae3adecc0ad8#egg=django_notification-dev
+django-notification==0.2
 django-pagination==1.0.7
-django-photologue==2.3
-django-piston==0.2.3
--e hg+https://bitbucket.org/ubernostrum/django-registration@fad7080fe76955e7d0d3c97bc468ea8360260a6b#egg=django_registration-dev
-django-timezones==0.1.4
-django-tinymce==1.5.1a2
-django-uni-form==0.8.0
-geopy==0.94.1
-gunicorn==0.12.2
-ipython==0.11
-psycopg2==2.4.2
-pyflakes==0.4.0
-python-dateutil==1.5
-python-ptrace==0.6.3
-pytz==2011h
-xlrd==0.7.1
-django-ckeditor
-fabric
+django-photologue==2.4
+django-registration==0.8
+django-tinymce==1.5.1b2
+django-uni-form==0.9.0
+djangorestframework==0.3.3
+flup==1.0.2
+geopy==0.99
+gunicorn==0.15.0
+haystack==0.15
+iotop==0.4
+mercurial==1.4.3
+psycopg2==2.0.13
+python-apt==0.7.94.2ubuntu6.4
+python-ptrace==0.6.4
+pytz==2012g
+timezones==1.5
+uWSGI==1.2.6
+virtualenv==1.6.4
+web.py==0.33
+wsgiref==0.1.2
