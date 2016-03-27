@@ -1,0 +1,56 @@
+{% extends "memdir/base.html" %}
+{% load fiber_tags %}
+{% load easy_maps_tags cache %}
+
+{% block content %}
+<div class='grid_10'>
+
+ <div class="breadcrumbs grid_10">
+     <ul>
+     <li><a href="{% url 'region' location.region %}">&laquo; Back to {{ location.get_region_display }}</a></li>
+     <li><a href="{% url 'community' location.community %}">Back to {{ location.get_community_display }}</a></li>
+     </ul>
+ </div>
+
+
+    {% if user.is_superuser %}
+    <div class="grid_10 admin-info">
+			<p class='member-number'><a title="Click to open in back-end" href="/admin/memdir/member/{{ location.member.id }}/"><b>System member number: </b>{{ location.member.memnum }}</a></p>
+			<p class='member-renewal'><b>Member renewal date: </b>{{ location.member.renewal_date }}</p>
+		</div>
+    {% else %}
+	    <div class="prepend_4 suffix_8 alpha omega"></div>
+    {% endif %}
+
+    <div class="clear"></div>
+
+    <div class="alpha grid_4">
+        <h3 class='member-agency'>{{ location.frp_program_name }}</h3>
+        <p class='member-full-address'><i>Address</i><br />{{ location.street }}<br />{{ location.city }}, {{ location.province}}<br />{{ location.postal_code }} </p>
+        <p class='member-phone-number'><i>Phone Number</i><br />{{ location.phone }}</p>
+        <p class='member-website'><i>Website:</i><br /><a href="{{ location.website   }}">{{ location.website }}</a></p>
+        <p>
+            <i>Hours:</i>
+            <table>
+            {% for d in location.days_of_operations %}
+                {% if d.formatted_hours %}
+                <tr>
+                    <th>{{ d.name }}:</th>
+                    <td>{{ d.formatted_hours }}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </table>
+        </p>
+    </div>
+    <div class='grid_6 omega member-geo-address-map' style="margin-top:20px;">
+        {% cache 600 my_map location.address %}
+            {% easy_map location.address 390 250 13 %}
+        {% endcache %}
+    </div>
+
+    <div class="grid_4">
+        {% show_page_content "aside" %}
+    </div>
+</div>
+{% endblock %}
