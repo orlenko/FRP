@@ -27,5 +27,5 @@ class EventManager(models.Manager):
     """
     def get_query_set(self):
         ret = super(EventManager, self).get_query_set()
-        ret = ret.filter(end__gte=datetime.datetime.now())
+        ret = ret.filter(end__gte=datetime.datetime.now)
         return ret

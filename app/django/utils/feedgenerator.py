@@ -198,7 +198,7 @@ class SyndicationFeed(object):
             updates.sort()
             return updates[-1]
         else:
-            return datetime.datetime.now()
+            return datetime.datetime.now
 
 class Enclosure(object):
     "Represents an RSS enclosure"

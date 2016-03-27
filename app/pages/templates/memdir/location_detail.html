@@ -45,29 +45,31 @@
             </table>
         </p>
 		{% if location.member.standards_complete or location.member.accredited %}
-			<p ><i><b>Accreditations:</b></i><br />
+			<p ><i><b>Accreditations & Certification:</b></i><br />
 			{% if location.member.standards_complete %}
-				FRP Standards Complete: {{location.member.standards_beginning_year}} - {{ location.member.standards_renewal_year }}
-				<br>
+				FRP Standards Complete: {{location.member.standards_beginning_year}} - {{ location.member.standards_renewal_year }}<br />
 			{% endif %}
 			{% if location.member.accredited == "carf" %}
-				<a href="http://www.carf.org/home/">CARF</a>
+				<a href="http://www.carf.org/home/">Commission on Accreditation of Rehabilitation Facilities (CARF)</a><br />
 			{% elif location.member.accredited == "coa" %}
-				<a href="http://coanet.org/">COA</a>
+				<a href="http://coanet.org/">Council on Accreditation (COA)</a><br />
 			{% elif location.member.accredited == "accredit_can" %}
-				<a href="http://www.accreditation.ca/">Accreditation Canada</a>
+				<a href="http://www.accreditation.ca/">Accreditation Canada</a><br />
 			{% endif %}
 			<br /> 
 		{% endif %}
 		</p>
     </div>
     <div class='grid_6 omega member-geo-address-map' style="margin-top:20px;">
+        <div style="display: none;">
+		Debug information: rendering map using easy_map + '{{location.address}}'
+	</div>
         {% cache 600 my_map location.address %}
         	{% easy_map location.address 390 250 13 %} 
         {% endcache %}
         {% if location.pcmg_offered or location.npp_offered or location.triplep_offered %}
         <div class='grid_3' style='font-size: 10pt;'>
-           <i><b>Parenting Programs Offered:</b></i>
+           <i><b>Parenting Programs Offered:</b></i><p />
             {% if location.pcmg_offered %}
                 <div class='grid_2'>
                     <a href="http://nationalpcmgp.ca/">
