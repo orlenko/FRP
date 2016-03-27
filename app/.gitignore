@@ -6,4 +6,6 @@
 .*.xls*
 *.orig
 *.back
-
+local-bak
+run
+whoosh_index
