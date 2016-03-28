@@ -6,7 +6,9 @@ from memdir.models import Member
 
 
 def t(s):
-    return s.encode('utf8')
+    if isinstance(s, unicode):
+        return s.encode('utf8')
+    return str(s)
 
 
 headers = [
