@@ -1,3 +1,4 @@
+from __future__ import with_statement
 import csv
 
 from django.core.management.base import BaseCommand
@@ -8,51 +9,55 @@ def t(s):
     return s.encode('utf8')
 
 
+headers = [
+    'agency',
+    'membership_number',
+    'renewal_date',
+    'street',
+    'city',
+    'province',
+    'postal_code',
+    'phone',
+    'fax',
+    'website',
+    'contact_name',
+    'contact_title',
+    'email',
+    'direct_phone',
+    'mail_street',
+    'mail_city',
+    'mail_province',
+    'mail_postal_code',
+    'deliver_frp_program',
+    'memebership_type',
+    'frp_program_name',
+    'location_street',
+    'location_city',
+    'location_province',
+    'location_postal_code',
+    'location_mail_street',
+    'location_mail_city',
+    'location_mail_province',
+    'location_mail_postal_code',
+    'location_phone',
+    'location_fax',
+    'location_website',
+    'location_contact_name',
+    'location_contact_position',
+    'location_contact_email',
+    'location_extra_contacts',
+    'location_hours',
+]
+
+
 class Command(BaseCommand):
     """Export members into a csv file."""
 
     def handle(self, *args, **options):
         with open('all_members.csv', 'w') as outfile:
             outfile.write(u'\ufeff'.encode('utf8'))
-            wr = csv.DictWriter(outfile, [
-                'agency',
-                'membership_number',
-                'renewal_date',
-                'street',
-                'city',
-                'province',
-                'postal_code',
-                'phone',
-                'fax',
-                'website',
-                'contact_name',
-                'contact_title',
-                'email',
-                'direct_phone',
-                'mail_street',
-                'mail_city',
-                'mail_province',
-                'mail_postal_code',
-                'deliver_frp_program',
-                'memebership_type',
-                'frp_program_name',
-                'location_street',
-                'location_city',
-                'location_province',
-                'location_postal_code',
-                'location_mail_street',
-                'location_mail_city',
-                'location_mail_province',
-                'location_mail_postal_code',
-                'location_phone',
-                'location_fax',
-                'location_website',
-                'location_contact_name',
-                'location_contact_position',
-                'location_contact_email',
-                'location_extra_contacts',
-                'location_hours',])
-            wr.writeheader()
+            wr = csv.DictWriter(outfile, headers)
+            wr.writerow(dict((fn, fn) for fn in headers))
             for member in Member.objects.all():
                 for location in member.locations.all():
                     wr.writerow({
