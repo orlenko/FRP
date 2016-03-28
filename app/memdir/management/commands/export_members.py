@@ -83,11 +83,12 @@ class Command(BaseCommand):
                         'location_phone': location.phone,
                         'location_fax': location.fax,
                         'location_website': location.website,
-                        'location_contact_name': location.main_contact.contact_name,
-                        'location_contact_position':
-                            location.main_contact.contact_position,
-                        'location_contact_email':
-                            location.main_contact.contact_email,
+                        'location_contact_name': getattr(
+                            location.main_contact, 'contact_name', ''),
+                        'location_contact_position': getattr(
+                            location.main_contact, 'contact_position', ''),
+                        'location_contact_email': getattr(
+                            location.main_contact, 'contact_email', ''),
                         'location_extra_contacts': format_extra_contacts(
                             location.extra_contacts),
                         'location_hours': format_hours(
