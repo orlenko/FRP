@@ -26,7 +26,7 @@ a:hover {
 	text-decoration:none;
 }
 #logo {
-	margin-top:49px; 
+	margin-top:49px;
 	height:184px;
 }
 #logo img {
@@ -145,12 +145,12 @@ h1,h2,h3,h4,h5,h6 {
 	background-color:#FFF;
 }
 #main_content {
-	height: 480px;
+	/*height: 480px;*/
 }
 #news_content {
 	background-image:url(../img/news_content_bg.png);
 	background-position:left top;
-	background-repeat:no-repeat; 
+	background-repeat:no-repeat;
 }
 #news_box {
 	margin-top:70px;
@@ -182,7 +182,7 @@ footer {
 	background-position:center;
 	background-repeat:no-repeat;
 	background-color: transparent;
-	border:0; 
+	border:0;
 	width:125px;
 	height:42px;
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -206,14 +206,14 @@ footer {
 	background-color:#FFF;
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size:18px;
-	color:#000;	
+	color:#000;
 }
 .form_button_small{
 	background-image:url(../img/form_button_small.png);
 	background-position:center;
 	background-repeat:no-repeat;
 	background-color: transparent;
-	border:0; 
+	border:0;
 	width:83px;
 	height:28px;
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -236,7 +236,7 @@ footer {
 	background-color:#FFF;
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size:12px;
-	color:#000;	
+	color:#000;
 }
 
 #download_enews {
@@ -263,7 +263,7 @@ footer {
 	float: left;
 	display: block;
 	padding: 0 9px;
-} 
+}
 #mainmenu ul li:first-child {
 	padding-left: 0;
 }
@@ -340,7 +340,7 @@ footer {
 
 /* Welcome boxes */
 #parents {
-	height:412px;
+	/*height:412px;*/
 	background-image:url(../img/for_parents_bg.png);
 	background-position:right top;
 	background-repeat:no-repeat;
@@ -362,7 +362,7 @@ opacity:0.7;
 filter:alpha(opacity=70); /* For IE8 and earlier */
 }
 #practitioners {
-	height:412px;
+	/*height:412px;*/
 	background-image:url(../img/for_practitioners_bg.png);
 	background-position:right top;
 	background-repeat:no-repeat;
