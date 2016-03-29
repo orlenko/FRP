@@ -60,8 +60,8 @@ class Command(BaseCommand):
             outfile.write(u'\ufeff'.encode('utf8'))
             wr = csv.DictWriter(outfile, headers)
             wr.writerow(dict((fn, fn) for fn in headers))
-            has_locations = False
             for member in Member.objects.all():
+                has_locations = False
                 for location in member.locations.all():
                     has_locations = True
                     wr.writerow({
