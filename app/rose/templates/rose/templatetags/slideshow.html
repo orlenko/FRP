@@ -1,6 +1,6 @@
 <div class="slideshow" style='display: none';>
 		{% for slide in slides %}
-		{% if slide.link %}
+		  {% if slide.link %}
 				<a href="{{ slide.link }}">
 			{% endif %}
 					<img src="{{ slide.image.url }}" alt="{{ slide.description }}"
@@ -10,12 +10,15 @@
 			{% endif %}
 		{% endfor %}
 </div>
+<div id="slideshow-nav"></div>
 
 <script type='text/javascript'>
 	$('.slideshow').css('display', 'block');
 	$(document).ready(function () {
 		$('.slideshow').cycle({
 			fx: 'fade',
+      timeout: 5500,
+      pager: '#slideshow-nav'
 		});
 	});
 </script>
