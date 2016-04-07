@@ -97,7 +97,9 @@ h1,h2,h3,h4,h5,h6 {
 	 margin-top:240px;
 	 height:470px;
 	 position:absolute;
-	 z-index:-99;
+}
+#marquee .slideshow {
+	z-index:-99;
 }
 #welcome {
 	margin-top:300px;
@@ -405,9 +407,8 @@ filter:alpha(opacity=70); /* For IE8 and earlier */
 
 #slideshow-nav {
 	position: absolute;
-	bottom: 50px;
+	top: 50px;
 	width: 100%;
-	z-index: 1000;
 	opacity: 0.5
 
 }
