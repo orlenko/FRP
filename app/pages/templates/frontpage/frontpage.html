@@ -25,6 +25,16 @@
 			The BC Association of Family Resource Programs is a not-for-profit provincial organization dedicated to promoting and supporting community-based Family Resource Programs (FRPs).  FRPs are parent/child (aged 0-6) community hubs where families access support, opportunities for engagement, and community resources.
 		</div>
 	</section>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+				$('#marquee').on("click", function (e) {
+					if (window.activeSlideAnchor !== null) {
+							window.location.href = window.activeSlideAnchor.prop('href');
+					}
+				})
+		});
+	</script>
 {% endblock %}
 
 {% block content %}
