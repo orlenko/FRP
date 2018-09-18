@@ -72,7 +72,7 @@
 				<a href="@fiber">Sign In</a>
 			</div>
 			<header id="{% block header_select %}contentpage{% endblock %}" class='grid_16'>
-			  <div id="logo" class="grid_4 alpha"><a href="/"><img src="{{ STATIC_URL }}img/bcfrp_logo.png" alt="BCFRP Logo"></a></div>
+			  <div id="logo" class="grid_3 alpha"><a href="/"><img src="{{ STATIC_URL }}img/bcfrp_logo.png" alt="BCFRP Logo"></a></div>
         <div id="searchbox" class="grid_6 prefix_6 omega clearfix">
           <form name='searchbox' type='submit' method='get' action="/search/">
             {% csrf_token %}
@@ -88,7 +88,7 @@
           </form>
         </div>
           <!--<img src="{{ STATIC_URL }}img/search_place_holder.png"></div>-->
-				<nav id="mainmenu" class="grid_12 omega">
+				<nav id="mainmenu" class="grid_14 omega">
 					{% show_menu "mainmenu" 1 1 %}
 				</nav>
 				{% if notices %}
@@ -168,12 +168,11 @@
 
 					<img src="{{ STATIC_URL }}img/funders.png" alt="Our Funders" border="0" usemap="#Map">
 					<map name="Map" id="Map">
-					    <area alt="CHILDREN AND FAMILY DEVELOPMENT" title="CHILDREN AND FAMILY DEVELOPMENT" href="http://www.gov.bc.ca/mcf/" shape="poly" coords="3,6,74,5,75,91,2,91" />
-					    <area alt="United Ways" title="United Ways" href="http://www.uwlm.ca" shape="poly" coords="169,4,244,7,246,91,170,91" />
-					    <area alt="Government of BC" title="Government of BC" href="http://www2.gov.bc.ca/" shape="poly" coords="331,8,425,7,430,90,329,89" />
-					    <area alt="Vancouver Foundation" title="Vancouver Foundation" href="http://www.vancouverfoundation.ca/" shape="poly" coords="523,14,526,81,715,77,708,15" />
-					    <area alt="" title="" href="http://www.pwc.com/ca/en.html" shape="poly" coords="794,88,792,10,909,10,910,86" />
-					    <area alt="" title="" href="http://www.maxbell.org/" shape="poly" coords="999,82,1108,83,1107,16,1003,13" />
+            <area alt="Employment and Social Development Canada" title="Employment and Social Development Canada" href="https://www.canada.ca/en/employment-social-development.html" coords="387,96,3,4" shape="rect">
+            <area alt="Vancouver Foundation" title="Vancouver Foundation" href="http://www.vancouverfoundation.ca/" coords="389,94,635,0" shape="rect">
+            <area alt="CHILDREN AND FAMILY DEVELOPMENT" title="CHILDREN AND FAMILY DEVELOPMENT" href="http://www.gov.bc.ca/mcf/" coords="640,98,806,2" shape="rect">
+            <area alt="United Way" title="United Way" href="http://www.uwlm.ca" coords="810,96,951,0" shape="rect">
+            <area alt="Government of BC" title="Government of BC" href="http://www2.gov.bc.ca/" coords="957,95,1107,1" shape="rect">
 					</map>
 				</div>
 				<div id="copyrights" class="grid_16 omega">The BC
